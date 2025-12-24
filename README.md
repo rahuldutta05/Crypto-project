@@ -6,7 +6,8 @@ This is not the final work and many more is yet to come.
 chatgpt repo link for rahul:https://chatgpt.com/share/694c2c95-a358-8003-b2d1-7dacf9442a8b
 (whatever work is done by him is posted here)
 chatgpt repo link for biswadeep:
+
 yet to be done
-frontend
+*frontend
 ppt
-tests
+tests*
