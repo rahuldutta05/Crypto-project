@@ -1,40 +1,26 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
-import os
 import json
-from crypto.key_expiry import destroy_encrypted_key
-from config import ENCRYPTED_KEYS_PATH
+import os
 
-METADATA_FILE = os.path.join(ENCRYPTED_KEYS_PATH, "key_metadata.json")
-
-def load_metadata():
-    if not os.path.exists(METADATA_FILE):
-        return {}
-    with open(METADATA_FILE, "r") as f:
-        return json.load(f)
-
-def save_metadata(data):
-    with open(METADATA_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+MESSAGE_FILE = "storage/messages.json"
 
 def expiry_job():
-    metadata = load_metadata()
+    if not os.path.exists(MESSAGE_FILE):
+        return
+
+    messages = json.load(open(MESSAGE_FILE))
     now = datetime.utcnow()
 
-    updated_metadata = {}
+    updated = {}
+    for msg_id, data in messages.items():
+        expiry_time = datetime.fromisoformat(data["expiry"])
+        if now < expiry_time:
+            updated[msg_id] = data
 
-    for submission_id, info in metadata.items():
-        expiry_time = datetime.fromisoformat(info["expiry_time"])
-        key_path = info["key_path"]
-
-        if now >= expiry_time:
-            destroy_encrypted_key(key_path)
-        else:
-            updated_metadata[submission_id] = info
-
-    save_metadata(updated_metadata)
+    json.dump(updated, open(MESSAGE_FILE, "w"), indent=4)
 
 def start_scheduler():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(expiry_job, "interval", minutes=1)
+    scheduler.add_job(expiry_job, "interval", seconds=30)
     scheduler.start()

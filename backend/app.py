@@ -1,37 +1,23 @@
-from flask import Flask, jsonify
+from flask import Flask
 from routes.auth_routes import auth_bp
-from routes.submission_routes import submission_bp
+from routes.key_routes import key_bp
+from routes.chat_routes import chat_bp
 from routes.verify_routes import verify_bp
 from routes.admin_routes import admin_bp
 from scheduler.expiry_scheduler import start_scheduler
-
-import os
-from config import ENCRYPTED_DATA_PATH, ENCRYPTED_KEYS_PATH
-
-os.makedirs(ENCRYPTED_DATA_PATH, exist_ok=True)
-os.makedirs(ENCRYPTED_KEYS_PATH, exist_ok=True)
+from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__)
-
-    @app.route("/")
-    def home():
-        return jsonify({
-            "status": "Cryptographic Lifecycle Backend Running",
-            "routes": [
-                "/auth/token",
-                "/submit",
-                "/verify",
-                "/admin"
-            ]
-        })
-
+    CORS(app)
     app.register_blueprint(auth_bp, url_prefix="/auth")
-    app.register_blueprint(submission_bp, url_prefix="/submit")
+    app.register_blueprint(key_bp, url_prefix="/keys")
+    app.register_blueprint(chat_bp, url_prefix="/chat")
     app.register_blueprint(verify_bp, url_prefix="/verify")
     app.register_blueprint(admin_bp, url_prefix="/admin")
 
     start_scheduler()
+
     return app
 
 if __name__ == "__main__":
