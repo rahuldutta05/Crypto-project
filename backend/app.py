@@ -1,25 +1,46 @@
-from flask import Flask
-from routes.auth_routes import auth_bp
-from routes.key_routes import key_bp
-from routes.chat_routes import chat_bp
-from routes.verify_routes import verify_bp
-from routes.admin_routes import admin_bp
-from scheduler.expiry_scheduler import start_scheduler
+"""
+app.py — Flask application factory.
+
+Creates and configures the Flask app, registers all blueprints,
+and starts the background expiry scheduler thread.
+"""
+
+from flask import Flask, jsonify
 from flask_cors import CORS
 
-def create_app():
+from api.auth   import auth_bp
+from api.chat   import chat_bp
+from api.keys   import keys_bp
+from api.verify import verify_bp
+from api.admin  import admin_bp
+from core.scheduler import start_background_scheduler
+
+
+def create_app() -> Flask:
     app = Flask(__name__)
     CORS(app)
-    app.register_blueprint(auth_bp, url_prefix="/auth")
-    app.register_blueprint(key_bp, url_prefix="/keys")
-    app.register_blueprint(chat_bp, url_prefix="/chat")
-    app.register_blueprint(verify_bp, url_prefix="/verify")
-    app.register_blueprint(admin_bp, url_prefix="/admin")
 
-    start_scheduler()
+    # ── Register blueprints ───────────────────────────────────────────────
+    app.register_blueprint(auth_bp,   url_prefix="/auth")
+    app.register_blueprint(chat_bp,   url_prefix="/chat")
+    app.register_blueprint(keys_bp,   url_prefix="/keys")
+    app.register_blueprint(verify_bp, url_prefix="/verify")
+    app.register_blueprint(admin_bp,  url_prefix="/admin")
+
+    # ── Global error handlers ─────────────────────────────────────────────
+    @app.errorhandler(404)
+    def not_found(_):
+        return jsonify({"error": "Endpoint not found"}), 404
+
+    @app.errorhandler(405)
+    def method_not_allowed(_):
+        return jsonify({"error": "Method not allowed"}), 405
+
+    @app.errorhandler(500)
+    def internal_error(e):
+        return jsonify({"error": "Internal server error", "detail": str(e)}), 500
+
+    # ── Start background expiry scheduler ─────────────────────────────────
+    start_background_scheduler()
 
     return app
-
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)

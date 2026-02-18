@@ -1,102 +1,108 @@
-import { useState } from "react";
-import API from "../services/api";
-import "../styles/main.css";
-import "../styles/chat.css";
-import "../styles/attacker.css";
+/**
+ * pages/ChatPortal.jsx — E2E encrypted message sender (POST /chat/send)
+ *
+ * Flow:
+ *   1. Fetch recipient's public key from GET /keys/:userId
+ *   2. Generate ephemeral AES-GCM DEK
+ *   3. AES-GCM encrypt message with DEK → encrypted_message
+ *   4. RSA-OAEP encrypt DEK with recipient pubkey → encrypted_key
+ *   5. POST { encrypted_message, encrypted_key, receiver } to /chat/send
+ *   6. Server returns { message_id, expiry }
+ */
+
+import React, { useState } from "react";
+import { getPublicKey, sendMessage } from "../services/api";
+import { importPublicKeyPem, rsaEncrypt } from "../crypto/rsa";
+import { generateDek, exportDekRaw, encryptMessage } from "../crypto/aes";
 
 export default function ChatPortal() {
+  const [receiver, setReceiver] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [result, setResult] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const [device, setDevice] = useState("deviceA");
-  const [msg, setMsg] = useState("");
-  const [inbox, setInbox] = useState({});
-  const [attacker, setAttacker] = useState({});
+  async function handleSend() {
+    if (!receiver.trim() || !message.trim()) {
+      setErrorMsg("Recipient and message are required.");
+      return;
+    }
 
-  async function registerDev() {
-    await API.post("/keys/register", {
-      user_id: device,
-      public_key: "dummy"
-    });
-    alert(device + " registered");
-  }
+    setStatus("sending"); setErrorMsg("");
 
-  async function sendMsg() {
+    try {
+      // 1. Fetch recipient public key
+      const keyData = await getPublicKey(receiver.trim());
+      const recipientPubKey = await importPublicKeyPem(keyData.public_key);
 
-    await API.post("/chat/send", {
-      encrypted_message: msg,
-      encrypted_key: "dummyAES",
-      receiver: device === "deviceA" ? "deviceB" : "deviceA"
-    });
+      // 2. Generate ephemeral DEK
+      const dek = await generateDek();
 
-    alert("Encrypted message sent!");
-  }
+      // 3. Encrypt message with AES-GCM
+      const encryptedMessage = await encryptMessage(message, dek);
 
-  async function fetchInbox() {
-    const res = await API.get("/chat/inbox/" + device);
-    setInbox(res.data);
-  }
+      // 4. Encrypt DEK with recipient's RSA public key
+      const rawDek = await exportDekRaw(dek);
+      const encryptedKey = await rsaEncrypt(recipientPubKey, rawDek);
 
-  async function intercept() {
-    const res = await API.get("/admin/dump/messages");
-    setAttacker(res.data);
+      // 5. POST to /chat/send
+      const data = await sendMessage({
+        encrypted_message: encryptedMessage,
+        encrypted_key: encryptedKey,
+        receiver: receiver.trim(),
+      });
+
+      setResult(data);
+      setStatus("done");
+      setMessage("");
+    } catch (e) {
+      if (e.status === 404) {
+        setErrorMsg(`User "${receiver}" has no registered public key. They must register first.`);
+      } else {
+        setErrorMsg(e.message || "Send failed.");
+      }
+      setStatus("error");
+    }
   }
 
   return (
-    <div className="container">
+    <div className="page-chat">
+      <div className="card">
+        <h2>Send Encrypted Message</h2>
+        <p className="subtitle">
+          Messages are encrypted client-side with the recipient's public key.
+          The server never sees plaintext.
+        </p>
 
-      <h1>Secure Anonymous Communication Portal</h1>
+        <div className="form-group">
+          <label>To (user ID)</label>
+          <input className="input-field" type="text" placeholder="e.g. alice"
+            value={receiver} onChange={(e) => setReceiver(e.target.value)} />
+        </div>
 
-      <select
-        value={device}
-        onChange={e => setDevice(e.target.value)}
-      >
-        <option value="deviceA">Device A</option>
-        <option value="deviceB">Device B</option>
-      </select>
+        <div className="form-group">
+          <label>Message</label>
+          <textarea className="message-input" rows={5} value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Your encrypted message…"
+            disabled={status === "sending"} />
+        </div>
 
-      <button onClick={registerDev}>
-        Register Device
-      </button>
+        {errorMsg && <div className="error-banner">{errorMsg}</div>}
 
-      <div className="chat-panel">
-
-        <input
-          value={msg}
-          onChange={e => setMsg(e.target.value)}
-          placeholder="Enter message"
-        />
-
-        <button onClick={sendMsg}>
-          Send Encrypted Message
+        <button className="btn-primary" onClick={handleSend}
+          disabled={status === "sending" || !receiver.trim() || !message.trim()}>
+          {status === "sending" ? "Encrypting & Sending…" : "Send Encrypted"}
         </button>
 
-        <button onClick={fetchInbox}>
-          Fetch Inbox
-        </button>
-
-      </div>
-
-      <div className="chat-box">
-        <h3>Inbox</h3>
-        {Object.entries(inbox).map(([id, m]) => (
-          <div className="message" key={id}>
-            {m.encrypted_message}
+        {status === "done" && result && (
+          <div className="result-box success">
+            <strong>✅ Message sent</strong>
+            <div>Message ID: <code>{result.message_id}</code></div>
+            <div>Expires: <code>{new Date(result.expiry).toLocaleString()}</code></div>
           </div>
-        ))}
+        )}
       </div>
-
-      <button onClick={intercept}>
-        Simulate Attacker
-      </button>
-
-      <div className="attacker-panel">
-        <h3>Intercepted Ciphertext</h3>
-        {Object.entries(attacker).map(([id, m]) => (
-          <div className="ciphertext" key={id}>
-            {m.encrypted_message}
-          </div>
-        ))}
-      </div>
-
     </div>
   );
 }
