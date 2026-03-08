@@ -4,8 +4,24 @@ import os
 from datetime import datetime, timedelta
 from crypto.signature_utils import generate_keypair, sign_data, verify_signature, create_anonymous_id
 from crypto.hash_utils import create_commitment, verify_commitment, hash_data
+from crypto.blind_signatures import (
+    server_keygen, blind_message, blind_sign, unblind_signature,
+    verify_blind_signature
+)
 
 auth_bp = Blueprint('auth', __name__)
+
+BLIND_KEY_PATH = 'storage/blind_signing_key.json'
+
+
+def _get_blind_signing_key():
+    if os.path.exists(BLIND_KEY_PATH):
+        with open(BLIND_KEY_PATH, 'r') as f:
+            return json.load(f)
+    key = server_keygen()
+    with open(BLIND_KEY_PATH, 'w') as f:
+        json.dump(key, f, indent=2)
+    return key
 
 def load_tokens():
     with open('storage/tokens.json', 'r') as f:
@@ -162,3 +178,63 @@ def validate_session():
         
     except Exception as e:
         return jsonify({'error': str(e)}), 400
+
+
+# ── Blind Signatures (Chaum): server signs without seeing the token ───────────
+
+@auth_bp.route('/blind-public-key', methods=['GET'])
+def get_blind_public_key():
+    """Get server's public key for blind signing. Server never sees the token."""
+    try:
+        key = _get_blind_signing_key()
+        return jsonify({
+            'public_key': key['public_key'],
+            'message': 'Use this to blind your token; server will sign without seeing it'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
+
+@auth_bp.route('/blind-sign', methods=['POST'])
+def blind_sign_endpoint():
+    """
+    Submit blinded message. Server signs it without ever seeing the content.
+    Client later unblinds to get signature on original token — anonymous e-cash style.
+    """
+    try:
+        data = request.json
+        blinded_message = data.get('blinded_message')  # int or str of int
+        if blinded_message is None:
+            return jsonify({'error': 'blinded_message required'}), 400
+        key = _get_blind_signing_key()
+        blinded_int = int(blinded_message)
+        signed_blind = blind_sign(blinded_int, key['private_key'])
+        return jsonify({
+            'signed_blinded': str(signed_blind),
+            'message': 'Signature on blinded token; unblind client-side to get token signature'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
+
+@auth_bp.route('/verify-blind-token', methods=['POST'])
+def verify_blind_token():
+    """
+    Verify a (token, signature) pair. Server can verify it's genuine but has
+    zero record of having issued it to you specifically.
+    """
+    try:
+        data = request.json
+        token = data.get('token')  # raw token string
+        signature = data.get('signature')  # int or str
+        if not token or signature is None:
+            return jsonify({'valid': False, 'error': 'token and signature required'}), 400
+        key = _get_blind_signing_key()
+        sig_int = int(signature)
+        valid = verify_blind_signature(token, sig_int, key['public_key'])
+        return jsonify({
+            'valid': valid,
+            'message': 'Token is genuine' if valid else 'Invalid or forged token'
+        })
+    except Exception as e:
+        return jsonify({'valid': False, 'error': str(e)}), 400

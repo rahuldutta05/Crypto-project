@@ -81,3 +81,28 @@ def verify_commitment(secret, nonce, commitment):
     commitment_data = f"{secret}:{nonce}"
     expected_commitment = hash_data(commitment_data)
     return expected_commitment == commitment
+
+
+# ── Commitment with Reveal (temporal integrity) ─────────────────────────────
+# Publish commitment first; reveal message later. Proves you didn't change it after the fact.
+
+
+def create_temporal_commitment(message, salt=None):
+    """
+    Commit to a message before sending. Publish only the commitment (hash).
+    Later reveal (message, salt); anyone can verify you didn't change it.
+    Returns (commitment_hash, salt).
+    """
+    if salt is None:
+        salt = os.urandom(32).hex()
+    commitment = hash_data(f"{message}:{salt}")
+    return commitment, salt
+
+
+def verify_temporal_reveal(message, salt, commitment_hash):
+    """
+    Verify a revealed message against a previously published commitment.
+    Proves temporal integrity: you said what you said, when you said it.
+    """
+    expected = hash_data(f"{message}:{salt}")
+    return expected == commitment_hash
