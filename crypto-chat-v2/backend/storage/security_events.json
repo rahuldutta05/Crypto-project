@@ -1,0 +1,98 @@
+[
+  {
+    "id": "40ab1f2a94310477",
+    "timestamp": "2026-03-08T14:20:14.964521",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "sc3OLIhbNSO7dIQJAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-08T14:20:14.964436"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "72c14704c85fe3d8",
+    "timestamp": "2026-03-08T14:20:28.387408",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "sc3OLIhbNSO7dIQJAAAB",
+      "device_id": null,
+      "timestamp": "2026-03-08T14:20:28.387330"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f3faf7f860fea366",
+    "timestamp": "2026-03-08T14:20:28.877013",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "A6xObImvkOjjX_-6AAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-08T14:20:28.876944"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6f97bf95c457a297",
+    "timestamp": "2026-03-08T14:20:32.119398",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "YfKM_VoRhGd457NnAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-08T14:20:32.119257"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f85920a84f2a56c4",
+    "timestamp": "2026-03-08T14:23:56.302129",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "nku_vWC9EoVn9M0gAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-08T14:23:56.302040"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8efbd9a9626264a3",
+    "timestamp": "2026-03-08T14:26:29.426371",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "invalid_signature",
+      "device_id": "fa1e05422b9ea6d5",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8850f3c1a850032a",
+    "timestamp": "2026-03-08T14:26:29.427112",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "invalid_signature",
+      "device_id": "fa1e05422b9ea6d5",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c7c1a4c5dd76ee46",
+    "timestamp": "2026-03-08T14:26:51.676383",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "send_message",
+      "session_id": "nku_vWC9EoVn9M0gAAAB",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  }
+]

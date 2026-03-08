@@ -1,0 +1,424 @@
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
+from flask_socketio import SocketIO, emit, join_room, leave_room
+from datetime import datetime, timedelta
+import json
+import os
+
+from routes.auth_routes import auth_bp
+from routes.chat_routes import chat_bp
+from routes.verify_routes import verify_bp
+from routes.admin_routes import admin_bp
+from routes.pairing_routes import pairing_bp
+from scheduler.expiry_scheduler import start_expiry_scheduler
+from monitoring.security_monitor import SecurityMonitor
+from config import Config
+
+app = Flask(__name__)
+app.config.from_object(Config)
+
+# CORS for internet hosting
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
+
+# WebSocket support (threading mode works on Windows without eventlet install issues)
+socketio = SocketIO(
+    app,
+    cors_allowed_origins="*",
+    async_mode='threading',
+    logger=False,
+    engineio_logger=False
+)
+
+# Global security monitor (shared with all modules)
+security_monitor = SecurityMonitor()
+
+# Initialize storage directory + default files
+os.makedirs('storage', exist_ok=True)
+_storage_defaults = {
+    'messages.json': {},
+    'keys.json': {'keys': {}},
+    'tokens.json': {},
+    'proof.json': {},
+    'devices.json': {},
+    'security_events.json': [],
+    'nonces.json': []
+}
+for fname, default in _storage_defaults.items():
+    path = os.path.join('storage', fname)
+    if not os.path.exists(path):
+        with open(path, 'w') as f:
+            json.dump(default, f)
+
+# Register blueprints
+app.register_blueprint(auth_bp, url_prefix='/api/auth')
+app.register_blueprint(chat_bp, url_prefix='/api/chat')
+app.register_blueprint(verify_bp, url_prefix='/api/verify')
+app.register_blueprint(admin_bp, url_prefix='/api/admin')
+app.register_blueprint(pairing_bp, url_prefix='/api/pairing')
+
+# ── In-memory connected device state ──────────────────────────────────────────
+connected_devices = {}   # session_id → device info dict
+device_rooms = {}        # device_id → session_id
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CORE PRINCIPLE 1: Anonymous but Verifiable
+# ══════════════════════════════════════════════════════════════════════════════
+
+@socketio.on('connect')
+def handle_connect():
+    """Anonymous connection — no login required"""
+    session_id = request.sid
+    connected_devices[session_id] = {
+        'connected_at': datetime.utcnow().isoformat(),
+        'ip_address': request.remote_addr,
+        'verified': False
+    }
+
+    security_monitor.log_event('connection', {
+        'session_id': session_id,
+        'ip': request.remote_addr,
+        'timestamp': datetime.utcnow().isoformat()
+    })
+
+    emit('connected', {
+        'session_id': session_id,
+        'message': 'Connected anonymously - ready for pairing'
+    })
+
+
+@socketio.on('verify_device')
+def handle_device_verification(data):
+    """Verify device ownership via cryptographic challenge (zero-knowledge proof)"""
+    try:
+        session_id = request.sid
+        device_id = data.get('device_id')
+        signature = data.get('signature')
+        challenge = data.get('challenge')
+
+        from crypto.signature_utils import verify_signature
+
+        def _load_devices():
+            with open('storage/devices.json', 'r') as f:
+                return json.load(f)
+
+        devices = _load_devices()
+
+        if device_id not in devices:
+            security_monitor.log_event('auth_failure', {
+                'reason': 'unknown_device',
+                'device_id': device_id,
+                'ip': request.remote_addr
+            })
+            emit('verification_failed', {'error': 'Unknown device'})
+            return
+
+        public_key = devices[device_id]['public_key']
+
+        if verify_signature(challenge, signature, public_key):
+            connected_devices[session_id]['verified'] = True
+            connected_devices[session_id]['device_id'] = device_id
+            device_rooms[device_id] = session_id
+
+            join_room(device_id)
+
+            security_monitor.log_event('auth_success', {
+                'device_id': device_id,
+                'session_id': session_id,
+                'method': 'zero_knowledge_proof'
+            })
+
+            emit('verified', {
+                'device_id': device_id,
+                'message': 'Device verified - identity remains anonymous'
+            })
+        else:
+            security_monitor.log_event('auth_failure', {
+                'reason': 'invalid_signature',
+                'device_id': device_id,
+                'ip': request.remote_addr
+            })
+            emit('verification_failed', {'error': 'Invalid signature'})
+
+    except Exception as e:
+        security_monitor.log_event('error', {
+            'type': 'verification_error',
+            'error': str(e)
+        })
+        emit('error', {'message': str(e)})
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CORE PRINCIPLE 2: Proof of Existence
+# ══════════════════════════════════════════════════════════════════════════════
+
+@socketio.on('send_message')
+def handle_send_message(data):
+    """
+    Send encrypted message with proof-of-existence.
+    Content is NOT stored — only hash + timestamp.
+    """
+    try:
+        session_id = request.sid
+
+        if session_id not in connected_devices or not connected_devices[session_id].get('verified'):
+            security_monitor.log_event('unauthorized_attempt', {
+                'action': 'send_message',
+                'session_id': session_id,
+                'ip': request.remote_addr
+            })
+            emit('error', {'message': 'Unauthorized - device not verified'})
+            return
+
+        sender_id = connected_devices[session_id]['device_id']
+        recipient_id = data.get('recipient_id')
+        encrypted_data = data.get('encrypted_data')
+        nonce = data.get('nonce')
+        signature = data.get('signature')
+        expiry_minutes = data.get('expiry_minutes', 60)
+
+        # ── Anti-Replay: Check nonce ──────────────────────────────────────────
+        with open('storage/nonces.json', 'r') as f:
+            used_nonces = json.load(f)
+
+        nonce_values = [n['nonce'] if isinstance(n, dict) else n for n in used_nonces]
+
+        if nonce in nonce_values:
+            security_monitor.log_event('replay_attack_detected', {
+                'nonce': nonce,
+                'sender': sender_id,
+                'ip': request.remote_addr,
+                'timestamp': datetime.utcnow().isoformat()
+            })
+            emit('error', {'message': 'Replay attack detected - nonce already used'})
+            return
+
+        # Record nonce
+        used_nonces.append({
+            'nonce': nonce,
+            'timestamp': datetime.utcnow().isoformat(),
+            'sender': sender_id
+        })
+        with open('storage/nonces.json', 'w') as f:
+            json.dump(used_nonces, f)
+
+        # ── Proof-of-Existence ────────────────────────────────────────────────
+        from crypto.hash_utils import create_proof_of_existence
+
+        message_id = os.urandom(16).hex()
+        proof = create_proof_of_existence(encrypted_data, metadata={
+            'sender': sender_id,
+            'recipient': recipient_id,
+            'type': 'chat_message'
+        })
+
+        expiry_time = datetime.utcnow() + timedelta(minutes=expiry_minutes)
+
+        # Store ONLY proof metadata — NOT the actual encrypted content
+        with open('storage/messages.json', 'r') as f:
+            messages = json.load(f)
+
+        messages[message_id] = {
+            'sender': sender_id,
+            'recipient': recipient_id,
+            'proof_hash': proof['proof_hash'],   # hash only
+            'timestamp': proof['timestamp'],      # timestamp only
+            'expires_at': expiry_time.isoformat(),
+            'signature': signature,
+            'nonce': nonce,
+            'status': 'active'
+            # NOTE: encrypted_data is intentionally NOT stored
+        }
+
+        with open('storage/messages.json', 'w') as f:
+            json.dump(messages, f, indent=2)
+
+        # Store proof separately for verification
+        with open('storage/proof.json', 'r') as f:
+            proofs = json.load(f)
+
+        proofs[message_id] = proof
+
+        with open('storage/proof.json', 'w') as f:
+            json.dump(proofs, f, indent=2)
+
+        # Forward encrypted message to recipient (memory/WebSocket only, never disk)
+        if recipient_id in device_rooms:
+            emit('receive_message', {
+                'message_id': message_id,
+                'sender': sender_id,
+                'encrypted_data': encrypted_data,
+                'signature': signature,
+                'timestamp': proof['timestamp'],
+                'expires_at': expiry_time.isoformat(),
+                'proof_hash': proof['proof_hash']
+            }, room=recipient_id)
+
+        emit('message_sent', {
+            'message_id': message_id,
+            'proof_hash': proof['proof_hash'],
+            'expires_at': expiry_time.isoformat(),
+            'message': 'Message sent with proof-of-existence (content not stored)'
+        })
+
+        security_monitor.log_event('message_sent', {
+            'message_id': message_id,
+            'sender': sender_id,
+            'recipient': recipient_id,
+            'proof_hash': proof['proof_hash'],
+            'expiry': expiry_time.isoformat()
+        })
+
+    except Exception as e:
+        security_monitor.log_event('error', {
+            'type': 'send_message_error',
+            'error': str(e)
+        })
+        emit('error', {'message': str(e)})
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CORE PRINCIPLE 3: Cryptographic Expiry
+# ══════════════════════════════════════════════════════════════════════════════
+
+@socketio.on('check_message_validity')
+def handle_message_validity_check(data):
+    """Check if message key has been cryptographically destroyed"""
+    try:
+        message_id = data.get('message_id')
+
+        with open('storage/messages.json', 'r') as f:
+            messages = json.load(f)
+
+        if message_id not in messages:
+            emit('message_status', {'valid': False, 'reason': 'not_found'})
+            return
+
+        msg = messages[message_id]
+        now_str = datetime.utcnow().isoformat()
+        expires_at = msg.get('expires_at', '')
+
+        if expires_at and now_str >= expires_at:
+            msg['status'] = 'expired'
+
+            with open('storage/messages.json', 'w') as f:
+                json.dump(messages, f, indent=2)
+
+            security_monitor.log_event('key_expired', {
+                'message_id': message_id,
+                'expired_at': now_str
+            })
+
+            emit('message_status', {
+                'valid': False,
+                'reason': 'key_expired',
+                'message': 'Cryptographic key destroyed - data permanently unrecoverable'
+            })
+        else:
+            # Calculate seconds remaining
+            try:
+                expires_dt = datetime.fromisoformat(expires_at)
+                remaining = (expires_dt - datetime.utcnow()).total_seconds()
+            except Exception:
+                remaining = None
+
+            emit('message_status', {
+                'valid': True,
+                'expires_in': remaining
+            })
+
+    except Exception as e:
+        emit('error', {'message': str(e)})
+
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    """Clean up on disconnect"""
+    session_id = request.sid
+
+    if session_id in connected_devices:
+        device_id = connected_devices[session_id].get('device_id')
+        if device_id and device_id in device_rooms:
+            del device_rooms[device_id]
+            leave_room(device_id)
+
+        security_monitor.log_event('disconnection', {
+            'session_id': session_id,
+            'device_id': device_id,
+            'timestamp': datetime.utcnow().isoformat()
+        })
+
+        del connected_devices[session_id]
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# HTTP Utility Routes
+# ══════════════════════════════════════════════════════════════════════════════
+
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    return jsonify({
+        'status': 'healthy',
+        'timestamp': datetime.utcnow().isoformat(),
+        'connected_devices': len(connected_devices),
+        'core_principles': {
+            'anonymous_verifiable': True,
+            'proof_of_existence': True,
+            'cryptographic_expiry': True
+        }
+    })
+
+
+@app.route('/api/server-info', methods=['GET'])
+def server_info():
+    """Return server connection info for QR code generation"""
+    import socket
+
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+    except Exception:
+        local_ip = "localhost"
+
+    return jsonify({
+        'server_url': f'http://{local_ip}:5000',
+        'websocket_url': f'ws://{local_ip}:5000',
+        'timestamp': datetime.utcnow().isoformat()
+    })
+
+
+if __name__ == '__main__':
+    # Start key expiry scheduler
+    start_expiry_scheduler()
+
+    print("=" * 60)
+    print("🔐 CRYPTOGRAPHIC CHAT FRAMEWORK v2.0")
+    print("=" * 60)
+    print("\n📋 CORE PRINCIPLES:")
+    print("  1. Anonymous but Verifiable Submission")
+    print("  2. Proof-of-Existence (No Content Storage)")
+    print("  3. Cryptographically Enforced Data Expiry")
+    print("\n🌐 SERVER STARTING...")
+    print("  • WebSocket: Enabled")
+    print("  • Security Monitoring: Active")
+    print("  • Key Expiry Scheduler: Running")
+    print("\n⚠️  SECURITY NOTICE:")
+    print("  All attack attempts are logged for analysis")
+    print("  Access admin dashboard at /api/admin/security-events")
+    print("=" * 60 + "\n")
+
+    socketio.run(
+        app,
+        host='0.0.0.0',
+        port=5000,
+        debug=True,
+        allow_unsafe_werkzeug=True
+    )

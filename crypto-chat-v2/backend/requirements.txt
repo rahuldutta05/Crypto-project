@@ -1,0 +1,11 @@
+Flask==3.0.0
+flask-cors==4.0.0
+flask-socketio==5.3.6
+python-socketio==5.10.0
+pycryptodomex
+APScheduler==3.10.4
+python-dateutil==2.8.2
+qrcode[pil]==7.4.2
+Pillow==10.1.0
+eventlet==0.35.2
+gunicorn==21.2.0
