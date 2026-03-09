@@ -1,5 +1,171 @@
 [
   {
+    "id": "2a74568f7eca7895",
+    "timestamp": "2026-03-09T16:07:54.017360Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "ij5o_NrRJZyPW1DIAAAH",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-09T16:07:54.017330Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "674f25ca6cdbf148",
+    "timestamp": "2026-03-09T15:22:30.678058Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "nwUENlIa-bhm2E3oAAAF",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-09T15:22:30.678035Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e653722cc7a517ea",
+    "timestamp": "2026-03-09T15:22:28.134390Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "Fl2dAvXHYMPm09cqAAAB",
+      "device_id": "79fa03921c231aff",
+      "timestamp": "2026-03-09T15:22:28.134339Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "44bbfc95364de9c5",
+    "timestamp": "2026-03-09T15:14:06.478942Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "0512e2ae69cbad2a7852e4a8c7d7fcee",
+      "sender": "79fa03921c231aff",
+      "recipient": "2efcb973a96d4243",
+      "proof_hash": "ec9b585fc91c6d4a935b478c6fc99ac6f57d2fa2183073741eeb706429c8aaad",
+      "expiry": "2026-03-09T15:15:06.446852Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e8b5f5651f401a8f",
+    "timestamp": "2026-03-09T15:13:59.796789Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "BbJ3Dr_F5NUVem2RAAAD",
+      "device_id": "2efcb973a96d4243",
+      "timestamp": "2026-03-09T15:13:59.796744Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d75f61d761b0582d",
+    "timestamp": "2026-03-09T15:13:38.949397Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "740767084408c64ae27bb683343eea24",
+      "sender": "2efcb973a96d4243",
+      "recipient": "79fa03921c231aff",
+      "proof_hash": "f5f5f9b92c8ee03ca222491e9343aec0084962d055dc49e0f65404127c86fc57",
+      "expiry": "2026-03-09T16:13:38.918703Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e1d9421628192203",
+    "timestamp": "2026-03-09T15:13:10.651024Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "ddcd9aeec38701aece2c11553f04a4c8",
+      "sender": "2efcb973a96d4243",
+      "recipient": "79fa03921c231aff",
+      "proof_hash": "c4e5444d1d43533bf7e068945d20984c0cf65a1e379688220bbb32837a4f96de",
+      "expiry": "2026-03-09T16:13:10.620967Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1621894e70629da4",
+    "timestamp": "2026-03-09T15:12:55.639463Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "fd1a3a500b5a2522f273ab703aeae55b",
+      "sender": "79fa03921c231aff",
+      "recipient": "2efcb973a96d4243",
+      "proof_hash": "d69708cbb16fc8a50266e0c9fda7f9302222822985d027c23112fa8d77d2e816",
+      "expiry": "2026-03-09T16:12:55.610048Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b474ca273c15d1cf",
+    "timestamp": "2026-03-09T15:12:52.355825Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "79fa03921c231aff",
+      "session_id": "Fl2dAvXHYMPm09cqAAAB",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "10f6e8159192a057",
+    "timestamp": "2026-03-09T15:12:47.200404Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "2efcb973a96d4243",
+      "session_id": "BbJ3Dr_F5NUVem2RAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "30bf75a26647b68a",
+    "timestamp": "2026-03-09T15:12:46.882906Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "BbJ3Dr_F5NUVem2RAAAD",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-09T15:12:46.882882Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6941c3f6fbc2aba7",
+    "timestamp": "2026-03-09T15:11:45.645075Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T15:11:45.645027Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "684c02a3405d6b20",
+    "timestamp": "2026-03-09T15:11:43.011137Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "Fl2dAvXHYMPm09cqAAAB",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-09T15:11:43.011095Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "0df59aa58dfde72e",
     "timestamp": "2026-03-09T15:03:22.440231Z",
     "event_type": "auth_failure",
@@ -100,6 +266,18 @@
       "ip": "5.6.7.8",
       "attempts": 5,
       "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9fe4a2295eb79209",
+    "timestamp": "2026-03-09T15:11:45.647485Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 4,
+      "recommendation": "Possible automated attack tool detected"
     },
     "analyzed": false
   }
