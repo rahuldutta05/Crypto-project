@@ -1336,5 +1336,19 @@
       "timestamp": "2026-03-09T07:22:42.808483"
     },
     "analyzed": false
+  },
+  {
+    "id": "8fb2ccd122d8e5d2",
+    "timestamp": "2026-03-09T07:22:46.166049",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-09T07:22:46.165999"
+    },
+    "analyzed": false
   }
 ]
