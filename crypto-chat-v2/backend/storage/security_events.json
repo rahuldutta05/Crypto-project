@@ -1276,5 +1276,29 @@
       "method": "dh_pairing"
     },
     "analyzed": false
+  },
+  {
+    "id": "f50d0b6a1defdcb6",
+    "timestamp": "2026-03-09T07:22:10.193983",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "uZ8TlO3UzPO7FtinAAAC",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T07:22:10.193937"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "597d2e0db630ce70",
+    "timestamp": "2026-03-09T07:22:10.281396",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "3Km8iT4tBJcpqIStAAAD",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-09T07:22:10.281361"
+    },
+    "analyzed": false
   }
 ]
