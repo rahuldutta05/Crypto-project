@@ -93,14 +93,21 @@ export default function ChatInterface({ deviceInfo }) {
         socket.on('message_sent', onMessageSent)
         socket.on('error', onError)
 
+        // Emit verify_device on every (re)connect — works on mobile where the
+        // connection may establish after ChatInterface has already mounted.
+        socket.on('connect', emitVerify)
+        // Also emit immediately if already connected (desktop fast-path).
+        if (socket.connected) emitVerify()
+
         return () => {
             socket.off('verified', onVerified)
             socket.off('verification_failed', onVerificationFailed)
             socket.off('receive_message', onReceiveMessage)
             socket.off('message_sent', onMessageSent)
             socket.off('error', onError)
+            socket.off('connect', emitVerify)
         }
-    }, [socket, sessionKey])
+    }, [socket, sessionKey, deviceId])
 
     // ── Auto-scroll ───────────────────────────────────────────────────────────────
     useEffect(() => {
