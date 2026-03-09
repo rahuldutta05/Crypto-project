@@ -106,5 +106,65 @@
     },
     "proof_hash": "3c181ed0241525e419353fefb3a670d0fc0a6039affb39b58be20d7ff0da516c",
     "merkle_index": 8
+  },
+  "d9541f13fad7245becc0781a9b488c91": {
+    "hash": "fabf4452b918338658557e39f8cd17f6243c4cedfb852f9e70e7d11e35a02fea",
+    "timestamp": "2026-03-09T13:47:53.385977",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "3b4c2bcf94d329d8",
+      "recipient": "abefb697ede23519",
+      "type": "chat_message"
+    },
+    "proof_hash": "4225aa6e5e4711aaec0c9013cece7724b747cb4657d5bf06fa5e32daf65fd6b2",
+    "merkle_index": 9
+  },
+  "1fc200182331c41e29318adb7217a16e": {
+    "hash": "783a75d8d74079cdd2776ab02bc49c78b5b2580fc9c048fb18492ced2152a6af",
+    "timestamp": "2026-03-09T13:48:03.532276",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "abefb697ede23519",
+      "recipient": "3b4c2bcf94d329d8",
+      "type": "chat_message"
+    },
+    "proof_hash": "c90accd5ec7f7e721e0043ece26e6c7ad44f2abd751b9e23f978ef4f6aa6036a",
+    "merkle_index": 10
+  },
+  "04a2fbd0a69058510804cb6de60e5158": {
+    "hash": "1e4c510b9855e7648c190ecffca1774d6e535b3ee85127aac7b6a5284cfeebee",
+    "timestamp": "2026-03-09T13:50:05.120687",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "type": "chat_message"
+    },
+    "proof_hash": "8f39757cbb3eb74c73fb7bd03c269f3c1c88f6eae9fec506ec38410de6ee1cb4",
+    "merkle_index": 11
+  },
+  "1e183df33f052c5cb18c6148b40fe10c": {
+    "hash": "6acd86695a337f90b993990cd99fe8e9a0e71358b465db5f5a12252fa5c9e114",
+    "timestamp": "2026-03-09T13:50:11.303209",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "ac9539aaf4893ac7",
+      "recipient": "e900f249f8f757f5",
+      "type": "chat_message"
+    },
+    "proof_hash": "e150914b5789a3c37fbde015adf2415e19a7e82195072148ee6f166d796a8a03",
+    "merkle_index": 12
+  },
+  "4f4c441e448d85ebe06ee23d51e94904": {
+    "hash": "16715b069eb7d170d7d20a544d203df7e51e2907e6563fc95bbc1bb78ca472c7",
+    "timestamp": "2026-03-09T13:50:31.484688",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "type": "chat_message"
+    },
+    "proof_hash": "d40c68173bdfee5fb56e150348eff37f751b58c1af9d3ea9973910e678e4af1f",
+    "merkle_index": 13
   }
 }
