@@ -292,7 +292,7 @@ def handle_send_message(data):
             'recipient': recipient_id,
             'proof_hash': proof['proof_hash'],
             'timestamp': proof['timestamp'],
-            'expires_at': expiry_time.isoformat() + 'Z',
+            'expires_at': expiry_time.isoformat().replace('+00:00', 'Z'),
             'signature': signature,
             'nonce': nonce,
             'status': 'active',

@@ -153,8 +153,8 @@ export default function ChatInterface({ deviceInfo }) {
             const now = Date.now()
             setMessages(prev => prev.map(m => {
                 if (m.expiresAt && !m.expired) {
-                    // Standardize string for parsing: ensure it works across browsers
-                    const targetDate = new Date(m.expiresAt.replace('Z', '+00:00'))
+                    // Robust ISO parsing
+                    const targetDate = new Date(m.expiresAt)
                     const remaining = targetDate.getTime() - now
                     
                     if (isNaN(remaining)) return m
@@ -288,7 +288,7 @@ export default function ChatInterface({ deviceInfo }) {
                                     )}
                                     {msg.expired
                                         ? <span className="msg-expired-label">🗑 Key destroyed</span>
-                                        : msg.remainingMs && (
+                                        : msg.remainingMs > 0 && (
                                             <span className="msg-expiry" title="Time until key destruction">
                                                 <Clock size={10} style={{ display: 'inline', marginRight: 2 }} />
                                                 {formatRemaining(msg.remainingMs)}
