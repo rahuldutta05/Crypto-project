@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { QrCode, Scan, ArrowLeft, CheckCircle, Copy } from 'lucide-react'
+import { api } from '../utils/api'
 
 export default function DevicePairing({ onPaired }) {
     const [mode, setMode] = useState('select')   // select | generate | scan | scanned | completing
@@ -16,7 +17,7 @@ export default function DevicePairing({ onPaired }) {
         setLoading(true)
         setError(null)
         try {
-            const res = await fetch('/api/pairing/initiate', { method: 'POST' })
+            const res = await fetch(api('/api/pairing/initiate'), { method: 'POST' })
             const data = await res.json()
             if (!res.ok) throw new Error(data.error || 'Failed to initiate pairing')
             setPairingData(data)
@@ -35,7 +36,7 @@ export default function DevicePairing({ onPaired }) {
         setError(null)
         try {
             const qrObject = JSON.parse(scanInput.trim())
-            const res = await fetch('/api/pairing/scan', {
+            const res = await fetch(api('/api/pairing/scan'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ qr_data: qrObject })
@@ -82,7 +83,7 @@ export default function DevicePairing({ onPaired }) {
         setError(null)
         try {
             const device2DhPublic = scanInput.trim()
-            const res = await fetch('/api/pairing/complete', {
+            const res = await fetch(api('/api/pairing/complete'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

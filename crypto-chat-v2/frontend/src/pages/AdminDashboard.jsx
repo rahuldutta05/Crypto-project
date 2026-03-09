@@ -1,9 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { BarChart3, RefreshCw, Download, Shield, Activity, AlertTriangle, Clock, Zap } from 'lucide-react'
-
-// Backend base URL — set VITE_API_URL in Vercel env vars to reach Railway backend
-const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
-const api = (path) => `${API_BASE}${path}`
+import { api } from '../utils/api'
 
 export default function AdminDashboard() {
     const [stats, setStats] = useState(null)
