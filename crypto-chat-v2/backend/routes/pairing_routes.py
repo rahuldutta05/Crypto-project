@@ -16,7 +16,6 @@ from datetime import datetime
 from github_storage import load_json, save_json
 from datetime import timedelta
 import random
-from config import Config
 
 pairing_bp = Blueprint('pairing', __name__)
 
@@ -129,7 +128,7 @@ def initiate_pairing():
             'qr_code': f'data:image/png;base64,{img_str}',
             'qr_data': qr_data,
             'pairing_code': pairing_code,
-            'pair_url': f"{Config.FRONTEND_URL.rstrip('/')}/pair?code={pairing_code}",
+            'pair_url': f"{request.host_url.rstrip('/')}/pair?code={pairing_code}",
             'message': 'Device registered - scan QR code to pair'
         }), 201
 

@@ -85,9 +85,9 @@ export default function DevicePairing({ onPaired }) {
     }
 
     // ── Step 2 (Device A): Auto-complete once Device B joined ────────────────────
-    const handleAutoComplete = async (isAuto = false) => {
+    const handleAutoComplete = async () => {
         if (!pairingData?.device_id) return
-        if (!isAuto) setAutoCompleting(true)
+        setAutoCompleting(true)
         setError(null)
         try {
             const res = await fetch(api('/api/pairing/complete-auto'), {
@@ -98,10 +98,6 @@ export default function DevicePairing({ onPaired }) {
                 })
             })
             const data = await res.json()
-            
-            // If polling and not ready yet, just return silently
-            if (isAuto && res.status === 409) return
-
             if (!res.ok) throw new Error(data.error || 'Complete failed')
 
             onPaired?.({
@@ -114,9 +110,9 @@ export default function DevicePairing({ onPaired }) {
                 isInitiator: true   // Device A: send="send-chain", recv="recv-chain"
             })
         } catch (e) {
-            if (!isAuto) setError(e.message)
+            setError(e.message)
         } finally {
-            if (!isAuto) setAutoCompleting(false)
+            setAutoCompleting(false)
         }
     }
 
@@ -137,17 +133,6 @@ export default function DevicePairing({ onPaired }) {
     }
 
     const qrValue = useMemo(() => pairingData?.pair_url || '', [pairingData?.pair_url])
-
-    // Background polling for Device A to auto-complete pairing
-    useEffect(() => {
-        if (mode !== 'generate' || !pairingData?.device_id) return
-        
-        const interval = setInterval(() => {
-            handleAutoComplete(true)
-        }, 3000) // Poll every 3 seconds
-
-        return () => clearInterval(interval)
-    }, [mode, pairingData?.device_id])
 
     // Auto-join when opened from camera deep link (/pair?code=XXXXXX)
     useEffect(() => {
