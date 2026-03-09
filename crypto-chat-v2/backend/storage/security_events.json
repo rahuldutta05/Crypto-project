@@ -1312,5 +1312,17 @@
       "timestamp": "2026-03-09T07:22:11.083835"
     },
     "analyzed": false
+  },
+  {
+    "id": "4cc5a0aa6f894778",
+    "timestamp": "2026-03-09T07:22:40.877780",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "7tx3rBA7y1WNdpEUAAAF",
+      "device_id": null,
+      "timestamp": "2026-03-09T07:22:40.877726"
+    },
+    "analyzed": false
   }
 ]
