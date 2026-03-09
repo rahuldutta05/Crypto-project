@@ -1392,5 +1392,19 @@
       "timestamp": "2026-03-09T07:23:09.391416"
     },
     "analyzed": false
+  },
+  {
+    "id": "697b392702511090",
+    "timestamp": "2026-03-09T07:23:17.002609",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-09T07:23:17.002535"
+    },
+    "analyzed": false
   }
 ]
