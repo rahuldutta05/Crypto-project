@@ -1,5 +1,41 @@
 [
   {
+    "id": "ebcf5b52ef3c9243",
+    "timestamp": "2026-03-09T16:39:51.056184Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "fp6Q3At5aCPQA4ZPAAAC",
+      "device_id": "02ee0f535d2cab36",
+      "timestamp": "2026-03-09T16:39:51Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3a466487ebdfbbac",
+    "timestamp": "2026-03-09T16:36:35.651320Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "cdf24aa64109a13e",
+      "session_id": "Z5n78ygCiG_EwzGkAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "dcbf78ba0d8e6be9",
+    "timestamp": "2026-03-09T16:36:35.588501Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "02ee0f535d2cab36",
+      "session_id": "fp6Q3At5aCPQA4ZPAAAC",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "0965f5ebfdc87910",
     "timestamp": "2026-03-09T16:36:35.393274Z",
     "event_type": "connection",
