@@ -6,51 +6,41 @@ from crypto.signature_utils import encrypt_with_public_key, sign_data
 from crypto.hash_utils import create_proof_of_existence
 from monitoring.security_monitor import security_monitor
 import os
+from github_storage import load_json, save_json
 
 chat_bp = Blueprint('chat', __name__)
 
 
 def load_messages():
-    with open('storage/messages.json', 'r') as f:
-        return json.load(f)
+    return load_json('messages.json', default={})
 
 
 def save_messages(messages):
-    with open('storage/messages.json', 'w') as f:
-        json.dump(messages, f, indent=2)
+    save_json('messages.json', messages)
 
 
 def load_keys():
-    with open('storage/keys.json', 'r') as f:
-        return json.load(f)
+    return load_json('keys.json', default={})
 
 
 def save_keys(keys):
-    with open('storage/keys.json', 'w') as f:
-        json.dump(keys, f, indent=2)
+    save_json('keys.json', keys)
 
 
 def load_proofs():
-    with open('storage/proof.json', 'r') as f:
-        return json.load(f)
+    return load_json('proof.json', default={})
 
 
 def save_proofs(proofs):
-    with open('storage/proof.json', 'w') as f:
-        json.dump(proofs, f, indent=2)
+    save_json('proof.json', proofs)
 
 
 def load_nonces():
-    try:
-        with open('storage/nonces.json', 'r') as f:
-            return json.load(f)
-    except Exception:
-        return []
+    return load_json('nonces.json', default=[])
 
 
 def save_nonces(nonces):
-    with open('storage/nonces.json', 'w') as f:
-        json.dump(nonces, f, indent=2)
+    save_json('nonces.json', nonces)
 
 
 @chat_bp.route('/send', methods=['POST'])

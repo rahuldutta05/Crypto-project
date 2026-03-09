@@ -13,6 +13,7 @@ from crypto.diffie_hellman import DiffieHellman
 from crypto.signature_utils import generate_keypair, create_anonymous_id
 from crypto.hash_utils import hash_data
 from datetime import datetime
+from github_storage import load_json, save_json
 
 pairing_bp = Blueprint('pairing', __name__)
 
@@ -22,13 +23,11 @@ _pending_dh = {}
 
 
 def load_devices():
-    with open('storage/devices.json', 'r') as f:
-        return json.load(f)
+    return load_json('devices.json', default={})
 
 
 def save_devices(devices):
-    with open('storage/devices.json', 'w') as f:
-        json.dump(devices, f, indent=2)
+    save_json('devices.json', devices)
 
 
 @pairing_bp.route('/initiate', methods=['POST'])

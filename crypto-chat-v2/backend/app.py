@@ -13,6 +13,7 @@ from routes.pairing_routes import pairing_bp
 from scheduler.expiry_scheduler import start_expiry_scheduler
 from monitoring.security_monitor import SecurityMonitor
 from config import Config
+from github_storage import load_json, save_json, sync_from_github
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -47,6 +48,8 @@ security_monitor = SecurityMonitor()
 
 # Initialize storage directory + default files
 os.makedirs('storage', exist_ok=True)
+# Sync storage files from GitHub on startup (no-op in local dev)
+sync_from_github()
 _storage_defaults = {
     'messages.json': {},
     'keys.json': {'keys': {}},
@@ -115,8 +118,7 @@ def handle_device_verification(data):
         challenge = data.get('challenge')
 
         def _load_devices():
-            with open('storage/devices.json', 'r') as f:
-                return json.load(f)
+            return load_json('devices.json', default={})
 
         devices = _load_devices()
 
@@ -209,9 +211,7 @@ def handle_send_message(data):
         expiry_minutes = data.get('expiry_minutes', 60)
 
         # ── Anti-Replay: Check nonce ──────────────────────────────────────────
-        with open('storage/nonces.json', 'r') as f:
-            used_nonces = json.load(f)
-
+        used_nonces = load_json('nonces.json', default=[])
         nonce_values = [n['nonce'] if isinstance(n, dict) else n for n in used_nonces]
 
         if nonce in nonce_values:
@@ -230,8 +230,7 @@ def handle_send_message(data):
             'timestamp': datetime.utcnow().isoformat(),
             'sender': sender_id
         })
-        with open('storage/nonces.json', 'w') as f:
-            json.dump(used_nonces, f)
+        save_json('nonces.json', used_nonces)
 
         # ── Proof-of-Existence ────────────────────────────────────────────────
         from crypto.hash_utils import create_proof_of_existence, hash_data
@@ -245,8 +244,7 @@ def handle_send_message(data):
 
         # ── Merkle tree: every message is a leaf; publish only root ────────────
         from crypto.merkle_proofs import build_merkle_tree
-        with open('storage/merkle_state.json', 'r') as f:
-            merkle_state = json.load(f)
+        merkle_state = load_json('merkle_state.json', default={'leaf_hashes': [], 'root_hash': None, 'tree_size': 0})
         leaves = merkle_state.get('leaf_hashes', [])
         leaf_hash = proof['proof_hash']
         leaves.append(leaf_hash)
@@ -254,8 +252,7 @@ def handle_send_message(data):
         merkle_state['leaf_hashes'] = leaves
         merkle_state['root_hash'] = root_hash
         merkle_state['tree_size'] = len(leaves)
-        with open('storage/merkle_state.json', 'w') as f:
-            json.dump(merkle_state, f, indent=2)
+        save_json('merkle_state.json', merkle_state)
 
         # Optional: Ring signature — proves "one of these users" sent it; server cannot tell which
         ring_signature = data.get('ring_signature')  # if client sends ring_sig, we store and don't log sender linkably
@@ -263,9 +260,7 @@ def handle_send_message(data):
         expiry_time = datetime.utcnow() + timedelta(minutes=expiry_minutes)
 
         # Store ONLY proof metadata — NOT the actual encrypted content
-        with open('storage/messages.json', 'r') as f:
-            messages = json.load(f)
-
+        messages = load_json('messages.json', default={})
         msg_record = {
             'sender': sender_id,
             'recipient': recipient_id,
@@ -280,18 +275,12 @@ def handle_send_message(data):
         if ring_signature:
             msg_record['ring_signature'] = ring_signature
         messages[message_id] = msg_record
-
-        with open('storage/messages.json', 'w') as f:
-            json.dump(messages, f, indent=2)
+        save_json('messages.json', messages)
 
         # Store proof separately for verification
-        with open('storage/proof.json', 'r') as f:
-            proofs = json.load(f)
-
+        proofs = load_json('proof.json', default={})
         proofs[message_id] = {**proof, 'merkle_index': len(leaves) - 1}
-
-        with open('storage/proof.json', 'w') as f:
-            json.dump(proofs, f, indent=2)
+        save_json('proof.json', proofs)
 
         # Forward encrypted message to recipient (memory/WebSocket only, never disk)
         if recipient_id in device_rooms:

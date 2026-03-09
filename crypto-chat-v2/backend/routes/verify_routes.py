@@ -3,17 +3,16 @@ import json
 from crypto.hash_utils import verify_proof_of_existence
 from crypto.merkle_proofs import create_merkle_proof, verify_merkle_proof
 from crypto.proof_of_deletion import create_proof_of_deletion, verify_proof_of_deletion
+from github_storage import load_json, save_json
 
 verify_bp = Blueprint('verify', __name__)
 
 def load_proofs():
-    with open('storage/proof.json', 'r') as f:
-        return json.load(f)
+    return load_json('proof.json', default={})
 
 
 def load_merkle_state():
-    with open('storage/merkle_state.json', 'r') as f:
-        return json.load(f)
+    return load_json('merkle_state.json', default={'leaf_hashes': [], 'root_hash': None, 'tree_size': 0})
 
 
 @verify_bp.route('/proof/<message_id>', methods=['GET'])
@@ -155,11 +154,9 @@ def submit_proof_of_deletion():
         attestation_key = data.get('attestation_key')  # optional HMAC key
         proof = create_proof_of_deletion(commitment_hash, key_id=key_id, secret_attestation_key=attestation_key)
         # Record as deleted so verifiers can check
-        with open('storage/deleted_commitments.json', 'r') as f:
-            deleted = json.load(f)
+        deleted = load_json('deleted_commitments.json', default=[])
         deleted.append({'commitment_hash': commitment_hash, 'proof': proof})
-        with open('storage/deleted_commitments.json', 'w') as f:
-            json.dump(deleted, f, indent=2)
+        save_json('deleted_commitments.json', deleted)
         return jsonify({
             'success': True,
             'proof': proof,
