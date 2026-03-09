@@ -1350,5 +1350,19 @@
       "timestamp": "2026-03-09T07:22:46.165999"
     },
     "analyzed": false
+  },
+  {
+    "id": "d330fc318b735a4a",
+    "timestamp": "2026-03-09T07:22:56.786007",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-09T07:22:56.785961"
+    },
+    "analyzed": false
   }
 ]
