@@ -97,5 +97,17 @@
     "nonce": "63fe509bb60c33425625d500866aeb0d",
     "status": "expired",
     "merkle_index": 8
+  },
+  "d9541f13fad7245becc0781a9b488c91": {
+    "sender": "3b4c2bcf94d329d8",
+    "recipient": "abefb697ede23519",
+    "proof_hash": "4225aa6e5e4711aaec0c9013cece7724b747cb4657d5bf06fa5e32daf65fd6b2",
+    "timestamp": "2026-03-09T13:47:53.385977",
+    "expires_at": "2026-03-09T14:47:53.389842Z",
+    "signature": "demo_sig",
+    "nonce": "4d26209e37509e8e9b7676d8253265b6",
+    "status": "active",
+    "merkle_index": 9,
+    "burn_on_read": false
   }
 }
