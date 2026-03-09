@@ -1,5 +1,19 @@
 [
   {
+    "id": "e699ce32b626e45c",
+    "timestamp": "2026-03-09T14:17:42.364374",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-09T14:17:42.364340"
+    },
+    "analyzed": false
+  },
+  {
     "id": "90bde70f24ccc7b2",
     "timestamp": "2026-03-09T14:17:32.540235",
     "event_type": "auth_failure",
