@@ -1,5 +1,53 @@
 [
   {
+    "id": "d5a8b5e7f44a8b81",
+    "timestamp": "2026-03-09T16:45:34.182520Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "gi-KuSty7kn6gnxVAAAF",
+      "device_id": "f3cbd4ccfa5fe197",
+      "timestamp": "2026-03-09T16:45:34Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e4df5c7cad59e326",
+    "timestamp": "2026-03-09T16:40:55.274597Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "a5595247b21180e2bfa4d445cbdc4a6b",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "15045fb0ca6de6df",
+    "timestamp": "2026-03-09T16:40:54.476011Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "a5595247b21180e2bfa4d445cbdc4a6b",
+      "sender": "f3cbd4ccfa5fe197",
+      "recipient": "37bcf889102f73aa",
+      "proof_hash": "ca99519b9d4e4f68d7ca51dae467c1b41e5a325078c94c7f5d3d48b9d6183e50",
+      "expiry": "2026-03-09T16:41:54Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5509cc8705286256",
+    "timestamp": "2026-03-09T16:40:51.971793Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "5cff5e5da98a82badbc5f7b9ca85dc35",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
     "id": "c8c0dc825639e987",
     "timestamp": "2026-03-09T16:40:51.188620Z",
     "event_type": "message_sent",
