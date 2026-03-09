@@ -189,7 +189,7 @@ export default function AdminDashboard() {
                     { label: 'Total Security Events', value: summary?.summary?.total_security_events ?? '—', cls: 'cyan', sub: 'All time' },
                     { label: 'Attacks Detected', value: summary?.summary?.total_attacks_detected ?? '—', cls: 'orange', sub: 'All types' },
                     { label: 'Successful Attacks', value: summary?.summary?.successful_attacks ?? 0, cls: 'red', sub: 'Should be 0!' },
-                    { label: 'Attack Success Rate', value: summary ? `${(summary.summary.attack_success_rate ?? 0).toFixed(1)}%` : '—', cls: 'red', sub: summary?.interpretation?.verdict },
+                    { label: 'Attack Success Rate', value: `${((summary?.summary?.attack_success_rate) ?? 0).toFixed(1)}%`, cls: 'red', sub: summary?.interpretation?.verdict },
                     { label: 'Devices Registered', value: stats?.core_principles?.anonymous_verifiable?.total_devices ?? '—', cls: 'cyan', sub: 'Anonymous IDs' },
                     { label: 'Proofs Created', value: stats?.core_principles?.proof_of_existence?.total_proofs ?? '—', cls: 'green', sub: 'Content NOT stored' },
                     { label: 'Messages Expired', value: stats?.core_principles?.cryptographic_expiry?.expired_messages ?? '—', cls: 'orange', sub: 'Keys destroyed' },
