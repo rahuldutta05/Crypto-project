@@ -48,9 +48,14 @@
 /* ── Reset ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body, #root {
+html, body {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100%;
 }
 
 body {
@@ -232,10 +237,11 @@ code, .mono { font-family: var(--font-mono); font-size: 0.83em; }
 .page { 
   flex: 1; 
   display: flex; 
-  overflow: hidden; 
+  overflow: auto; 
   position: relative; 
   z-index: 1; 
   min-height: 0;
+  min-width: 0;
   height: 100%;
 }
 
