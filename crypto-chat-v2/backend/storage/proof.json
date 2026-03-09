@@ -407,5 +407,30 @@
     "proof_hash": "9c24235131b3a27b421d67848aac8d0b642bfe5e491074f1fdc567d4ab170e96",
     "merkle_index": 31,
     "data_hash": "DESTROYED"
+  },
+  "e20c61e93855a81819882afa7ee6445e": {
+    "hash": "640247dadc027fae85088b9859bb6850f7db01b4d9b294483ea72d5e2284ac17",
+    "timestamp": "2026-03-09T16:13:20.386554+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "type": "chat_message"
+    },
+    "proof_hash": "634fbbd0e0ba3548360be3571e34bfaa02257dff1ba049b5177e90fc1b9955f8",
+    "merkle_index": 32,
+    "data_hash": "DESTROYED"
+  },
+  "60f45e691c0c00c59f43b98cfc645d9e": {
+    "hash": "25ddfb59903fb49dce5662caef2e92dbd6245f66570b15ecf9d0cd18d7372e20",
+    "timestamp": "2026-03-09T16:13:41.207789+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "type": "chat_message"
+    },
+    "proof_hash": "f80c122afd6e44a3413843fe20ced2a31c23ebdbaa00af28283ba3ce0b5e66ae",
+    "merkle_index": 33
   }
 }
