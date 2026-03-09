@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, redirect
+
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from datetime import datetime, timedelta
@@ -25,6 +26,20 @@ CORS(app)  # Simplify to global default for debugging
 @app.route('/api/debug-post', methods=['POST', 'OPTIONS'])
 def debug_post():
     return jsonify({'status': 'ok', 'method': request.method}), 200
+
+@app.route('/pair')
+def pair_redirect():
+    """
+    Redirect /pair?code=... to the React frontend on Vercel.
+    The Railway backend has no /pair page — the React app (Vercel) handles it.
+    This catches old links or any edge case where someone hits the backend URL directly.
+    """
+    code = request.args.get('code', '')
+    frontend_url = app.config.get('FRONTEND_URL', 'https://crypto-chat-sepia.vercel.app')
+    target = f"{frontend_url.rstrip('/')}/pair"
+    if code:
+        target += f"?code={code}"
+    return redirect(target, code=302)
 
 # Use eventlet in production (gunicorn), fall back to threading for Windows dev
 try:
