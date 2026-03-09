@@ -108,7 +108,7 @@ def handle_connect():
     """Anonymous connection — no login required"""
     session_id = request.sid
     connected_devices[session_id] = {
-        'connected_at': datetime.utcnow().isoformat(),
+        'connected_at': datetime.utcnow().isoformat() + 'Z',
         'ip_address': request.remote_addr,
         'verified': False
     }
@@ -116,7 +116,7 @@ def handle_connect():
     security_monitor.log_event('connection', {
         'session_id': session_id,
         'ip': request.remote_addr,
-        'timestamp': datetime.utcnow().isoformat()
+        'timestamp': datetime.utcnow().isoformat() + 'Z'
     })
 
     emit('connected', {
@@ -245,7 +245,7 @@ def handle_send_message(data):
                 'nonce': nonce,
                 'sender': sender_id,
                 'ip': request.remote_addr,
-                'timestamp': datetime.utcnow().isoformat()
+                'timestamp': datetime.utcnow().isoformat() + 'Z'
             })
             emit('error', {'message': 'Replay attack detected - nonce already used'})
             return
@@ -253,7 +253,7 @@ def handle_send_message(data):
         # Record nonce
         used_nonces.append({
             'nonce': nonce,
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.utcnow().isoformat() + 'Z',
             'sender': sender_id
         })
         save_json('nonces.json', used_nonces)
@@ -335,7 +335,7 @@ def handle_send_message(data):
             'sender': sender_id,
             'recipient': recipient_id,
             'proof_hash': proof['proof_hash'],
-            'expiry': expiry_time.isoformat()
+            'expiry': expiry_time.isoformat() + 'Z'
         })
 
     except Exception as e:
@@ -364,7 +364,7 @@ def handle_message_validity_check(data):
             return
 
         msg = messages[message_id]
-        now_str = datetime.utcnow().isoformat()
+        now_str = datetime.utcnow().isoformat() + 'Z'
         expires_at = msg.get('expires_at', '')
 
         if expires_at and now_str >= expires_at:
@@ -445,7 +445,7 @@ def handle_disconnect():
         security_monitor.log_event('disconnection', {
             'session_id': session_id,
             'device_id': device_id,
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.utcnow().isoformat() + 'Z'
         })
 
         del connected_devices[session_id]
@@ -459,7 +459,7 @@ def handle_disconnect():
 def health_check():
     return jsonify({
         'status': 'healthy',
-        'timestamp': datetime.utcnow().isoformat(),
+        'timestamp': datetime.utcnow().isoformat() + 'Z',
         'connected_devices': len(connected_devices),
         'framework': 'From Trust Me to Prove It',
         'proofs': {
@@ -492,7 +492,7 @@ def server_info():
     return jsonify({
         'server_url': f'http://{local_ip}:5000',
         'websocket_url': f'ws://{local_ip}:5000',
-        'timestamp': datetime.utcnow().isoformat()
+        'timestamp': datetime.utcnow().isoformat() + 'Z'
     })
 
 

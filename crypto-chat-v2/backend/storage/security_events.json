@@ -1,5 +1,16 @@
 [
   {
+    "id": "028792e15f9617d3",
+    "timestamp": "2026-03-09T14:50:15.613699Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "ip": "127.0.0.1",
+      "test": true
+    },
+    "analyzed": false
+  },
+  {
     "id": "99f28506c6bcad1f",
     "timestamp": "2026-03-09T14:02:52.864621",
     "event_type": "disconnection",

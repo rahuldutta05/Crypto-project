@@ -30,7 +30,7 @@ export default function AdminDashboard() {
             ])
             setStats(s)
             setSummary(sum)
-            setEvents((ev.events || []).slice(-50).reverse())  // latest 50
+            setEvents((ev.events || []).slice(0, 50))  // latest 50 (backend already prepends)
             setThreat(th)
             setReport(rep)
         } catch (e) {

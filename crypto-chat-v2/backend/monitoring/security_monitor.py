@@ -54,9 +54,9 @@ class SecurityMonitor:
 
         event = {
             'id': hashlib.sha256(
-                f"{event_type}{datetime.utcnow().isoformat()}".encode()
+                f"{event_type}{datetime.utcnow().isoformat()}Z".encode()
             ).hexdigest()[:16],
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.utcnow().isoformat() + 'Z',
             'event_type': event_type,
             'severity': self._calculate_severity(event_type),
             'details': details,
@@ -124,9 +124,9 @@ class SecurityMonitor:
                 # Direct append to avoid recursion
                 bf_event = {
                     'id': hashlib.sha256(
-                        f"brute_force_detected{datetime.utcnow().isoformat()}".encode()
+                        f"brute_force_detected{datetime.utcnow().isoformat()}Z".encode()
                     ).hexdigest()[:16],
-                    'timestamp': datetime.utcnow().isoformat(),
+                    'timestamp': datetime.utcnow().isoformat() + 'Z',
                     'event_type': 'brute_force_detected',
                     'severity': 'critical',
                     'details': {
@@ -158,9 +158,9 @@ class SecurityMonitor:
                 # Direct append to avoid recursion
                 sp_event = {
                     'id': hashlib.sha256(
-                        f"suspicious_pattern{datetime.utcnow().isoformat()}".encode()
+                        f"suspicious_pattern{datetime.utcnow().isoformat()}Z".encode()
                     ).hexdigest()[:16],
-                    'timestamp': datetime.utcnow().isoformat(),
+                    'timestamp': datetime.utcnow().isoformat() + 'Z',
                     'event_type': 'suspicious_pattern',
                     'severity': 'high',
                     'details': {
@@ -256,7 +256,7 @@ class SecurityMonitor:
         """Get attack timeline for the last N hours"""
 
         cutoff = datetime.utcnow() - timedelta(hours=hours)
-        cutoff_str = cutoff.isoformat()
+        cutoff_str = cutoff.isoformat() + 'Z'
         recent_events = [
             e for e in self.events
             if e['timestamp'] >= cutoff_str
@@ -284,7 +284,7 @@ class SecurityMonitor:
         """Clear events older than N days"""
 
         cutoff = datetime.utcnow() - timedelta(days=days)
-        cutoff_str = cutoff.isoformat()
+        cutoff_str = cutoff.isoformat() + 'Z'
         self.events = [
             e for e in self.events
             if e['timestamp'] >= cutoff_str

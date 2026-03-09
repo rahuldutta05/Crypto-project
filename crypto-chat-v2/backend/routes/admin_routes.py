@@ -36,7 +36,7 @@ def get_security_events():
             end_time = datetime.utcnow()
             start_time = end_time - timedelta(hours=hours)
             # Use ISO strings — get_events does string comparison
-            filters['time_range'] = (start_time.isoformat(), end_time.isoformat())
+            filters['time_range'] = (start_time.isoformat() + 'Z', end_time.isoformat() + 'Z')
 
         if request.args.get('ip'):
             filters['ip'] = request.args.get('ip')
@@ -64,7 +64,7 @@ def get_attack_summary():
 
         return jsonify({
             'summary': summary,
-            'generated_at': datetime.utcnow().isoformat(),
+            'generated_at': datetime.utcnow().isoformat() + 'Z',
             'interpretation': {
                 'total_attacks': summary['total_attacks_detected'],
                 'success_rate': f"{summary['attack_success_rate']:.2f}%",
@@ -89,7 +89,7 @@ def get_attack_timeline():
         return jsonify({
             'timeline': timeline,
             'period': f'Last {hours} hours',
-            'generated_at': datetime.utcnow().isoformat()
+            'generated_at': datetime.utcnow().isoformat() + 'Z'
         })
 
     except Exception as e:
@@ -106,7 +106,7 @@ def get_penetration_test_report():
 
         return jsonify({
             'report': report,
-            'generated_at': datetime.utcnow().isoformat(),
+            'generated_at': datetime.utcnow().isoformat() + 'Z',
             'recommendation': generate_recommendation(report)
         })
 
@@ -128,7 +128,7 @@ def export_events():
                 'Content-Type': 'application/json',
                 'Content-Disposition': (
                     f'attachment; filename=security_events_'
-                    f'{datetime.utcnow().strftime("%Y%m%d_%H%M%S")}.json'
+                    f'{datetime.utcnow().strftime("%Y%m%d_%H%M%S")}Z.json'
                 )
             }
 
@@ -138,7 +138,7 @@ def export_events():
                 'Content-Type': 'text/csv',
                 'Content-Disposition': (
                     f'attachment; filename=security_events_'
-                    f'{datetime.utcnow().strftime("%Y%m%d_%H%M%S")}.csv'
+                    f'{datetime.utcnow().strftime("%Y%m%d_%H%M%S")}Z.csv'
                 )
             }
 
@@ -211,7 +211,7 @@ def get_system_stats():
         attack_summary = security_monitor.get_attack_summary()
 
         return jsonify({
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.utcnow().isoformat() + 'Z',
             'core_principles': {
                 'anonymous_verifiable': {
                     'total_devices': len(devices),
@@ -252,7 +252,7 @@ def get_system_stats():
 def get_threat_assessment():
     """Assess current threat level based on recent activity"""
     try:
-        cutoff = (datetime.utcnow() - timedelta(hours=1)).isoformat()
+        cutoff = (datetime.utcnow() - timedelta(hours=1)).isoformat() + 'Z'
         events = security_monitor.get_events()
         recent_events = [e for e in events if e['timestamp'] >= cutoff]
 
