@@ -1,25 +1,13 @@
 [
   {
-    "id": "650663c46fb50c77",
-    "timestamp": "2026-03-09T13:24:06.240106",
+    "id": "80de3755819099dd",
+    "timestamp": "2026-03-09T13:24:47.344209",
     "event_type": "connection",
     "severity": "info",
     "details": {
-      "session_id": "MAmbLZNckUrbUCBTAAAD",
-      "ip": "100.64.0.3",
-      "timestamp": "2026-03-09T13:24:06.240076"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "67fdc56b2054d144",
-    "timestamp": "2026-03-09T13:23:52.984509",
-    "event_type": "connection",
-    "severity": "info",
-    "details": {
-      "session_id": "jhxWwmSajBN-tWQcAAAB",
+      "session_id": "FbjSqz52GzXQZ4umAAAB",
       "ip": "100.64.0.2",
-      "timestamp": "2026-03-09T13:23:52.984476"
+      "timestamp": "2026-03-09T13:24:47.344173"
     },
     "analyzed": false
   },
