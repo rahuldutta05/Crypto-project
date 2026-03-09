@@ -1,49 +1,13 @@
 [
   {
-    "id": "b626704f9670b893",
-    "timestamp": "2026-03-09T11:56:37.925747",
-    "event_type": "disconnection",
-    "severity": "info",
-    "details": {
-      "session_id": "irA4fiXODyeZf0_bAAAF",
-      "device_id": null,
-      "timestamp": "2026-03-09T11:56:37.925715"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "94577f1d57aee176",
-    "timestamp": "2026-03-09T11:56:36.996174",
+    "id": "7e7f7f5ffc7d82f4",
+    "timestamp": "2026-03-09T11:57:52.260021",
     "event_type": "connection",
     "severity": "info",
     "details": {
-      "session_id": "irA4fiXODyeZf0_bAAAF",
-      "ip": "100.64.0.3",
-      "timestamp": "2026-03-09T11:56:36.996150"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "aefbb026d9cd73bd",
-    "timestamp": "2026-03-09T11:56:36.016189",
-    "event_type": "disconnection",
-    "severity": "info",
-    "details": {
-      "session_id": "BSEuJYCbHSthh1m5AAAD",
-      "device_id": null,
-      "timestamp": "2026-03-09T11:56:36.016156"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "ecb32ddf95131031",
-    "timestamp": "2026-03-09T11:56:35.948276",
-    "event_type": "connection",
-    "severity": "info",
-    "details": {
-      "session_id": "BSEuJYCbHSthh1m5AAAD",
-      "ip": "100.64.0.3",
-      "timestamp": "2026-03-09T11:56:35.948249"
+      "session_id": "26X3Z7oOzSCAtAtBAAAB",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T11:57:52.259961"
     },
     "analyzed": false
   },
