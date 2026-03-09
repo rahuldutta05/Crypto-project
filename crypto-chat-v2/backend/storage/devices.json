@@ -148,5 +148,27 @@
     "paired_with": "653d9d31438b71af",
     "safety_number": "414671",
     "status": "paired"
+  },
+  "34185117c06aed8e": {
+    "device_id": "34185117c06aed8e",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzo7nhZO3VgdGCNAf7kCV\nzie/4LSSdoClEf4go+AeZXP0B1ybJStrmQKYrJDEo9NsY2dFXlkATLWp5lqsz+uW\nOGENmxo4Vz4lJe06B3psn8LtWgHL49V84m8eO1beoKchTzLWO371rDz7RsETUMWO\n5ya9ZqD0a1pRBZIJx7D6PiToq4hJMfEtfn9DZI/oCgMndUuuounBHPB1JWM0dZgT\nLArbgYkq9SLtWFFoooboaqiCs216gFiT++fqe04STHnTGdFbxSY6YvXkO4hrMnae\n9cgtm74RcjG0uDoftdmJAA2vQrutij7tTX1jkf3ZUjTSfiKRjoRRT/0lszr2BQHG\nTwIDAQAB\n-----END PUBLIC KEY-----",
+    "dh_public_key": "5225b145f5815aff89bdb3ba14facf4e6fa13598017b8be203e9b1c993d1bb72ab9361771e884d3ab6faf62bdc18b724f84986e228e33816321729d7de0fff6a49303eac105ab9655906609962e14dd37cab2d5309482585192f7481067bd1cf2cad99ae75a419eba7de5a07deae307d36c48541ccb90c07e02d0f187fa16fd1d1c69f9109279a83cd19c1075c1ed0e5fac6f40930c842aeb6a2380cecb15fa01a9a4ca0f19a726e16ea374d94bd8b6f0a232d90a1a4b5d1dd012e8ddcad7d7e17c330b2aed46c8129605ec0bda5972aca38cc7e3172629aaaab480f928527836a01c8772c62af7494060f25793c28f3e8169e861ba68b09699b975dc578001b",
+    "challenge": "71e976d0f0ab3bc5afef19a5982bb45a2c12f87f2e42508bc4a64270edbd2978",
+    "created_at": "2026-03-09T08:00:02.519695",
+    "paired_with": null,
+    "safety_number": null,
+    "status": "pending_pairing",
+    "pairing_code": "224531"
+  },
+  "c883437e151acee5": {
+    "device_id": "c883437e151acee5",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtM4QImzgH83C2y/bfNIJ\nOtd3CKV4Jue12m6PK9scANgSe4W9STNq5JR0Ztwzo+wpk+mTgMKNjTNHgsZepPBN\n5aeumR+RlgX4ajg+Sm7i6XCUxgIAXbO+YL0wDK1oorRbYxkrTWmv74dCZxVRnLGP\nKEKll3tdsjhAONLGtGUiWt+Ur9COuohiHYoF7dCUUSBPcxSRVxPQBol0stGH5WVO\nCp9CbiyZutOZeTNDX3tbcNz3eFdhPuDj3Nfqx+PXvFnaN+1RUMY2fXJ/OItES2Di\nN69h0Ty5tgwOoc41o2rZnhk8gTECeGVP47qsrlaYHjes8s/jp0U5oWtGInvDyd2m\n+QIDAQAB\n-----END PUBLIC KEY-----",
+    "dh_public_key": "7bccd0cdc2e6dda0812a9e4e097262002caec8038a7762f7f1381936594b71a4ae36863781d9092370d5a8139e3991fc6aae342cc76b91c345b770776b929f986923dcf7fc23da5cee1eaf774997cd101863d45cc31b345ae98a66b5c7e2aaf2d5ff496321abede96dbdc08c7963257c5bfeebcb54d455b183211cbb03e737f762e20ee54279383768099bea132e82d4e4ca3c0d5cda960c56a89297fe689dc1e5e8c839149c2a8f41da3f084948fbd345300b327ecc6c91474fc09c9f4364567615765e2f6d9e084aed89c8cfda1e20f7008f136bf566cfefad8125d9f129681918749c7ed5fee9f1e4a5de37b20d07d385988ec9b652331168e888f6cb3c0b",
+    "challenge": "1ef2ee845225f1670ed61fc3da9a2d74c5292e21b09def8ce5e5eedac1e8754a",
+    "created_at": "2026-03-09T08:06:31.440340",
+    "paired_with": null,
+    "safety_number": null,
+    "status": "pending_pairing",
+    "pairing_code": "755018"
   }
 }
