@@ -1,5 +1,65 @@
 [
   {
+    "id": "520772f628181f91",
+    "timestamp": "2026-03-09T16:28:24.672710Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "llPxoDcuXtDoYv6zAAAF",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-09T16:28:24.672687Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "112f21b978155879",
+    "timestamp": "2026-03-09T16:28:12.588286Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "9s40fcEb_5asO_wXAAAD",
+      "device_id": "b91f3480ffcb65b6",
+      "timestamp": "2026-03-09T16:28:12Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8e61a2b9c8652773",
+    "timestamp": "2026-03-09T16:28:07.574831Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "b91f3480ffcb65b6",
+      "session_id": "9s40fcEb_5asO_wXAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e44d449185dd9f7f",
+    "timestamp": "2026-03-09T16:28:06.350009Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "9s40fcEb_5asO_wXAAAD",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-09T16:28:06.349986Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a0f2e474da8d9d0f",
+    "timestamp": "2026-03-09T16:27:53.279956Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "vSNj7teQyyZeoow8AAAB",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T16:27:53.279924Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "0df59aa58dfde72e",
     "timestamp": "2026-03-09T15:03:22.440231Z",
     "event_type": "auth_failure",
