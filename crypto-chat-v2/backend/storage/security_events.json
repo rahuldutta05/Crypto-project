@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "id": "028792e15f9617d3",
     "timestamp": "2026-03-09T14:50:15.613699Z",
     "event_type": "connection",
@@ -7,6 +8,130 @@
     "details": {
       "ip": "127.0.0.1",
       "test": true
+=======
+    "id": "94a47ab1ee66a142",
+    "timestamp": "2026-03-09T14:19:27.890330",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-09T14:19:27.890290"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9ed6d6b589ddf76e",
+    "timestamp": "2026-03-09T14:19:23.589129",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "9MLnp9HltUTbFa5mAAAH",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-09T14:19:23.589098"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3239cc715ff4bc89",
+    "timestamp": "2026-03-09T14:19:22.041208",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "aYZ4AQb5K3F9G8KRAAAF",
+      "device_id": null,
+      "timestamp": "2026-03-09T14:19:22.041177"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "746d4ab1003f1305",
+    "timestamp": "2026-03-09T14:17:48.325150",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "aYZ4AQb5K3F9G8KRAAAF",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T14:17:48.325124"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f6adfe72e0c30599",
+    "timestamp": "2026-03-09T14:17:47.084705",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "ccJWKIjV6dlCChdXAAAD",
+      "device_id": null,
+      "timestamp": "2026-03-09T14:17:47.084670"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e699ce32b626e45c",
+    "timestamp": "2026-03-09T14:17:42.364374",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-09T14:17:42.364340"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "90bde70f24ccc7b2",
+    "timestamp": "2026-03-09T14:17:32.540235",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-09T14:17:32.540193"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "aa258254b106389d",
+    "timestamp": "2026-03-09T14:17:30.493607",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "ccJWKIjV6dlCChdXAAAD",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-09T14:17:30.493578"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0c4449381315374d",
+    "timestamp": "2026-03-09T14:17:26.704883",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "_qdDpN-JsWp9e8eOAAAB",
+      "device_id": null,
+      "timestamp": "2026-03-09T14:17:26.704847"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4a3d66bee6125ef1",
+    "timestamp": "2026-03-09T14:13:13.394677",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "_qdDpN-JsWp9e8eOAAAB",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T14:13:13.394644"
+>>>>>>> 56623ae0f0827f45c5e283b3a04accf987307970
     },
     "analyzed": false
   },
