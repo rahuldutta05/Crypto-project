@@ -1036,5 +1036,245 @@
       "expiry": "2026-03-09T02:22:58.564554"
     },
     "analyzed": false
+  },
+  {
+    "id": "db867e177055bf6d",
+    "timestamp": "2026-03-09T02:25:19.734684",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "mwj8e3fjhlYYtaEdAAAC",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:19.734629"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ae20a506b9cff79e",
+    "timestamp": "2026-03-09T02:25:19.734990",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "PTV1eVQ5pGWNi26qAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:19.734951"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9a03aca0f6c1c1ae",
+    "timestamp": "2026-03-09T02:25:19.767893",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "c9f2ad124af45d81",
+      "session_id": "mwj8e3fjhlYYtaEdAAAC",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a86e677a9e74d418",
+    "timestamp": "2026-03-09T02:25:19.768274",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "653d9d31438b71af",
+      "session_id": "PTV1eVQ5pGWNi26qAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9b96ad04177f8344",
+    "timestamp": "2026-03-09T02:25:30.272691",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "4UOur6yFwY2OoETEAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:30.272622"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3b96bb4bf323cd76",
+    "timestamp": "2026-03-09T02:25:30.307117",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "c9f2ad124af45d81",
+      "session_id": "4UOur6yFwY2OoETEAAAB",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "46d52d9422aaedc3",
+    "timestamp": "2026-03-09T02:25:30.404302",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "ToDXkiO9okBkk3HpAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:30.404243"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bd247b6ed35d33d1",
+    "timestamp": "2026-03-09T02:25:30.426651",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "653d9d31438b71af",
+      "session_id": "ToDXkiO9okBkk3HpAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2f73ae3dab09ed47",
+    "timestamp": "2026-03-09T02:25:37.805616",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "x90yOB71u2Ot2VomAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:37.805523"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "259931f0c0280786",
+    "timestamp": "2026-03-09T02:25:37.838171",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "653d9d31438b71af",
+      "session_id": "x90yOB71u2Ot2VomAAAB",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6317fe71316ec6ce",
+    "timestamp": "2026-03-09T02:25:38.199770",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "mjdVOkkfuF7kOPuQAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:38.199721"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e94a8325bfecdb84",
+    "timestamp": "2026-03-09T02:25:38.230965",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "c9f2ad124af45d81",
+      "session_id": "mjdVOkkfuF7kOPuQAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d28fc44444f2084c",
+    "timestamp": "2026-03-09T02:25:45.257166",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "1u0In4QNjDohvAg-AAAC",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:45.257087"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cf1911474a64e4e9",
+    "timestamp": "2026-03-09T02:25:45.257396",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "gk7lHPTeQLM5EFkkAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:25:45.257337"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f64713bca79ae8d0",
+    "timestamp": "2026-03-09T02:25:45.288000",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "653d9d31438b71af",
+      "session_id": "1u0In4QNjDohvAg-AAAC",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "34641e0d4c4ee999",
+    "timestamp": "2026-03-09T02:25:45.296888",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "c9f2ad124af45d81",
+      "session_id": "gk7lHPTeQLM5EFkkAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2177b1dcc7e2c11b",
+    "timestamp": "2026-03-09T02:26:04.919450",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "fWVQfc7b97fosWFOAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:26:04.919381"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a62c9d09a54857b6",
+    "timestamp": "2026-03-09T02:26:04.950023",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "653d9d31438b71af",
+      "session_id": "fWVQfc7b97fosWFOAAAB",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1bff6576972ddc3f",
+    "timestamp": "2026-03-09T02:26:05.204250",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "xp-9_CwZNGI0XoY3AAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-03-09T02:26:05.204198"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "60810e9225f66cbb",
+    "timestamp": "2026-03-09T02:26:05.235167",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "c9f2ad124af45d81",
+      "session_id": "xp-9_CwZNGI0XoY3AAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
   }
 ]

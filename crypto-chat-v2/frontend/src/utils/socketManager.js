@@ -8,7 +8,10 @@ let socket = null
 
 export function getSocket() {
     if (!socket) {
-        socket = io('/', {          // proxied to localhost:5000 via vite
+        // In dev: Vite proxies '/' → localhost:5000, so no URL needed.
+        // In production: point directly at the Render backend.
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || '/'
+        socket = io(backendUrl, {
             transports: ['websocket', 'polling'],
             autoConnect: false
         })

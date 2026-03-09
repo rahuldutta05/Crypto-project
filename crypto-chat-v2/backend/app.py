@@ -26,11 +26,18 @@ CORS(app, resources={
     }
 })
 
-# WebSocket support (threading mode works on Windows without eventlet install issues)
+# Use eventlet in production (gunicorn), fall back to threading for Windows dev
+try:
+    import eventlet
+    eventlet.monkey_patch()
+    _async_mode = 'eventlet'
+except ImportError:
+    _async_mode = 'threading'
+
 socketio = SocketIO(
     app,
     cors_allowed_origins="*",
-    async_mode='threading',
+    async_mode=_async_mode,
     logger=False,
     engineio_logger=False
 )

@@ -70,7 +70,8 @@ export default function DevicePairing({ onPaired }) {
             publicKey: scannedResult.public_key,
             pairedWith: scannedResult.paired_device,
             safetyNumber: scannedResult.safety_number,
-            sessionKey: scannedResult.session_key
+            sessionKey: scannedResult.session_key,
+            isInitiator: false  // Device B: send="recv-chain", recv="send-chain"
         })
     }
 
@@ -98,7 +99,8 @@ export default function DevicePairing({ onPaired }) {
                 publicKey: pairingData.public_key,
                 pairedWith: data.paired_device,
                 safetyNumber: data.safety_number,
-                sessionKey: data.session_key
+                sessionKey: data.session_key,
+                isInitiator: true   // Device A: send="send-chain", recv="recv-chain"
             })
         } catch (e) {
             setError(e.message)

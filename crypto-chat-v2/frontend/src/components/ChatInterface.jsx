@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Send, Lock, Clock, AlertTriangle } from 'lucide-react'
-import { encryptMessage, decryptMessage, generateNonce } from '../utils/cryptoUtils'
+import { initDoubleRatchet, ratchetEncrypt, ratchetDecrypt, generateNonce } from '../utils/cryptoUtils'
 import { getSocket } from '../utils/socketManager'
 import SafetyNumber from './SafetyNumber'
 
 export default function ChatInterface({ deviceInfo }) {
-    const { deviceId, pairedWith, safetyNumber, sessionKey } = deviceInfo
+    const { deviceId, pairedWith, safetyNumber, sessionKey, isInitiator } = deviceInfo
 
     const [messages, setMessages] = useState([])
     const [input, setInput] = useState('')
@@ -14,6 +14,17 @@ export default function ChatInterface({ deviceInfo }) {
     const [verified, setVerified] = useState(false)
     const bottomRef = useRef(null)
     const socket = getSocket()
+    // Double Ratchet state — held in a ref so React re-renders don't reset the chain
+    const ratchetRef = useRef(null)
+
+    // ── Initialise Double Ratchet chains from shared session key ───────────────────────
+    useEffect(() => {
+        if (sessionKey) {
+            initDoubleRatchet(sessionKey, isInitiator ?? true).then(state => {
+                ratchetRef.current = state
+            })
+        }
+    }, [sessionKey, isInitiator])
 
     // ── Verify device via WebSocket ──────────────────────────────────────────────
     useEffect(() => {
@@ -35,15 +46,17 @@ export default function ChatInterface({ deviceInfo }) {
 
         const onReceiveMessage = async (data) => {
             let content = '[encrypted]'
-            // Try to decrypt if we have a session key
-            if (sessionKey && data.encrypted_data && typeof data.encrypted_data === 'object') {
+            // Ratchet-decrypt using the per-message HKDF-derived key
+            if (ratchetRef.current && data.encrypted_data && data.encrypted_data.step) {
                 try {
-                    content = await decryptMessage(data.encrypted_data, sessionKey)
-                } catch {
-                    content = '[decryption failed]'
+                    const { plaintext, newState } = await ratchetDecrypt(data.encrypted_data, ratchetRef.current)
+                    ratchetRef.current = newState   // advance recv chain — old key discarded
+                    content = plaintext
+                } catch (err) {
+                    content = `[decryption failed: ${err.message}]`
                 }
             } else if (typeof data.encrypted_data === 'string') {
-                content = data.encrypted_data  // fallback for demo
+                content = data.encrypted_data  // plain-text fallback for legacy messages
             }
 
             setMessages(prev => [...prev, {
@@ -134,16 +147,15 @@ export default function ChatInterface({ deviceInfo }) {
         }])
 
         try {
-            let encryptedPayload = plaintext
-            if (sessionKey) {
-                encryptedPayload = await encryptMessage(plaintext, sessionKey)
-            }
+            if (!ratchetRef.current) throw new Error('Ratchet not initialised yet')
+            const { payload, newState } = await ratchetEncrypt(plaintext, ratchetRef.current)
+            ratchetRef.current = newState   // advance send chain — old key discarded
 
             socket.emit('send_message', {
                 recipient_id: pairedWith,
-                encrypted_data: encryptedPayload,
+                encrypted_data: payload,    // { ciphertext, iv, step }
                 nonce: generateNonce(),
-                signature: 'demo_sig',   // in production: sign with RSA private key
+                signature: 'demo_sig',
                 expiry_minutes: expiryMinutes
             })
         } catch (e) {
