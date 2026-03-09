@@ -1,5 +1,82 @@
 [
   {
+    "id": "3463c27d8ee067e8",
+    "timestamp": "2026-03-09T16:13:20.394470Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "e20c61e93855a81819882afa7ee6445e",
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "proof_hash": "634fbbd0e0ba3548360be3571e34bfaa02257dff1ba049b5177e90fc1b9955f8",
+      "expiry": "2026-03-09T16:14:20.389147Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "71b01f8579e9a7b0",
+    "timestamp": "2026-03-09T16:13:07.316375Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "bea4cf56092aa22703872d566848be56",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c2e603cd0e9282fb",
+    "timestamp": "2026-03-09T16:13:06.483310Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "bea4cf56092aa22703872d566848be56",
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "proof_hash": "9c24235131b3a27b421d67848aac8d0b642bfe5e491074f1fdc567d4ab170e96",
+      "expiry": "2026-03-09T16:14:06.453530Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "067475aa78491a2b",
+    "timestamp": "2026-03-09T16:12:50.502724Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "4565c5ed1f133a64480cc40079d570dd",
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "proof_hash": "eb48910087c663649923eaf9bcd70a456ffbda8990282fa2c58e74595a03b8ab",
+      "expiry": "2026-03-09T16:13:50.481383Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6ea9f8d7a34e29a7",
+    "timestamp": "2026-03-09T16:12:37.264342Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "4428e8207de1adfb",
+      "session_id": "jOGJH-_3F7L4t6xeAAAP",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e068174df7f64c79",
+    "timestamp": "2026-03-09T16:12:34.284955Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "cba3eba2ed13021e",
+      "session_id": "1PWkmpeB3j5IflEBAAAR",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "b91c86cb955e38c0",
     "timestamp": "2026-03-09T16:12:29.861562Z",
     "event_type": "connection",
