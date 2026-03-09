@@ -280,5 +280,16 @@
     "paired_with": "fb86587cdaaf702d",
     "safety_number": "302151",
     "status": "paired"
+  },
+  "3b4c2bcf94d329d8": {
+    "device_id": "3b4c2bcf94d329d8",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAktHxVig4LAkHmwbhuBb4\nDYCHEHl3kToyW6GnqQGGVw4UHSb97vmd4u+WjPyQzpqfjojoGZQM4LTvWuT/aWiP\n2uJ4Qv5gh0+lujKmCICu/zghlB2eTGPklTHgfv40sBn5Y5ITFt41E6H5iNSTBoh1\nsDRvdv3yR/1quUMEM166CIVYPQRj1IX2HtsUE3M/p8AkfwsMw07uS2yRMNGBzT43\nPNU0yA+BDiVXRZ4u6TTssH4aPEvr4E7XYnBkVMyzdTAMQcp9i0Xxrq7DaTEBflcJ\nQxXxQNzr9uZOoz6sJ2UyymHxlEaunniA1jhgL+SOkAIsSiPxJLguWsRiZkLC2++R\ndQIDAQAB\n-----END PUBLIC KEY-----",
+    "dh_public_key": "cb112e141f77dc1c959796ec14353a587ad66b5720cc3ea8d6a43a916f6555de68159173516332b2bdc66614bafbcfbd129ecd0e182cf8330b99f36da485f7ba87e99b1f0273c179589f33b44be5db0d019a49b9dd3f1895e5572a26c0aaea6d6609b2a1e822d98f0e4c0b20a5b7bd708f4184dea4544315f8ab0a065fff048dbae6d78aedf397ca9c7cf162e36ba71855bec51b0b2e70309a63470fc5b5981e7025efe0b6826827c9fd668e95dfa5aa3112fd36d62e2d2285c2020f175443b09268cb9602a4845509976a7b08a5c71a4913ff86f1e8451ef6944596deb92b19f622bfbc9f61d4497f2a4a06fd93faacd9c1e471381bf3be9bb8d097de3242a0",
+    "challenge": "6bc235360ea7d1a843045f9f44fb157e2df6302b898f84b14e61768f6847a143",
+    "created_at": "2026-03-09T13:47:15.930984",
+    "paired_with": null,
+    "safety_number": null,
+    "status": "pending_pairing",
+    "pairing_code": "202144"
   }
 }
