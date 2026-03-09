@@ -11,7 +11,7 @@ from routes.verify_routes import verify_bp
 from routes.admin_routes import admin_bp
 from routes.pairing_routes import pairing_bp
 from scheduler.expiry_scheduler import start_expiry_scheduler
-from monitoring.security_monitor import SecurityMonitor
+from monitoring.security_monitor import security_monitor
 from config import Config
 from github_storage import load_json, save_json, sync_from_github
 
@@ -43,8 +43,8 @@ socketio = SocketIO(
     engineio_logger=False
 )
 
-# Global security monitor (shared with all modules)
-security_monitor = SecurityMonitor()
+# Global security monitor (imported from monitoring.security_monitor)
+# security_monitor = ... 
 
 # Initialize storage directory + default files
 os.makedirs('storage', exist_ok=True)

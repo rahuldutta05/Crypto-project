@@ -15,28 +15,22 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 import hashlib
 
+from github_storage import load_json, save_json
+
 
 class SecurityMonitor:
-    def __init__(self, storage_path='storage/security_events.json'):
-        self.storage_path = storage_path
+    def __init__(self, filename='security_events.json'):
+        self.filename = filename
         self.events = self._load_events()
         self.attack_patterns = defaultdict(list)
 
     def _load_events(self):
-        """Load security events from storage"""
-        if os.path.exists(self.storage_path):
-            try:
-                with open(self.storage_path, 'r') as f:
-                    return json.load(f)
-            except Exception:
-                return []
-        return []
+        """Load security events from github_storage"""
+        return load_json(self.filename, default=[])
 
     def _save_events(self):
-        """Persist security events"""
-        os.makedirs(os.path.dirname(self.storage_path), exist_ok=True)
-        with open(self.storage_path, 'w') as f:
-            json.dump(self.events, f, indent=2)
+        """Persist security events via github_storage"""
+        save_json(self.filename, self.events)
 
     def log_event(self, event_type, details):
         """
