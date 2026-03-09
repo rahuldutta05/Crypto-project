@@ -406,9 +406,20 @@
     "dh_public_key": "ed2e48465104d9f6cdee4bdd5e8c466c653a7a8a345656e95b2d39cbdedfe1ec06be44840e3c719740b3e739584e08e2892666e14136c958dcb359f0e41027978cc53b0af1dcbf1dbf9e091dff5803dd6664f4d3fc8ffed009a36cc28900447fe41f4e45632d500fb298fdd8c306adfd95c12f4c48c511362f48d765804fae7ea25f3ce378cb04c9be8449183f4b5cc1fdcff8fc0b423eec9cd78ff57ecc54447d908af58119245b1c5e8fae5bd458e9291f2b98c1cb6592541c6851cb46bde280d13acd39c331c4ab66539200069ad4318e89e203971036b58303d27a64c03aee11c0af579cfc30aade0871af563d8459a3615e570f14c16a852ef0b674783",
     "challenge": "bc34c1f1ac762fbc1cc81631376ce29401c3cfcf3bda4a50b72fdf482e964048",
     "created_at": "2026-03-09T16:28:16.715147Z",
-    "paired_with": null,
-    "safety_number": null,
-    "status": "pending_pairing",
-    "pairing_code": "252683"
+    "paired_with": "02ee0f535d2cab36",
+    "safety_number": "961681",
+    "status": "paired",
+    "pairing_code": "252683",
+    "peer_dh_public": "aecff91213fb204fa2d96d7bd6f1d8f8e0efb561d735c656d3aa159f5aae64a5d6cb60fe3fec4777669e89e8f75fbe1aaf0d3abb168f7e1f83b510ffc9e0a24839e9057cabc064e1c1f10e8793ce1799e67742f84bdb36f4e57543dddf396c0981a7266585c3d371ba4761fd7fa8d8318f04d7ad9e9115bf23c7e0b5ca927c2c53d8e128028b8a570a57944e6fcee1e730947d0ddf8a8a2d99da008dfdc23750b52e3f1a975c85ff2b2f1633f1910e72d9ce1d24db395030c7e14b6a9ef5692503daaadc0bf19c998f535a42b6981e5d47095534bb9a4f38292679909b0a3706f42eeb41d4bcc97d7061e8973f435a8c05fd2ac486ff5d6391e6eb6c04d7f714",
+    "session_salt": "WAwn97u+qegud8DJ+fecLxIH3bUk0b8OqYcYQJbj/5Q="
+  },
+  "02ee0f535d2cab36": {
+    "device_id": "02ee0f535d2cab36",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuBYc1GgRzER5NiTiAPLN\n7BBUqew0R2dTskEuJi0cSxNZQ0Aa1xYsR0iFrS8gOjLXcZHYjV71ZkR2Ub+cVYEw\n5zKbovM6MYOF79IqmBAq3Aimhf5Kq1oV7tWuDbERZFOhwrtTcmzu51UZBiRkiq1E\nPPd5MvHdCmG78YsEV9W702mIi+qdu5ae1vqYfivXW5pLOIv5PdFo0KQpbLTIfqaL\nJhrauJwnD7fWvt8F6Ym+x91HEvc7JxX1VhDvrZfKgFkEmEfA1suXQ3OGls2q+JBI\nPUjr/qdYDQKNRvvGIfvDBICRJ9id+DkmWJPQyIbaYVAc4a9YHnr4VDFYkYXoeFhM\n/wIDAQAB\n-----END PUBLIC KEY-----",
+    "dh_public_key": "aecff91213fb204fa2d96d7bd6f1d8f8e0efb561d735c656d3aa159f5aae64a5d6cb60fe3fec4777669e89e8f75fbe1aaf0d3abb168f7e1f83b510ffc9e0a24839e9057cabc064e1c1f10e8793ce1799e67742f84bdb36f4e57543dddf396c0981a7266585c3d371ba4761fd7fa8d8318f04d7ad9e9115bf23c7e0b5ca927c2c53d8e128028b8a570a57944e6fcee1e730947d0ddf8a8a2d99da008dfdc23750b52e3f1a975c85ff2b2f1633f1910e72d9ce1d24db395030c7e14b6a9ef5692503daaadc0bf19c998f535a42b6981e5d47095534bb9a4f38292679909b0a3706f42eeb41d4bcc97d7061e8973f435a8c05fd2ac486ff5d6391e6eb6c04d7f714",
+    "created_at": "2026-03-09T16:28:25.881482Z",
+    "paired_with": "cdf24aa64109a13e",
+    "safety_number": "961681",
+    "status": "paired"
   }
 }
