@@ -478,8 +478,20 @@
     "expires_at": "2026-03-09T16:41:51.170070Z",
     "signature": "demo_sig",
     "nonce": "e327389810e91a0f715b3ff44c277c81",
-    "status": "active",
+    "status": "burned",
     "merkle_index": 38,
+    "burn_on_read": true
+  },
+  "a5595247b21180e2bfa4d445cbdc4a6b": {
+    "sender": "f3cbd4ccfa5fe197",
+    "recipient": "37bcf889102f73aa",
+    "proof_hash": "ca99519b9d4e4f68d7ca51dae467c1b41e5a325078c94c7f5d3d48b9d6183e50",
+    "timestamp": "2026-03-09T16:40:54.430583+00:00",
+    "expires_at": "2026-03-09T16:41:54.443703Z",
+    "signature": "demo_sig",
+    "nonce": "1370f037c0d8f4191e6fcae4bdd6fa56",
+    "status": "active",
+    "merkle_index": 39,
     "burn_on_read": true
   }
 }
