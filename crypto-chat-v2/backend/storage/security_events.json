@@ -1,87 +1,25 @@
 [
   {
-    "id": "7d7f4601d56163ff",
-    "timestamp": "2026-03-09T16:36:01.614399Z",
-    "event_type": "disconnection",
-    "severity": "info",
-    "details": {
-      "session_id": "lLbfgII1ksFxgyNAAAAJ",
-      "device_id": null,
-      "timestamp": "2026-03-09T16:36:01Z"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "0364be207b7e1217",
-    "timestamp": "2026-03-09T16:36:00.232672Z",
+    "id": "0965f5ebfdc87910",
+    "timestamp": "2026-03-09T16:36:35.393274Z",
     "event_type": "connection",
     "severity": "info",
     "details": {
-      "session_id": "lLbfgII1ksFxgyNAAAAJ",
-      "ip": "100.64.0.7",
-      "timestamp": "2026-03-09T16:36:00.232636Z"
+      "session_id": "Z5n78ygCiG_EwzGkAAAD",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T16:36:35.393246Z"
     },
     "analyzed": false
   },
   {
-    "id": "ced2140c3df597fc",
-    "timestamp": "2026-03-09T16:35:59.953194Z",
-    "event_type": "disconnection",
-    "severity": "info",
-    "details": {
-      "session_id": "OFrykxp71fpdWqHPAAAH",
-      "device_id": null,
-      "timestamp": "2026-03-09T16:35:59Z"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "09caac560a9ba9a9",
-    "timestamp": "2026-03-09T16:35:59.629218Z",
+    "id": "61b3ffbbcc3acc8f",
+    "timestamp": "2026-03-09T16:36:35.327436Z",
     "event_type": "connection",
     "severity": "info",
     "details": {
-      "session_id": "OFrykxp71fpdWqHPAAAH",
-      "ip": "100.64.0.6",
-      "timestamp": "2026-03-09T16:35:59.629194Z"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "e5d2caf6f92d5968",
-    "timestamp": "2026-03-09T16:28:36.353480Z",
-    "event_type": "message_sent",
-    "severity": "info",
-    "details": {
-      "message_id": "a8b9ef75dc40ff3b4478368253925e20",
-      "sender": "cdf24aa64109a13e",
-      "recipient": "02ee0f535d2cab36",
-      "proof_hash": "d62969cd72f8d2302867badbd47090077e094226f88650dc453c562d12f4c60d",
-      "expiry": "2026-03-09T16:29:36Z"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "891598eb8a644838",
-    "timestamp": "2026-03-09T16:28:29.095886Z",
-    "event_type": "auth_success",
-    "severity": "info",
-    "details": {
-      "device_id": "cdf24aa64109a13e",
-      "session_id": "vSNj7teQyyZeoow8AAAB",
-      "method": "dh_pairing"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "d4b25ae893390559",
-    "timestamp": "2026-03-09T16:28:26.284438Z",
-    "event_type": "auth_success",
-    "severity": "info",
-    "details": {
-      "device_id": "02ee0f535d2cab36",
-      "session_id": "llPxoDcuXtDoYv6zAAAF",
-      "method": "dh_pairing"
+      "session_id": "fp6Q3At5aCPQA4ZPAAAC",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T16:36:35.327393Z"
     },
     "analyzed": false
   },
