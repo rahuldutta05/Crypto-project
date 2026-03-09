@@ -1,16 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { QRCodeSVG } from 'qrcode.react'
-import { QrCode, Scan, ArrowLeft, CheckCircle, Copy } from 'lucide-react'
+import { QrCode, Scan, ArrowLeft, CheckCircle, Copy, Link as LinkIcon, Hash } from 'lucide-react'
 import { api } from '../utils/api'
 
 export default function DevicePairing({ onPaired }) {
-    const [mode, setMode] = useState('select')   // select | generate | scan | scanned | completing
+    const [searchParams] = useSearchParams()
+    const initialCode = (searchParams.get('code') || '').trim()
+
+    const [mode, setMode] = useState('select')   // select | generate | scan | scanned
     const [pairingData, setPairingData] = useState(null)   // from /api/pairing/initiate
     const [scannedResult, setScannedResult] = useState(null) // Device B's scan response
     const [scanInput, setScanInput] = useState('')
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
     const [copied, setCopied] = useState(false)
+    const [autoCompleting, setAutoCompleting] = useState(false)
 
     // ── Step 1: Generate QR ──────────────────────────────────────────────────────
     const handleGenerate = async () => {
@@ -29,22 +34,25 @@ export default function DevicePairing({ onPaired }) {
         }
     }
 
-    // ── Step 2 (Device B): Scan QR → show DH public key for Device A ────────────
-    const handleScan = async () => {
-        if (!scanInput.trim()) return
+    // ── Step 2 (Device B): Join with 6-digit code (or deep link) ─────────────────
+    const handleJoinWithCode = async (code) => {
+        const clean = (code || '').trim()
+        if (!clean) return
         setLoading(true)
         setError(null)
         try {
-            const qrObject = JSON.parse(scanInput.trim())
+            const lookupRes = await fetch(api(`/api/pairing/lookup?code=${encodeURIComponent(clean)}`))
+            const lookup = await lookupRes.json()
+            if (!lookupRes.ok) throw new Error(lookup.error || 'Invalid or expired pairing code')
+
             const res = await fetch(api('/api/pairing/scan'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ qr_data: qrObject })
+                body: JSON.stringify({ qr_data: lookup.qr_data })
             })
             const data = await res.json()
-            if (!res.ok) throw new Error(data.error || 'Scan failed')
+            if (!res.ok) throw new Error(data.error || 'Pairing failed')
 
-            // Hold the result and show it so the user can copy dh_public_key to Device A
             setScannedResult(data)
             setMode('scanned')
         } catch (e) {
@@ -65,7 +73,7 @@ export default function DevicePairing({ onPaired }) {
 
     // ── Step 2c (Device B): Proceed to chat after sharing the key ─────────────────
     const handleProceedAfterScan = () => {
-        onPaired({
+        onPaired?.({
             deviceId: scannedResult.device_id,
             privateKey: scannedResult.private_key,
             publicKey: scannedResult.public_key,
@@ -76,25 +84,27 @@ export default function DevicePairing({ onPaired }) {
         })
     }
 
-    // ── Step 2 (Device A): Complete DH with Device B's public key ─────────────────
-    const handleComplete = async () => {
-        if (!scanInput.trim() || !pairingData) return
-        setLoading(true)
+    // ── Step 2 (Device A): Auto-complete once Device B joined ────────────────────
+    const handleAutoComplete = async (isAuto = false) => {
+        if (!pairingData?.device_id) return
+        if (!isAuto) setAutoCompleting(true)
         setError(null)
         try {
-            const device2DhPublic = scanInput.trim()
-            const res = await fetch(api('/api/pairing/complete'), {
+            const res = await fetch(api('/api/pairing/complete-auto'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    device_id: pairingData.device_id,
-                    device2_dh_public: device2DhPublic
+                    device_id: pairingData.device_id
                 })
             })
             const data = await res.json()
+            
+            // If polling and not ready yet, just return silently
+            if (isAuto && res.status === 409) return
+
             if (!res.ok) throw new Error(data.error || 'Complete failed')
 
-            onPaired({
+            onPaired?.({
                 deviceId: pairingData.device_id,
                 privateKey: pairingData.private_key,
                 publicKey: pairingData.public_key,
@@ -104,17 +114,49 @@ export default function DevicePairing({ onPaired }) {
                 isInitiator: true   // Device A: send="send-chain", recv="recv-chain"
             })
         } catch (e) {
-            setError(e.message)
+            if (!isAuto) setError(e.message)
         } finally {
-            setLoading(false)
+            if (!isAuto) setAutoCompleting(false)
         }
     }
 
-    const copyQR = () => {
-        if (pairingData?.qr_data) {
-            navigator.clipboard.writeText(JSON.stringify(pairingData.qr_data))
+    const copyPairUrl = () => {
+        if (pairingData?.pair_url) {
+            navigator.clipboard.writeText(pairingData.pair_url)
+            setCopied(true)
+            setTimeout(() => setCopied(false), 2000)
         }
     }
+
+    const copyCode = () => {
+        if (pairingData?.pairing_code) {
+            navigator.clipboard.writeText(pairingData.pairing_code)
+            setCopied(true)
+            setTimeout(() => setCopied(false), 2000)
+        }
+    }
+
+    const qrValue = useMemo(() => pairingData?.pair_url || '', [pairingData?.pair_url])
+
+    // Background polling for Device A to auto-complete pairing
+    useEffect(() => {
+        if (mode !== 'generate' || !pairingData?.device_id) return
+        
+        const interval = setInterval(() => {
+            handleAutoComplete(true)
+        }, 3000) // Poll every 3 seconds
+
+        return () => clearInterval(interval)
+    }, [mode, pairingData?.device_id])
+
+    // Auto-join when opened from camera deep link (/pair?code=XXXXXX)
+    useEffect(() => {
+        if (!initialCode) return
+        setMode('scan')
+        setScanInput(initialCode)
+        handleJoinWithCode(initialCode)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [initialCode])
 
     // ── Render ────────────────────────────────────────────────────────────────────
     return (
@@ -137,17 +179,15 @@ export default function DevicePairing({ onPaired }) {
                     </div>
                     <h1>
                         {mode === 'select' && 'Secure Device Pairing'}
-                        {mode === 'generate' && 'QR Code Generated'}
-                        {mode === 'scan' && 'Connect to Device'}
+                        {mode === 'generate' && 'Pairing Link Generated'}
+                        {mode === 'scan' && 'Join with Code'}
                         {mode === 'scanned' && 'Share Your Public Key'}
-                        {mode === 'completing' && 'Complete Pairing'}
                     </h1>
                     <p>
                         {mode === 'select' && 'No login required — cryptographic zero-knowledge proof'}
-                        {mode === 'generate' && 'Share the QR code with the second device, then paste in its DH public key'}
-                        {mode === 'scan' && 'Paste the QR JSON data from the first device'}
+                        {mode === 'generate' && 'Device B can scan this QR (it opens a link) or enter the 6-digit code'}
+                        {mode === 'scan' && 'Enter the 6-digit pairing code (or open /pair?code=XXXXXX)'}
                         {mode === 'scanned' && 'Copy your DH public key and give it to Device A to complete pairing'}
-                        {mode === 'completing' && 'Paste the DH public key returned by Device B'}
                     </p>
                 </div>
 
@@ -156,15 +196,15 @@ export default function DevicePairing({ onPaired }) {
                     <div className="pairing-options">
                         <button className="btn btn-primary" onClick={handleGenerate} disabled={loading}>
                             {loading ? <span className="spinner" /> : <QrCode size={16} />}
-                            Generate QR Code (Device A)
+                            Generate Link + Code (Device A)
                         </button>
                         <button className="btn btn-secondary" onClick={() => setMode('scan')}>
                             <Scan size={16} /> Scan QR Code (Device B)
                         </button>
                         <ul className="pairing-steps mt-sm" style={{ paddingLeft: '1.2rem' }}>
-                            <li><b>Device A:</b> Click "Generate QR Code" → show QR to Device B</li>
-                            <li><b>Device B:</b> Click "Scan QR Code" → paste the QR JSON → get session key</li>
-                            <li><b>Device A:</b> Paste Device B's DH public key to finalise pairing</li>
+                            <li><b>Device A:</b> Generate a link + 6-digit code → show QR to Device B</li>
+                            <li><b>Device B:</b> Scan QR (opens link) or enter code → pairing happens automatically</li>
+                            <li><b>Device A:</b> Click “Complete Pairing” (no copy/paste)</li>
                             <li><b>Both:</b> Compare safety numbers to detect MITM</li>
                         </ul>
                     </div>
@@ -173,26 +213,66 @@ export default function DevicePairing({ onPaired }) {
                 {/* ── GENERATE ── */}
                 {mode === 'generate' && pairingData && (
                     <div className="qr-display">
-                        {pairingData.qr_code
-                            ? <img src={pairingData.qr_code} alt="QR Code" />
-                            : <QRCodeSVG value={JSON.stringify(pairingData.qr_data)} size={220}
-                                bgColor="#0f1020" fgColor="#00e5ff" />
-                        }
-                        <button className="btn btn-ghost btn-sm" onClick={copyQR}>
-                            <Copy size={13} /> Copy QR JSON
-                        </button>
+                        {qrValue && (
+                            <QRCodeSVG value={qrValue} size={220} bgColor="#0f1020" fgColor="#00e5ff" />
+                        )}
+
+                        <div className="w-full" style={{ display: 'grid', gap: '0.6rem' }}>
+                            <div className="card p-md" style={{ background: 'rgba(15,24,40,0.65)' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        <Hash size={14} />
+                                        <span style={{ fontWeight: 700, fontSize: '0.85rem' }}>Pairing code</span>
+                                    </div>
+                                    <button className="btn btn-ghost btn-sm" onClick={copyCode}>
+                                        <Copy size={13} /> {copied ? 'Copied' : 'Copy'}
+                                    </button>
+                                </div>
+                                <div className="mono" style={{
+                                    marginTop: '0.5rem',
+                                    fontSize: '1.6rem',
+                                    letterSpacing: '0.25em',
+                                    textAlign: 'center',
+                                    color: 'var(--accent-cyan)'
+                                }}>
+                                    {pairingData.pairing_code}
+                                </div>
+                                <div className="text-muted" style={{ fontSize: '0.75rem', marginTop: '0.4rem', textAlign: 'center' }}>
+                                    Expires in ~2 minutes
+                                </div>
+                            </div>
+
+                            <div className="card p-md" style={{ background: 'rgba(15,24,40,0.65)' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        <LinkIcon size={14} />
+                                        <span style={{ fontWeight: 700, fontSize: '0.85rem' }}>Pairing link</span>
+                                    </div>
+                                    <button className="btn btn-ghost btn-sm" onClick={copyPairUrl}>
+                                        <Copy size={13} /> {copied ? 'Copied' : 'Copy'}
+                                    </button>
+                                </div>
+                                <div className="mono" style={{
+                                    marginTop: '0.5rem',
+                                    fontSize: '0.72rem',
+                                    wordBreak: 'break-all',
+                                    color: 'var(--text-secondary)'
+                                }}>
+                                    {pairingData.pair_url}
+                                </div>
+                            </div>
+                        </div>
+
                         <p className="qr-label">Device ID: <span className="mono">{pairingData.device_id.slice(0, 12)}…</span></p>
                         <hr style={{ width: '100%', border: 'none', borderTop: '1px solid var(--border)' }} />
-                        <p className="qr-label" style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
-                            After Device B scans, paste its DH public key below:
-                        </p>
                         <div className="scan-input-area w-full">
-                            <textarea className="input" placeholder="Paste Device B's dh_public_key here…"
-                                value={scanInput} onChange={e => setScanInput(e.target.value)} rows={3} />
-                            <button className="btn btn-primary" onClick={handleComplete} disabled={loading || !scanInput}>
-                                {loading ? <span className="spinner" /> : <CheckCircle size={15} />}
+                            <button className="btn btn-primary" onClick={handleAutoComplete} disabled={autoCompleting}>
+                                {autoCompleting ? <span className="spinner" /> : <CheckCircle size={15} />}
                                 Complete Pairing
                             </button>
+                            <div className="text-muted" style={{ fontSize: '0.78rem', textAlign: 'center' }}>
+                                If Device B hasn’t joined yet, this will tell you to wait.
+                            </div>
                         </div>
                     </div>
                 )}
@@ -200,11 +280,14 @@ export default function DevicePairing({ onPaired }) {
                 {/* ── SCAN ── */}
                 {mode === 'scan' && (
                     <div className="scan-input-area">
-                        <label className="text-muted">Paste QR JSON from Device A:</label>
-                        <textarea className="input" rows={5}
-                            placeholder='{"device_id":"...","dh_public_key":"...","challenge":"...",...}'
-                            value={scanInput} onChange={e => setScanInput(e.target.value)} />
-                        <button className="btn btn-primary" onClick={handleScan} disabled={loading || !scanInput}>
+                        <label className="text-muted">Enter pairing code (6 digits):</label>
+                        <input
+                            className="input mono"
+                            placeholder="e.g. 482917"
+                            value={scanInput}
+                            onChange={e => setScanInput(e.target.value)}
+                        />
+                        <button className="btn btn-primary" onClick={() => handleJoinWithCode(scanInput)} disabled={loading || !scanInput}>
                             {loading ? <span className="spinner" /> : <CheckCircle size={15} />}
                             Connect & Pair
                         </button>

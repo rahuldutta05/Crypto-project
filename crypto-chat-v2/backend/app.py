@@ -12,6 +12,7 @@ from routes.admin_routes import admin_bp
 from routes.pairing_routes import pairing_bp
 from scheduler.expiry_scheduler import start_expiry_scheduler
 from monitoring.security_monitor import security_monitor
+from flask_socketio import emit, join_room
 from config import Config
 from github_storage import load_json, save_json, sync_from_github
 
@@ -46,6 +47,11 @@ socketio = SocketIO(
 
 # Initialize storage directory + default files
 os.makedirs('storage', exist_ok=True)
+# Register security event callback for real-time WebSocket updates
+def broadcast_security_event(event):
+    socketio.emit('security_event', event, room='admin_room')
+
+security_monitor.on_event = broadcast_security_event
 # Sync storage files from GitHub on startup (no-op in local dev)
 sync_from_github()
 _storage_defaults = {
@@ -103,6 +109,12 @@ def handle_connect():
         'message': 'Connected anonymously - ready for pairing'
     })
 
+
+@socketio.on('join_admin')
+def handle_join_admin(data):
+    """Allows admin dashboard to join a specific room for security alerts"""
+    join_room('admin_room')
+    print("Admin joined security monitoring room")
 
 @socketio.on('verify_device')
 def handle_device_verification(data):
@@ -207,6 +219,7 @@ def handle_send_message(data):
         nonce = data.get('nonce')
         signature = data.get('signature')
         expiry_minutes = data.get('expiry_minutes', 60)
+        burn_on_read = data.get('burn_on_read', False)
 
         # ── Anti-Replay: Check nonce ──────────────────────────────────────────
         used_nonces = load_json('nonces.json', default=[])
@@ -269,6 +282,7 @@ def handle_send_message(data):
             'nonce': nonce,
             'status': 'active',
             'merkle_index': len(leaves) - 1,
+            'burn_on_read': burn_on_read
         }
         if ring_signature:
             msg_record['ring_signature'] = ring_signature
@@ -288,14 +302,16 @@ def handle_send_message(data):
                 'encrypted_data': encrypted_data,
                 'signature': signature,
                 'timestamp': proof['timestamp'],
-                'expires_at': expiry_time.isoformat() + 'Z',
-                'proof_hash': proof['proof_hash']
+                'expires_at': msg_record['expires_at'],
+                'proof_hash': proof['proof_hash'],
+                'burn_on_read': burn_on_read
             }, room=recipient_id)
 
         emit('message_sent', {
             'message_id': message_id,
             'proof_hash': proof['proof_hash'],
-            'expires_at': expiry_time.isoformat() + 'Z',
+            'expires_at': msg_record['expires_at'],
+            'burn_on_read': burn_on_read,
             'message': 'Message sent with proof-of-existence (content not stored)'
         })
 
@@ -368,6 +384,37 @@ def handle_message_validity_check(data):
     except Exception as e:
         emit('error', {'message': str(e)})
 
+
+@socketio.on('destroy_message')
+def handle_destroy_message(data):
+    """Immediate cryptographic destruction of a message proof (Burn on Read)"""
+    try:
+        message_id = data.get('message_id')
+        if not message_id: return
+
+        messages = load_json('messages.json', default={})
+        proofs = load_json('proof.json', default={})
+
+        if message_id in messages:
+            messages[message_id]['status'] = 'burned'
+            save_json('messages.json', messages)
+            
+        if message_id in proofs:
+            # Cryptographic deletion: replace content with zeros/None
+            proofs[message_id]['data_hash'] = 'DESTROYED'
+            save_json('proof.json', proofs)
+            
+        security_monitor.log_event('message_burned', {
+            'message_id': message_id,
+            'reason': 'burn_on_read'
+        })
+        
+        # Notify both parties if connected
+        emit('message_destroyed', {'message_id': message_id}, room=messages.get(message_id, {}).get('sender'))
+        emit('message_destroyed', {'message_id': message_id}, room=messages.get(message_id, {}).get('recipient'))
+
+    except Exception as e:
+        print(f"Burn error: {e}")
 
 @socketio.on('disconnect')
 def handle_disconnect():

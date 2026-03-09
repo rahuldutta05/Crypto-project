@@ -14,12 +14,37 @@ from crypto.signature_utils import generate_keypair, create_anonymous_id
 from crypto.hash_utils import hash_data
 from datetime import datetime
 from github_storage import load_json, save_json
+from datetime import timedelta
+import random
+from config import Config
 
 pairing_bp = Blueprint('pairing', __name__)
 
 # In-memory store for pending DH instances (private keys don't persist to disk)
 # { device_id: DiffieHellman instance }
 _pending_dh = {}
+
+# In-memory store for short pairing codes (expire quickly)
+# { code: { device_id: str, created_at: datetime } }
+_pending_codes = {}
+
+PAIRING_CODE_TTL = timedelta(minutes=2)
+
+
+def _cleanup_expired_codes(now=None):
+    now = now or datetime.utcnow()
+    expired = [code for code, v in _pending_codes.items() if now - v['created_at'] > PAIRING_CODE_TTL]
+    for code in expired:
+        _pending_codes.pop(code, None)
+
+
+def _generate_pairing_code():
+    _cleanup_expired_codes()
+    for _ in range(20):
+        code = f"{random.randint(0, 999999):06d}"
+        if code not in _pending_codes:
+            return code
+    raise RuntimeError("Unable to allocate pairing code")
 
 
 def load_devices():
@@ -56,6 +81,10 @@ def initiate_pairing():
         # Store DH instance in memory so complete_pairing can use correct private key
         _pending_dh[device_id] = dh.get_private_key_hex()
 
+        # Allocate a short pairing code (6 digits) so Device B can join easily
+        pairing_code = _generate_pairing_code()
+        _pending_codes[pairing_code] = {'device_id': device_id, 'created_at': datetime.utcnow()}
+
         # Store device info
         devices = load_devices()
         devices[device_id] = {
@@ -66,7 +95,8 @@ def initiate_pairing():
             'created_at': datetime.utcnow().isoformat(),
             'paired_with': None,
             'safety_number': None,
-            'status': 'pending_pairing'
+            'status': 'pending_pairing',
+            'pairing_code': pairing_code
         }
         save_devices(devices)
 
@@ -98,8 +128,100 @@ def initiate_pairing():
             'public_key': keypair['public_key'],
             'qr_code': f'data:image/png;base64,{img_str}',
             'qr_data': qr_data,
+            'pairing_code': pairing_code,
+            'pair_url': f"{Config.FRONTEND_URL.rstrip('/')}/pair?code={pairing_code}",
             'message': 'Device registered - scan QR code to pair'
         }), 201
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
+
+@pairing_bp.route('/lookup', methods=['GET'])
+def lookup_pairing():
+    """
+    Lookup pairing QR payload by a short code.
+    Used for deep links / QR-of-URL flows so users never copy raw JSON.
+    """
+    try:
+        code = (request.args.get('code') or '').strip()
+        if not code or not code.isdigit() or len(code) != 6:
+            return jsonify({'error': 'Invalid code'}), 400
+
+        _cleanup_expired_codes()
+        entry = _pending_codes.get(code)
+        if not entry:
+            return jsonify({'error': 'Code expired or not found'}), 404
+
+        device_id = entry['device_id']
+        devices = load_devices()
+        d = devices.get(device_id)
+        if not d:
+            return jsonify({'error': 'Device not found'}), 404
+
+        qr_data = {
+            'device_id': device_id,
+            'server_url': request.host_url.rstrip('/'),
+            'dh_public_key': d.get('dh_public_key'),
+            'challenge': d.get('challenge'),
+            'timestamp': d.get('created_at')
+        }
+
+        return jsonify({'success': True, 'qr_data': qr_data}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
+
+@pairing_bp.route('/complete-auto', methods=['POST'])
+def complete_pairing_auto():
+    """
+    Auto-complete pairing for Device A once Device B has joined.
+    This removes the manual step of copy/pasting Device B's DH public key.
+    """
+    try:
+        data = request.json or {}
+        device1_id = data.get('device_id')
+        if not device1_id:
+            return jsonify({'error': 'device_id required'}), 400
+
+        devices = load_devices()
+        if device1_id not in devices:
+            return jsonify({'error': 'Device not found'}), 404
+
+        device2_dh_public_hex = devices[device1_id].get('peer_dh_public')
+        if not device2_dh_public_hex:
+            return jsonify({'error': 'Waiting for Device B to join'}), 409
+
+        private_key_hex = _pending_dh.get(device1_id)
+        if not private_key_hex:
+            return jsonify({'error': 'DH session expired - please re-initiate pairing'}), 400
+
+        dh1 = DiffieHellman.from_private_key_hex(private_key_hex)
+        shared_secret = dh1.compute_shared_secret(device2_dh_public_hex)
+
+        _pending_dh.pop(device1_id, None)
+
+        devices[device1_id]['status'] = 'paired'
+        save_devices(devices)
+
+        safety_number = devices[device1_id].get('safety_number')
+
+        stored_salt_b64 = devices[device1_id].get('session_salt')
+        if stored_salt_b64:
+            salt_bytes = base64.b64decode(stored_salt_b64)
+            session_key_bytes, salt_b64 = DiffieHellman.derive_session_key(shared_secret, salt=salt_bytes)
+        else:
+            session_key_bytes, salt_b64 = DiffieHellman.derive_session_key(shared_secret)
+        session_key_b64 = base64.b64encode(session_key_bytes).decode()
+
+        return jsonify({
+            'success': True,
+            'paired_device': devices[device1_id].get('paired_with'),
+            'safety_number': safety_number,
+            'session_key': session_key_b64,
+            'session_salt': salt_b64,
+            'message': 'Pairing complete - secure channel established'
+        }), 200
 
     except Exception as e:
         return jsonify({'error': str(e)}), 400

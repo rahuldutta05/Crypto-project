@@ -19,18 +19,19 @@ from github_storage import load_json, save_json
 
 
 class SecurityMonitor:
-    def __init__(self, filename='security_events.json'):
-        self.filename = filename
+    def __init__(self, storage_file='security_events.json'):
+        self.storage_file = storage_file
         self.events = self._load_events()
+        self.on_event = None  # Callback function for real-time notifications
         self.attack_patterns = defaultdict(list)
 
     def _load_events(self):
         """Load security events from github_storage"""
-        return load_json(self.filename, default=[])
+        return load_json(self.storage_file, default=[])
 
     def _save_events(self):
         """Persist security events via github_storage"""
-        save_json(self.filename, self.events)
+        save_json(self.storage_file, self.events)
 
     def log_event(self, event_type, details):
         """
@@ -62,8 +63,12 @@ class SecurityMonitor:
             'analyzed': False
         }
 
-        self.events.append(event)
+        self.events.insert(0, event)
         self._save_events()
+
+        # Notify via callback if registered
+        if self.on_event:
+            self.on_event(event)
 
         # Check for attack patterns (NO recursive log_event calls inside!)
         self._detect_patterns(event_type, details)

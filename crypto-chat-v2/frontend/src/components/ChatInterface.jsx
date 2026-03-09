@@ -10,6 +10,7 @@ export default function ChatInterface({ deviceInfo }) {
     const [messages, setMessages] = useState([])
     const [input, setInput] = useState('')
     const [expiryMinutes, setExpiryMinutes] = useState(60)
+    const [burnOnRead, setBurnOnRead] = useState(false)
     const [sending, setSending] = useState(false)
     const [verified, setVerified] = useState(false)
     const bottomRef = useRef(null)
@@ -65,8 +66,16 @@ export default function ChatInterface({ deviceInfo }) {
                 timestamp: data.timestamp,
                 expiresAt: data.expires_at,
                 proofHash: data.proof_hash,
-                expired: false
+                expired: false,
+                burnOnRead: data.burn_on_read
             }])
+
+            // PILLAR 3 NOVELTY: Burn on Read — notify server to destroy proof immediately
+            if (data.burn_on_read) {
+                setTimeout(() => {
+                    socket.emit('destroy_message', { message_id: data.message_id })
+                }, 500) // Small delay to ensure client has processed it
+            }
         }
 
         const onMessageSent = (data) => {
@@ -87,10 +96,17 @@ export default function ChatInterface({ deviceInfo }) {
             }])
         }
 
+        const onMessageDestroyed = (data) => {
+            setMessages(prev => prev.map(m =>
+                m.id === data.message_id ? { ...m, expired: true, content: '🗑 Burned on Read', isBurned: true } : m
+            ))
+        }
+
         socket.on('verified', onVerified)
         socket.on('verification_failed', onVerificationFailed)
         socket.on('receive_message', onReceiveMessage)
         socket.on('message_sent', onMessageSent)
+        socket.on('message_destroyed', onMessageDestroyed)
         socket.on('error', onError)
 
         // Emit verify_device on every (re)connect — works on mobile where the
@@ -161,7 +177,8 @@ export default function ChatInterface({ deviceInfo }) {
                 encrypted_data: payload,    // { ciphertext, iv, step }
                 nonce: generateNonce(),
                 signature: 'demo_sig',
-                expiry_minutes: expiryMinutes
+                expiry_minutes: expiryMinutes,
+                burn_on_read: burnOnRead
             })
         } catch (e) {
             setMessages(prev => prev.map(m =>
@@ -279,6 +296,13 @@ export default function ChatInterface({ deviceInfo }) {
                     <option value={720}>Expires: 12hr</option>
                     <option value={1440}>Expires: 24hr</option>
                 </select>
+                <div className="flex items-center gap-xs ml-sm mr-sm" style={{ minWidth: 'max-content' }}>
+                    <input type="checkbox" id="burn-toggle" checked={burnOnRead} 
+                        onChange={e => setBurnOnRead(e.target.checked)} />
+                    <label htmlFor="burn-toggle" style={{ fontSize: '0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                        <Zap size={10} style={{ color: burnOnRead ? 'var(--accent-cyan)' : 'inherit' }} /> Burn
+                    </label>
+                </div>
                 <textarea
                     className="input composer-input"
                     placeholder="Type a message… (Enter to send, Shift+Enter for newline)"

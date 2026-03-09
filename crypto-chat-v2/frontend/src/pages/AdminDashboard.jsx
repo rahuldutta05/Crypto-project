@@ -1,6 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
-import { BarChart3, RefreshCw, Download, Shield, Activity, AlertTriangle, Clock, Zap } from 'lucide-react'
-import { api } from '../utils/api'
+import { getSocket, connectSocket } from '../utils/socketManager'
 
 export default function AdminDashboard() {
     const [stats, setStats] = useState(null)
@@ -39,6 +37,25 @@ export default function AdminDashboard() {
     }, [])
 
     useEffect(() => { fetchAll() }, [fetchAll])
+
+    // WebSocket real-time updates
+    useEffect(() => {
+        const socket = connectSocket()
+        
+        socket.emit('join_admin', {})
+
+        const onSecurityEvent = (event) => {
+            console.log("Real-time security alert:", event)
+            setEvents(prev => [event, ...prev.slice(0, 49)])
+            // Optionally slight delay refresh to update charts
+            setTimeout(fetchAll, 1000)
+        }
+
+        socket.on('security_event', onSecurityEvent)
+        return () => {
+            socket.off('security_event', onSecurityEvent)
+        }
+    }, [fetchAll])
 
     useEffect(() => {
         if (!autoRefresh) return

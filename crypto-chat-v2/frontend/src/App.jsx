@@ -58,6 +58,7 @@ export default function App() {
         <main className="page">
           <Routes>
             <Route path="/" element={<ChatApp />} />
+            <Route path="/pair" element={<ChatApp />} />
             <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </main>

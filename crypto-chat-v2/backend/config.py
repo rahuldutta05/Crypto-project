@@ -3,6 +3,7 @@ from datetime import timedelta
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-CHANGE-IN-PRODUCTION'
+    FRONTEND_URL = os.environ.get('FRONTEND_URL') or 'http://localhost:5173'
     
     # Cryptographic settings
     KEY_SIZE = 2048  # RSA key size
