@@ -1,5 +1,309 @@
 [
   {
+    "id": "6e1d9e77dd66cf34",
+    "timestamp": "2026-03-09T13:53:37.755658",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "Bjc5ZYoBn4-JFMf-AAAN",
+      "device_id": "e900f249f8f757f5",
+      "timestamp": "2026-03-09T13:53:37.755619"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c36b655a8be2dd06",
+    "timestamp": "2026-03-09T13:50:39.338995",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "31b12fd198cd78225e3b38c9608e8688",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "6b6f4259c58f5f24b04aada8ff964d294624821b31ec6f8c683ffec9d263b87a",
+      "expiry": "2026-03-09T13:51:39.048122"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "63e7d56dff72bb65",
+    "timestamp": "2026-03-09T13:50:39.231376",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "bbd1cf298c542aafd6fb89cbe4c3739c",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "8ae4c129889ce68526ec8305c8ce83510596463161da251267c2f622ca4a6881",
+      "expiry": "2026-03-09T13:51:38.819406"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cff77501de5cd091",
+    "timestamp": "2026-03-09T13:50:39.043693",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "0eef185a766c64158e0beac7ebec9252",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "822037d56a3051c0a66128133f5e8ac9784f1a26126ebcc4405d28772df96ab3",
+      "expiry": "2026-03-09T13:51:38.687383"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6216ca30ff168271",
+    "timestamp": "2026-03-09T13:50:38.815128",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "d248c2c8600fc07ca7b13c1297e0d09b",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "db3a91969acde381c0efbcfdfbfac07bffcfc2b64178dda1e214e7f7740357b5",
+      "expiry": "2026-03-09T13:51:38.538380"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "94d7cc6961aef96e",
+    "timestamp": "2026-03-09T13:50:38.534734",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "a8179b51286a59635857f5a21d735dcd",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "1bb181a89b4b7e536440392763e2d55c84cfb7d65a943529c83d6301cb7ccd7c",
+      "expiry": "2026-03-09T13:51:38.355457"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6b714a21654083ab",
+    "timestamp": "2026-03-09T13:50:38.403248",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "e76b08109f58dd65351a199bab02519a",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "d72e635b071f98397b19082ce357f0026a2b8b4526c60a1d5761945a17d72afa",
+      "expiry": "2026-03-09T13:51:38.224877"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3d6dac20f0cb9727",
+    "timestamp": "2026-03-09T13:50:38.154549",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "03fea9bef94a7976b9c26b45390ab284",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "7250c58389a295027f0b202500115e30b7e76046b87e0e155026eb8bb3b12be0",
+      "expiry": "2026-03-09T13:51:38.073881"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "011ac8263dc0f312",
+    "timestamp": "2026-03-09T13:50:37.951884",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "9eeb10b1386f7b36163f49e67c4267ed",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "c5154e3d7b90f31f8ae8da2e3ffd81e80e8556c8eb8bbfc2cb83f90e88e08b73",
+      "expiry": "2026-03-09T13:51:37.899037"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b113b46d73ffdc89",
+    "timestamp": "2026-03-09T13:50:37.751629",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "ef2ef56a5562b19b836d80ea5748d515",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "0f52ef8f82c0a203852b57a30a9a84dba728a8f2303387af00f6e097161319b1",
+      "expiry": "2026-03-09T13:51:37.710305"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "063d185344b0029a",
+    "timestamp": "2026-03-09T13:50:35.026389",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "865d8c014f5d02dc537b9465203e4df3",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "ef65957be474e32f483b826b0e5ed314ffebf0e8bc43bb5e2285ab14a2fd2f4c",
+      "expiry": "2026-03-09T13:51:34.995574"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "df76aad65c92c91f",
+    "timestamp": "2026-03-09T13:50:34.792914",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "23573ff7751954b457c0797d9b40aa65",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "3fddbedb6e4e1506a2ade7ecc88b5a77cdc70412f1dc90ed010a069b7f67bd4f",
+      "expiry": "2026-03-09T13:51:34.758535"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5579ca52eec36751",
+    "timestamp": "2026-03-09T13:50:34.574598",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "65e62bba4a77356d906515a2fc89febf",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "c0fab756297d21be0e2cf6e363eb77e907bc6e92c2ffd1651c5e7e778688526c",
+      "expiry": "2026-03-09T13:51:34.540059"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "77573718ccc5d015",
+    "timestamp": "2026-03-09T13:50:34.307081",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "3f544143ce947b6aced8d20d9d948cf5",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "0c8225b33b393a786257a8b90dd91fdb5a76a90598e656844556895cb172795e",
+      "expiry": "2026-03-09T13:51:34.273594"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d19c1da8b830c3f7",
+    "timestamp": "2026-03-09T13:50:34.138125",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "1795b288611070bf06b1774fdcb6c5fa",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "014be0a1b001d3c00fc372db8c54a47ad912d2ffe64f6c7f29149f357bbc1ce5",
+      "expiry": "2026-03-09T13:51:34.107359"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3e6ae1ee3555d02e",
+    "timestamp": "2026-03-09T13:50:33.727337",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "edbb8cb55e76680a2808bbbab33b7594",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "378b2a51b2cc9ba0036525342eba742a0f81fcefd2e7776cf87bc4f455aaf42a",
+      "expiry": "2026-03-09T13:51:33.678393"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0c0ab93bafb1888f",
+    "timestamp": "2026-03-09T13:50:32.761889",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "25017c446376097421c863916fda85b2",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "73052bd87c4c1d80f4f67c02e3106cb54fb716fb72dde9ff49efa2a7289e16a0",
+      "expiry": "2026-03-09T13:51:32.730115"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cd4050fe211ca278",
+    "timestamp": "2026-03-09T13:50:32.081850",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "028291af352aff2573e11401e98b62c7",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "65a71af6d446de71048009ea8d68c10067806f6a7a59ffa8855717b549547d7f",
+      "expiry": "2026-03-09T13:51:32.050183"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "25d87976a8b9940d",
+    "timestamp": "2026-03-09T13:50:31.551151",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "4f4c441e448d85ebe06ee23d51e94904",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "d40c68173bdfee5fb56e150348eff37f751b58c1af9d3ea9973910e678e4af1f",
+      "expiry": "2026-03-09T13:51:31.492225"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "987b507b69b6ef3b",
+    "timestamp": "2026-03-09T13:50:11.353543",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "1e183df33f052c5cb18c6148b40fe10c",
+      "sender": "ac9539aaf4893ac7",
+      "recipient": "e900f249f8f757f5",
+      "proof_hash": "e150914b5789a3c37fbde015adf2415e19a7e82195072148ee6f166d796a8a03",
+      "expiry": "2026-03-09T13:51:11.319843"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "be8dfa192153d751",
+    "timestamp": "2026-03-09T13:50:05.180693",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "04a2fbd0a69058510804cb6de60e5158",
+      "sender": "e900f249f8f757f5",
+      "recipient": "ac9539aaf4893ac7",
+      "proof_hash": "8f39757cbb3eb74c73fb7bd03c269f3c1c88f6eae9fec506ec38410de6ee1cb4",
+      "expiry": "2026-03-09T14:50:05.143157"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4d7dd8ca0c74e7a3",
+    "timestamp": "2026-03-09T13:49:55.857050",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "e900f249f8f757f5",
+      "session_id": "Bjc5ZYoBn4-JFMf-AAAN",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "8b1936b41794107b",
     "timestamp": "2026-03-09T13:49:51.684293",
     "event_type": "auth_success",
