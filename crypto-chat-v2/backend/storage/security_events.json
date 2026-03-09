@@ -1,49 +1,13 @@
 [
   {
-    "id": "99b234bd221c1e52",
-    "timestamp": "2026-03-09T11:43:12.352547",
+    "id": "bc10e2ab963cad01",
+    "timestamp": "2026-03-09T11:47:21.120996",
     "event_type": "connection",
     "severity": "info",
     "details": {
-      "session_id": "t6PhJE_X6ZsXwHSPAAAH",
-      "ip": "100.64.0.10",
-      "timestamp": "2026-03-09T11:43:12.352516"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "ce2f2dfe7d422865",
-    "timestamp": "2026-03-09T11:43:05.587138",
-    "event_type": "disconnection",
-    "severity": "info",
-    "details": {
-      "session_id": "9RA46fILa7_3B3njAAAF",
-      "device_id": null,
-      "timestamp": "2026-03-09T11:43:05.587087"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "6eaa26f1ab09d085",
-    "timestamp": "2026-03-09T11:28:31.628783",
-    "event_type": "connection",
-    "severity": "info",
-    "details": {
-      "session_id": "9RA46fILa7_3B3njAAAF",
-      "ip": "100.64.0.7",
-      "timestamp": "2026-03-09T11:28:31.628746"
-    },
-    "analyzed": false
-  },
-  {
-    "id": "7a4739a302006718",
-    "timestamp": "2026-03-09T08:11:48.038472",
-    "event_type": "disconnection",
-    "severity": "info",
-    "details": {
-      "session_id": "-PlkyNwGSZdWq-DaAAAD",
-      "device_id": null,
-      "timestamp": "2026-03-09T08:11:48.038432"
+      "session_id": "oaPLGTT5SSduDcb2AAAB",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-09T11:47:21.120961"
     },
     "analyzed": false
   },
