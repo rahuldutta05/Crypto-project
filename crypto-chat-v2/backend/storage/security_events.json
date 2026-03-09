@@ -1406,5 +1406,19 @@
       "timestamp": "2026-03-09T07:23:17.002535"
     },
     "analyzed": false
+  },
+  {
+    "id": "085d0cab84d75cc1",
+    "timestamp": "2026-03-09T07:23:24.838436",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-09T07:23:24.838386"
+    },
+    "analyzed": false
   }
 ]
