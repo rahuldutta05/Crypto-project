@@ -243,9 +243,20 @@
     "dh_public_key": "693152ec11705ffeaea094aa9aa77b5a90d01f3f7e2dfebbd6c79c8749e38a230a4c75ea90a58ff91beee78c4e0f38c0b2e911643d6f080b49a1a301db381135041bf2a4bc2e72fee28e42cd734d762df16d955c7c79a479adc72334a805e4e06c4d04c4d40e9b9d8bbb75c78db90c1cdfae843beef9641aa7b52b67af976f326e9a63325451fdd83a1d01d6e53bace7883fc5847a873d2365c2fe678b157abacf0df958187a672a121a3c75adc9cf75d388eafbae3f18a7d92badcd8503616e707fdf6286f2c3a93b1707ff29c1833215205c43cb801fe63db4002f81f780981939d0c3ca440ba28aa11e4f7387390ebc1ca63ac117894c165f5fc5b0b633e4",
     "challenge": "a3486a6a13a973588db9c54d9cb8eae453fb7819bbd78d25bdfe7fe085b6b0ea",
     "created_at": "2026-03-09T12:01:19.796942",
-    "paired_with": null,
-    "safety_number": null,
-    "status": "pending_pairing",
-    "pairing_code": "213459"
+    "paired_with": "2c0f9ff8887a09e0",
+    "safety_number": "042972",
+    "status": "paired",
+    "pairing_code": "213459",
+    "peer_dh_public": "b97cb2222e858d1b337d0f7cbb63da12cf8ae971efcd6c9bbf0bafe6974adb66c8246abc56c6bad1cbd616321244f98d0e1e211dc4e28bc94a33f345772acd91a172a7bee6d327a4b687116db7a6cf374bbc972c2ec6a5e7d32b924a27640852317c4f7631e3c45709c1834f985875c11edc4168fad006f036c8b8708e00636f88ecc3c134d55720e828862d92e6d6b3fe03998989a8858d7fc0c332f1f21dee806516ad5abf5be664ad37f20d5784e1b4f85508af43e9ed8252438a8f907446858c345ab9f5b604c4e3c7c60d63916b42ce5881c6e2558d0ec52afcd81107dc387de01aa59eb6634a633b45d0f6d91b73d10b14478cdbfa405c9c9925d87a5c",
+    "session_salt": "/BBGCwQRbsa3f1+IENqk4TuGtKmcME0FCP0PKYGiVaM="
+  },
+  "2c0f9ff8887a09e0": {
+    "device_id": "2c0f9ff8887a09e0",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn4vpyAE6OGAv0vUzkRNp\nejmZhVNMt2nGs8HYdJABKQD4anwbLMOt9RbAa2AapAAysyPQwEY//x0cgFlmy+2x\nd1FMt5NjAut6eDhXhLY+ej42ew5Bq0FmXae3GnxqeC5tODfF09zd6g8JJkuFl0Fb\neAlWS0rpxWVKmnT8EHJ+gFeEAdIDIBCHkdZ8OPPdZJKwLW4UNokcHQNkdvxtmS7p\n2NP4FXC/zsJMhrLDJHhEPjLfuuQb5gn9173MbW4eUFCJzkCv06jibIzhmJVPs3fE\n0bjSsWlCYpoGEcnnLED/nzwCtsjtWDuGcEbhQlT77k5Emmm01USKkhcmfw80y1Y1\nHwIDAQAB\n-----END PUBLIC KEY-----",
+    "dh_public_key": "b97cb2222e858d1b337d0f7cbb63da12cf8ae971efcd6c9bbf0bafe6974adb66c8246abc56c6bad1cbd616321244f98d0e1e211dc4e28bc94a33f345772acd91a172a7bee6d327a4b687116db7a6cf374bbc972c2ec6a5e7d32b924a27640852317c4f7631e3c45709c1834f985875c11edc4168fad006f036c8b8708e00636f88ecc3c134d55720e828862d92e6d6b3fe03998989a8858d7fc0c332f1f21dee806516ad5abf5be664ad37f20d5784e1b4f85508af43e9ed8252438a8f907446858c345ab9f5b604c4e3c7c60d63916b42ce5881c6e2558d0ec52afcd81107dc387de01aa59eb6634a633b45d0f6d91b73d10b14478cdbfa405c9c9925d87a5c",
+    "created_at": "2026-03-09T12:01:35.826033",
+    "paired_with": "c5257e01de319933",
+    "safety_number": "042972",
+    "status": "paired"
   }
 }
