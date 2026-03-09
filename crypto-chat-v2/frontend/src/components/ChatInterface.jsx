@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { Send, Lock, Clock, AlertTriangle } from 'lucide-react'
+import { Send, Lock, Clock, AlertTriangle, Zap } from 'lucide-react'
 import { initDoubleRatchet, ratchetEncrypt, ratchetDecrypt, generateNonce } from '../utils/cryptoUtils'
 import { getSocket } from '../utils/socketManager'
 import SafetyNumber from './SafetyNumber'

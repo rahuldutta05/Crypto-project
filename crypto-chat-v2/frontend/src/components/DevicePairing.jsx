@@ -53,14 +53,25 @@ export default function DevicePairing({ onPaired }) {
             const data = await res.json()
             if (!res.ok) throw new Error(data.error || 'Pairing failed')
 
-            setScannedResult(data)
-            setMode('scanned')
+            // Skip the "Share Your Public Key" step — the /scan endpoint already
+            // stored Device B's DH public key server-side so Device A can auto-complete.
+            // Go straight to chat.
+            onPaired?.({
+                deviceId: data.device_id,
+                privateKey: data.private_key,
+                publicKey: data.public_key,
+                pairedWith: data.paired_device,
+                safetyNumber: data.safety_number,
+                sessionKey: data.session_key,
+                isInitiator: false  // Device B: send="recv-chain", recv="send-chain"
+            })
         } catch (e) {
             setError(e.message)
         } finally {
             setLoading(false)
         }
     }
+
 
     // ── Step 2b (Device B): Copy DH public key helper ────────────────────────────
     const copyDhPublicKey = () => {
