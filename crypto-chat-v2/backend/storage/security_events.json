@@ -1434,5 +1434,17 @@
       "timestamp": "2026-03-09T07:24:26.349849"
     },
     "analyzed": false
+  },
+  {
+    "id": "73787abaed50ad9f",
+    "timestamp": "2026-03-09T07:53:02.141072",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "ltUOlcbw4PoGxN9yAAAJ",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-09T07:53:02.141036"
+    },
+    "analyzed": false
   }
 ]
