@@ -1,5 +1,57 @@
 [
   {
+    "id": "c8c0dc825639e987",
+    "timestamp": "2026-03-09T16:40:51.188620Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "5cff5e5da98a82badbc5f7b9ca85dc35",
+      "sender": "37bcf889102f73aa",
+      "recipient": "f3cbd4ccfa5fe197",
+      "proof_hash": "b61bfd1fd70e86dae209afc4efa51cdc7ba780a2d69f5266ee86a5f9d8f2e449",
+      "expiry": "2026-03-09T16:41:51Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "52c7fefb69395b5b",
+    "timestamp": "2026-03-09T16:40:27.287059Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "0450a8e6e8d52c067996e04442d1cc8c",
+      "sender": "37bcf889102f73aa",
+      "recipient": "f3cbd4ccfa5fe197",
+      "proof_hash": "106253813ee21e68c4301d88e00885744db48b7bafbdf716492d83f95e6cf115",
+      "expiry": "2026-03-09T16:41:27Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d5fbfb417f9b1aef",
+    "timestamp": "2026-03-09T16:40:21.640322Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "37bcf889102f73aa",
+      "session_id": "V_Z6OZspViGgzCAOAAAH",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c105c1c49d9483a4",
+    "timestamp": "2026-03-09T16:40:17.747728Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "f3cbd4ccfa5fe197",
+      "session_id": "gi-KuSty7kn6gnxVAAAF",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "33f0d92ca86bf89e",
     "timestamp": "2026-03-09T16:40:03.990141Z",
     "event_type": "connection",
