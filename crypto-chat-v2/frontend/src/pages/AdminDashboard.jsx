@@ -61,8 +61,10 @@ export default function AdminDashboard() {
     const simulateAttack = async (attackType) => {
         setSimulating(attackType)
         setSimResult(null)
+        const targetUrl = api('/api/admin/simulate-attack')
         try {
-            const res = await fetch(api('/api/admin/simulate-attack'), {
+            console.log(`Simulating ${attackType} at ${targetUrl}`)
+            const res = await fetch(targetUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ attack_type: attackType })
@@ -71,7 +73,8 @@ export default function AdminDashboard() {
             setSimResult({ ok: res.ok, message: data.message || data.error })
             if (res.ok) await fetchAll()   // refresh dashboard so event appears
         } catch (e) {
-            setSimResult({ ok: false, message: e.message })
+            console.error('Simulation failed', e)
+            setSimResult({ ok: false, message: `${e.message} (${targetUrl})` })
         } finally {
             setSimulating(null)
         }

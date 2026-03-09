@@ -96,8 +96,10 @@ code, .mono { font-family: var(--font-mono); font-size: 0.83em; }
   display: flex;
   flex-direction: column;
   height: 100%;
+  height: -webkit-fill-available;
   position: relative;
   z-index: 1;
+  min-height: 0;
 }
 
 /* ════════════════════════════════════════════════════════════════════
@@ -227,7 +229,15 @@ code, .mono { font-family: var(--font-mono); font-size: 0.83em; }
 }
 
 /* ── Page ──────────────────────────────────────────────────────────── */
-.page { flex: 1; display: flex; overflow: hidden; position: relative; z-index: 1; min-height: 0; }
+.page { 
+  flex: 1; 
+  display: flex; 
+  overflow: hidden; 
+  position: relative; 
+  z-index: 1; 
+  min-height: 0;
+  height: 100%;
+}
 
 /* ── Card ──────────────────────────────────────────────────────────── */
 .card {
