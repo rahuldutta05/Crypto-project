@@ -1,1 +1,110 @@
-{}
+{
+  "c26a752482d3aa42662844144f5f2e21": {
+    "hash": "ac11a9399686c0dde34ecdf599041518efbcf9bf5f3ab1012b8b2ea89a4a19bb",
+    "timestamp": "2026-03-09T02:13:54.681279",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "9cff1b6c358d955c",
+      "recipient": "7e31509737e23bde",
+      "type": "chat_message"
+    },
+    "proof_hash": "ad4b28fb2f9edf47b0ee41a56d725ce45afb4ab3a470fdff1b9b40e21107ea9e",
+    "merkle_index": 0
+  },
+  "85469f307d363550762dfbd327dbce61": {
+    "hash": "137b060c1418a4f8788fc36833e78cc659404522cd427e3154ce4b2983bb4197",
+    "timestamp": "2026-03-09T02:14:06.855160",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "7e31509737e23bde",
+      "recipient": "9cff1b6c358d955c",
+      "type": "chat_message"
+    },
+    "proof_hash": "c1c558756382169523bf1628f3484ebb054546a8a702ab45a423b5f5d21f823d",
+    "merkle_index": 1
+  },
+  "ed6274a8c0ea916caf68c7dd88583028": {
+    "hash": "e2cb4581f5a75f0dc1be6029843e8b49d6c68dc5d2a0074e4289aa25a1ba1391",
+    "timestamp": "2026-03-09T02:15:21.306413",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "854fb30327797b51",
+      "recipient": "813ac2682183851d",
+      "type": "chat_message"
+    },
+    "proof_hash": "3d5a20223b8cffe19902182bda36f16f2001c2346c51ab06ae20aff60ba43c34",
+    "merkle_index": 2
+  },
+  "c540191864c72387836b19d756a06dea": {
+    "hash": "a51e6c563b6600fac10152328a087250846868893e5128c37cf571ff25eb36a7",
+    "timestamp": "2026-03-09T02:15:26.490145",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "813ac2682183851d",
+      "recipient": "854fb30327797b51",
+      "type": "chat_message"
+    },
+    "proof_hash": "d0da236b1ea13e45e4f01e62454854063a23ace96a0237d9bc04e70213af204b",
+    "merkle_index": 3
+  },
+  "4bfe2ee31667e98295dc8df624bb12d3": {
+    "hash": "42d3696c570d8077e807176682c71ab915ba380821daabec585e9a3303d1bc68",
+    "timestamp": "2026-03-09T02:17:52.541042",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "854fb30327797b51",
+      "recipient": "813ac2682183851d",
+      "type": "chat_message"
+    },
+    "proof_hash": "3949ce30886559e95cafded637f4fddebc2e0f4a4a8492409eb85aa6cf56c334",
+    "merkle_index": 4
+  },
+  "e8a35b904684329d3dad65f7b8d484d7": {
+    "hash": "ae921e92c3fa7be072f98193412b379f5b7782caff0d989f7c1c405702097b69",
+    "timestamp": "2026-03-09T02:17:56.560469",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "813ac2682183851d",
+      "recipient": "854fb30327797b51",
+      "type": "chat_message"
+    },
+    "proof_hash": "3be4f5477eab03ac7cd630d08c40913722fda62a775c2f319918cb04c5078901",
+    "merkle_index": 5
+  },
+  "c7e5a3d5f93fc7ee51608a64651c0209": {
+    "hash": "86d1f785ab26aab3e645a8bb218365551e6480e9ea4bb37e38f834baf2acf9eb",
+    "timestamp": "2026-03-09T02:21:45.757457",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "653d9d31438b71af",
+      "recipient": "c9f2ad124af45d81",
+      "type": "chat_message"
+    },
+    "proof_hash": "d778dc9b2599382d4fd58cb168ea79b6408bf464b9a2e22382441ecbaaa231ee",
+    "merkle_index": 6
+  },
+  "3ae514bd0738e22884de1f18894f2d91": {
+    "hash": "3aee4c5d7597f2bb2ab7f1d1ad4e4b77ee8ca74b0539ececeab4b39e8240ab4f",
+    "timestamp": "2026-03-09T02:21:49.274131",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "c9f2ad124af45d81",
+      "recipient": "653d9d31438b71af",
+      "type": "chat_message"
+    },
+    "proof_hash": "2f532e7867486b55b8510df637f07ec25de97a7de2312bec8df19e2fba4c382d",
+    "merkle_index": 7
+  },
+  "209d9529054c1ebc138da2ac7cb1253d": {
+    "hash": "626d23676e483b9d54a64782c9b90f295342149c945c49643d86d9b6dbab8a9f",
+    "timestamp": "2026-03-09T02:21:58.561709",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "653d9d31438b71af",
+      "recipient": "c9f2ad124af45d81",
+      "type": "chat_message"
+    },
+    "proof_hash": "3c181ed0241525e419353fefb3a670d0fc0a6039affb39b58be20d7ff0da516c",
+    "merkle_index": 8
+  }
+}

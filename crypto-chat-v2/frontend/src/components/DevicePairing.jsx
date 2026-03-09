@@ -1,13 +1,15 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { QrCode, Scan, ArrowLeft, CheckCircle, Copy } from 'lucide-react'
 
 export default function DevicePairing({ onPaired }) {
-    const [mode, setMode] = useState('select')   // select | generate | scan | completing
+    const [mode, setMode] = useState('select')   // select | generate | scan | scanned | completing
     const [pairingData, setPairingData] = useState(null)   // from /api/pairing/initiate
+    const [scannedResult, setScannedResult] = useState(null) // Device B's scan response
     const [scanInput, setScanInput] = useState('')
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [copied, setCopied] = useState(false)
 
     // ── Step 1: Generate QR ──────────────────────────────────────────────────────
     const handleGenerate = async () => {
@@ -26,7 +28,7 @@ export default function DevicePairing({ onPaired }) {
         }
     }
 
-    // ── Step 2 (Device B): Scan QR + complete DH exchange ────────────────────────
+    // ── Step 2 (Device B): Scan QR → show DH public key for Device A ────────────
     const handleScan = async () => {
         if (!scanInput.trim()) return
         setLoading(true)
@@ -41,19 +43,35 @@ export default function DevicePairing({ onPaired }) {
             const data = await res.json()
             if (!res.ok) throw new Error(data.error || 'Scan failed')
 
-            onPaired({
-                deviceId: data.device_id,
-                privateKey: data.private_key,
-                publicKey: data.public_key,
-                pairedWith: data.paired_device,
-                safetyNumber: data.safety_number,
-                sessionKey: data.session_key
-            })
+            // Hold the result and show it so the user can copy dh_public_key to Device A
+            setScannedResult(data)
+            setMode('scanned')
         } catch (e) {
             setError(e.message)
         } finally {
             setLoading(false)
         }
+    }
+
+    // ── Step 2b (Device B): Copy DH public key helper ────────────────────────────
+    const copyDhPublicKey = () => {
+        if (scannedResult?.dh_public_key) {
+            navigator.clipboard.writeText(scannedResult.dh_public_key)
+            setCopied(true)
+            setTimeout(() => setCopied(false), 2000)
+        }
+    }
+
+    // ── Step 2c (Device B): Proceed to chat after sharing the key ─────────────────
+    const handleProceedAfterScan = () => {
+        onPaired({
+            deviceId: scannedResult.device_id,
+            privateKey: scannedResult.private_key,
+            publicKey: scannedResult.public_key,
+            pairedWith: scannedResult.paired_device,
+            safetyNumber: scannedResult.safety_number,
+            sessionKey: scannedResult.session_key
+        })
     }
 
     // ── Step 2 (Device A): Complete DH with Device B's public key ─────────────────
@@ -118,12 +136,14 @@ export default function DevicePairing({ onPaired }) {
                         {mode === 'select' && 'Secure Device Pairing'}
                         {mode === 'generate' && 'QR Code Generated'}
                         {mode === 'scan' && 'Connect to Device'}
+                        {mode === 'scanned' && 'Share Your Public Key'}
                         {mode === 'completing' && 'Complete Pairing'}
                     </h1>
                     <p>
                         {mode === 'select' && 'No login required — cryptographic zero-knowledge proof'}
                         {mode === 'generate' && 'Share the QR code with the second device, then paste in its DH public key'}
                         {mode === 'scan' && 'Paste the QR JSON data from the first device'}
+                        {mode === 'scanned' && 'Copy your DH public key and give it to Device A to complete pairing'}
                         {mode === 'completing' && 'Paste the DH public key returned by Device B'}
                     </p>
                 </div>
@@ -184,6 +204,32 @@ export default function DevicePairing({ onPaired }) {
                         <button className="btn btn-primary" onClick={handleScan} disabled={loading || !scanInput}>
                             {loading ? <span className="spinner" /> : <CheckCircle size={15} />}
                             Connect & Pair
+                        </button>
+                    </div>
+                )}
+
+                {/* ── SCANNED (Device B shares its DH public key with Device A) ── */}
+                {mode === 'scanned' && scannedResult && (
+                    <div className="scan-input-area">
+                        <label className="text-muted" style={{ fontWeight: 600 }}>
+                            Your DH Public Key — paste this into Device A:
+                        </label>
+                        <textarea
+                            className="input mono"
+                            rows={4}
+                            readOnly
+                            value={scannedResult.dh_public_key}
+                            style={{ fontSize: '0.74rem', wordBreak: 'break-all', cursor: 'text' }}
+                        />
+                        <button className="btn btn-secondary" onClick={copyDhPublicKey}>
+                            <Copy size={14} />
+                            {copied ? '✓ Copied!' : 'Copy DH Public Key'}
+                        </button>
+                        <p className="text-muted" style={{ fontSize: '0.8rem', marginTop: '0.4rem' }}>
+                            Once Device A has pasted your key and completed pairing, click below:
+                        </p>
+                        <button className="btn btn-primary" onClick={handleProceedAfterScan}>
+                            <CheckCircle size={15} /> Continue to Chat
                         </button>
                     </div>
                 )}

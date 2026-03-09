@@ -158,9 +158,13 @@ def scan_qr_code():
 
         save_devices(devices)
 
-        # Derive session key for encryption
+        # Derive session key for encryption (salt is generated once here and stored)
         session_key_bytes, salt_b64 = DiffieHellman.derive_session_key(shared_secret)
         session_key_b64 = base64.b64encode(session_key_bytes).decode()
+
+        # Store salt so Device A can derive the IDENTICAL session key in /complete
+        devices[device1_id]['session_salt'] = salt_b64
+        save_devices(devices)
 
         return jsonify({
             'success': True,
@@ -207,10 +211,20 @@ def complete_pairing():
         # Clean up pending DH state
         _pending_dh.pop(device1_id, None)
 
+        # Mark Device A as fully paired (scan already set Device B to 'paired')
+        devices[device1_id]['status'] = 'paired'
+        save_devices(devices)
+
         safety_number = devices[device1_id].get('safety_number')
 
-        # Derive session key
-        session_key_bytes, salt_b64 = DiffieHellman.derive_session_key(shared_secret)
+        # Reuse Device B's PBKDF2 salt so both sides derive the IDENTICAL AES key
+        stored_salt_b64 = devices[device1_id].get('session_salt')
+        if stored_salt_b64:
+            salt_bytes = base64.b64decode(stored_salt_b64)
+            session_key_bytes, salt_b64 = DiffieHellman.derive_session_key(shared_secret, salt=salt_bytes)
+        else:
+            # Fallback (should not happen in normal flow)
+            session_key_bytes, salt_b64 = DiffieHellman.derive_session_key(shared_secret)
         session_key_b64 = base64.b64encode(session_key_bytes).decode()
 
         return jsonify({
