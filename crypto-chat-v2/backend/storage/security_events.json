@@ -1,5 +1,80 @@
 [
   {
+    "id": "055cb1d8e5ceaae6",
+    "timestamp": "2026-03-09T16:14:09.895829Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "fa33b0ab792b01c4306221f4742a69a5",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "db20494ef5d60e0d",
+    "timestamp": "2026-03-09T16:14:09.107726Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "fa33b0ab792b01c4306221f4742a69a5",
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "proof_hash": "7689053d12775c6015f0aecae06648a67c37798f4af0ad184a0296dd0df6765d",
+      "expiry": "2026-03-09T16:15:09.078152Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "511e20cc17a224c4",
+    "timestamp": "2026-03-09T16:14:00.654056Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "1f2fd049892e3e72ef5d80e7373767eb",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "684041316e0cbb9e",
+    "timestamp": "2026-03-09T16:13:59.768089Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "1f2fd049892e3e72ef5d80e7373767eb",
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "proof_hash": "bd8a680671d2ffd20912c4c58e97b302df58fbc056b2c5f4684cc476ec60dc18",
+      "expiry": "2026-03-09T16:14:59.736072Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a36cb6be90422036",
+    "timestamp": "2026-03-09T16:13:41.236936Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "60f45e691c0c00c59f43b98cfc645d9e",
+      "sender": "4428e8207de1adfb",
+      "recipient": "cba3eba2ed13021e",
+      "proof_hash": "f80c122afd6e44a3413843fe20ced2a31c23ebdbaa00af28283ba3ce0b5e66ae",
+      "expiry": "2026-03-09T16:14:41.216846Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "63b68c374422222c",
+    "timestamp": "2026-03-09T16:13:21.183939Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "e20c61e93855a81819882afa7ee6445e",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
     "id": "3463c27d8ee067e8",
     "timestamp": "2026-03-09T16:13:20.394470Z",
     "event_type": "message_sent",
