@@ -1,5 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
-import { BarChart3, RefreshCw, Download, Shield, Activity, AlertTriangle, Clock } from 'lucide-react'
+import { BarChart3, RefreshCw, Download, Shield, Activity, AlertTriangle, Clock, Zap } from 'lucide-react'
+
+// Backend base URL — set VITE_API_URL in Vercel env vars to reach Railway backend
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
+const api = (path) => `${API_BASE}${path}`
 
 export default function AdminDashboard() {
     const [stats, setStats] = useState(null)
@@ -9,16 +13,18 @@ export default function AdminDashboard() {
     const [report, setReport] = useState(null)
     const [loading, setLoading] = useState(true)
     const [autoRefresh, setAutoRefresh] = useState(false)
+    const [simulating, setSimulating] = useState(null)  // attack_type currently being simulated
+    const [simResult, setSimResult] = useState(null)    // { ok, message }
 
     const fetchAll = useCallback(async () => {
         setLoading(true)
         try {
             const [statsRes, summaryRes, eventsRes, threatRes, reportRes] = await Promise.all([
-                fetch('/api/admin/system-stats'),
-                fetch('/api/admin/attack-summary'),
-                fetch('/api/admin/security-events'),
-                fetch('/api/admin/threat-assessment'),
-                fetch('/api/admin/penetration-test-report')
+                fetch(api('/api/admin/system-stats')),
+                fetch(api('/api/admin/attack-summary')),
+                fetch(api('/api/admin/security-events')),
+                fetch(api('/api/admin/threat-assessment')),
+                fetch(api('/api/admin/penetration-test-report'))
             ])
             const [s, sum, ev, th, rep] = await Promise.all([
                 statsRes.json(), summaryRes.json(), eventsRes.json(), threatRes.json(), reportRes.json()
@@ -44,12 +50,31 @@ export default function AdminDashboard() {
     }, [autoRefresh, fetchAll])
 
     const exportJSON = async () => {
-        const res = await fetch('/api/admin/export-events?format=json')
+        const res = await fetch(api('/api/admin/export-events?format=json'))
         const blob = await res.blob()
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url; a.download = 'security_events.json'; a.click()
         URL.revokeObjectURL(url)
+    }
+
+    const simulateAttack = async (attackType) => {
+        setSimulating(attackType)
+        setSimResult(null)
+        try {
+            const res = await fetch(api('/api/admin/simulate-attack'), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ attack_type: attackType })
+            })
+            const data = await res.json()
+            setSimResult({ ok: res.ok, message: data.message || data.error })
+            if (res.ok) await fetchAll()   // refresh dashboard so event appears
+        } catch (e) {
+            setSimResult({ ok: false, message: e.message })
+        } finally {
+            setSimulating(null)
+        }
     }
 
     const severityClass = (sev) => {
@@ -91,6 +116,46 @@ export default function AdminDashboard() {
                         <Download size={14} /> Export JSON
                     </button>
                 </div>
+            </div>
+
+            {/* Attacker Simulation Card */}
+            <div className="card" style={{ marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                    <Zap size={16} color="var(--accent-orange)" />
+                    <span style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--accent-orange)' }}>Attacker Simulation</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginLeft: '0.25rem' }}>
+                        — fire simulated events to test the dashboard
+                    </span>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    {[
+                        { type: 'replay_attack_detected',  label: '🔁 Replay Attack',       color: 'var(--accent-red)' },
+                        { type: 'unauthorized_attempt',    label: '🚫 Unauthorized Access',  color: 'var(--accent-orange)' },
+                        { type: 'auth_failure',            label: '🔑 Auth Failure',         color: 'var(--accent-yellow, #f0c040)' },
+                        { type: 'brute_force_detected',    label: '💥 Brute Force',          color: 'var(--accent-red)' },
+                        { type: 'suspicious_pattern',      label: '👁 Suspicious Pattern',   color: 'var(--accent-cyan)' },
+                        { type: 'mitm_detected',           label: '🕵 MITM Attempt',         color: 'var(--accent-purple, #a78bfa)' },
+                    ].map(({ type, label, color }) => (
+                        <button
+                            key={type}
+                            className="btn btn-ghost btn-sm"
+                            style={{ borderColor: color, color, opacity: simulating ? 0.6 : 1 }}
+                            disabled={!!simulating}
+                            onClick={() => simulateAttack(type)}
+                        >
+                            {simulating === type ? '⏳ Sending…' : label}
+                        </button>
+                    ))}
+                </div>
+                {simResult && (
+                    <div style={{
+                        marginTop: '0.6rem', fontSize: '0.78rem', padding: '0.3rem 0.6rem',
+                        borderRadius: '4px', background: simResult.ok ? 'rgba(0,255,150,0.08)' : 'rgba(255,80,80,0.1)',
+                        color: simResult.ok ? 'var(--accent-green, #4ade80)' : 'var(--accent-red)'
+                    }}>
+                        {simResult.ok ? '✓' : '✗'} {simResult.message}
+                    </div>
+                )}
             </div>
 
             {/* Threat Level Banner */}

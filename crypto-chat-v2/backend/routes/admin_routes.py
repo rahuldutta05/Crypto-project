@@ -341,3 +341,52 @@ def get_threat_recommendation(threat_level):
         'LOW': '✓ System operating normally. Routine monitoring sufficient.'
     }
     return recommendations.get(threat_level, 'Unknown threat level')
+
+
+@admin_bp.route('/simulate-attack', methods=['POST'])
+def simulate_attack():
+    """
+    Simulate an attack event for demo/testing purposes.
+    Logs a clearly-labelled SIMULATED event so the dashboard
+    shows it in Recent Security Events and Attacks by Type.
+
+    Body: { "attack_type": "replay_attack_detected" }
+    Supported types:
+      replay_attack_detected | unauthorized_attempt | auth_failure |
+      brute_force_detected   | suspicious_pattern   | mitm_detected
+    """
+    ALLOWED_TYPES = {
+        'replay_attack_detected',
+        'unauthorized_attempt',
+        'auth_failure',
+        'brute_force_detected',
+        'suspicious_pattern',
+        'mitm_detected',
+    }
+
+    try:
+        data = request.json or {}
+        attack_type = data.get('attack_type', 'suspicious_pattern')
+
+        if attack_type not in ALLOWED_TYPES:
+            return jsonify({'error': f'Unknown attack_type. Allowed: {sorted(ALLOWED_TYPES)}'}), 400
+
+        event = security_monitor.log_event(attack_type, {
+            'simulated': True,
+            'source': 'admin_simulation',
+            'note': f'Simulated {attack_type} via Admin Dashboard',
+            'ip': request.remote_addr,
+            'timestamp': datetime.utcnow().isoformat()
+        })
+
+        return jsonify({
+            'success': True,
+            'event_id': event['id'],
+            'attack_type': attack_type,
+            'severity': event['severity'],
+            'message': f'Simulated {attack_type} event logged successfully'
+        })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
