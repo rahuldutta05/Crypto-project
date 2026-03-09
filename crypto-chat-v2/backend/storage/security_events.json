@@ -1,5 +1,55 @@
 [
   {
+    "id": "cb3c94ff88e4cceb",
+    "timestamp": "2026-03-09T16:09:50.449651Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "ij5o_NrRJZyPW1DIAAAH",
+      "device_id": "e4852bee35029d30",
+      "timestamp": "2026-03-09T16:09:50.449605Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cf6cf39e3aee14f4",
+    "timestamp": "2026-03-09T16:08:07.220211Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "16f02d2199c4ba4e1fe4a7be30e64c4b",
+      "sender": "6ecef66ae1b14592",
+      "recipient": "e4852bee35029d30",
+      "proof_hash": "8a51f7c64021478ac5fc9c8fa62790795d8540ca15b2f3ffc888e7c373bb7216",
+      "expiry": "2026-03-09T16:09:07.172113Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2e24a4c6e8558b89",
+    "timestamp": "2026-03-09T16:07:59.421219Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "6ecef66ae1b14592",
+      "session_id": "nwUENlIa-bhm2E3oAAAF",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "576f2c453fc94e50",
+    "timestamp": "2026-03-09T16:07:56.637335Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "e4852bee35029d30",
+      "session_id": "ij5o_NrRJZyPW1DIAAAH",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "2a74568f7eca7895",
     "timestamp": "2026-03-09T16:07:54.017360Z",
     "event_type": "connection",
