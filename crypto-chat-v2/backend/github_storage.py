@@ -78,21 +78,27 @@ def _gh_put(filename, data, sha=None):
 def load_json(filename, default=None):
     """
     Load a JSON file.
-    • If GitHub is enabled: read from GitHub (source of truth), cache locally.
-    • Otherwise: read from local storage/ directory.
+    • Always reads from LOCAL DISK first — local is always in sync because
+      save_json() writes there synchronously before pushing to GitHub async.
+    • Falls back to GitHub only if the local file doesn't exist yet
+      (first-ever run before sync_from_github has pulled the files down).
     """
     if default is None:
         default = {}
 
+    # Local disk is the source of truth during a running session
+    local = _read_local(filename, None)
+    if local is not None:
+        return local
+
+    # Cold-start fallback: local file missing, try GitHub
     if _enabled():
         content, _ = _gh_get(filename)
         if content is not None:
-            # Cache to local disk so same-request reads are instant
             _write_local(filename, content)
             return content
 
-    # Local fallback (dev or GitHub read failed)
-    return _read_local(filename, default)
+    return default
 
 
 def save_json(filename, data):
