@@ -26,18 +26,16 @@ export default function ChatInterface({ deviceInfo }) {
         }
     }, [sessionKey, isInitiator])
 
-    // ── Verify device via WebSocket ──────────────────────────────────────────────
-    useEffect(() => {
-        if (!socket.connected) return
-
-        // For demo: emit verify_device with test signature
-        // In production the private key signs the challenge
+    // ── Verify device via WebSocket (reliable on all devices) ────────────────
+    // Called inside 'connect' so it fires whether the socket was already
+    // connected when this component mounted or connects later (e.g. on mobile).
+    const emitVerify = () => {
         socket.emit('verify_device', {
             device_id: deviceId,
             signature: 'demo_signature',
             challenge: 'demo_challenge'
         })
-    }, [socket.connected, deviceId])
+    }
 
     // ── Socket event listeners ────────────────────────────────────────────────────
     useEffect(() => {
