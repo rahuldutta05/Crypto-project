@@ -2,7 +2,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def load_json(path, default=None):
@@ -28,7 +28,7 @@ def check_and_expire_keys():
       1. Messages with a direct 'expires_at' timestamp (WebSocket flow)
       2. Messages linked via 'time_lock_key_id' (REST API flow)
     """
-    now_str = datetime.utcnow().isoformat()
+    now_str = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
 
     try:
         # ── 1. Expire time-locked keys ──────────────────────────────────────────

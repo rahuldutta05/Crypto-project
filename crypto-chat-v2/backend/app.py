@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory, redirect
 
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit, join_room, leave_room
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import json
 import os
 
@@ -108,7 +108,7 @@ def handle_connect():
     """Anonymous connection — no login required"""
     session_id = request.sid
     connected_devices[session_id] = {
-        'connected_at': datetime.utcnow().isoformat() + 'Z',
+        'connected_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
         'ip_address': request.remote_addr,
         'verified': False
     }
@@ -116,7 +116,7 @@ def handle_connect():
     security_monitor.log_event('connection', {
         'session_id': session_id,
         'ip': request.remote_addr,
-        'timestamp': datetime.utcnow().isoformat() + 'Z'
+        'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
     })
 
     emit('connected', {
@@ -245,7 +245,7 @@ def handle_send_message(data):
                 'nonce': nonce,
                 'sender': sender_id,
                 'ip': request.remote_addr,
-                'timestamp': datetime.utcnow().isoformat() + 'Z'
+                'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
             })
             emit('error', {'message': 'Replay attack detected - nonce already used'})
             return
@@ -253,7 +253,7 @@ def handle_send_message(data):
         # Record nonce
         used_nonces.append({
             'nonce': nonce,
-            'timestamp': datetime.utcnow().isoformat() + 'Z',
+            'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'sender': sender_id
         })
         save_json('nonces.json', used_nonces)
@@ -283,7 +283,7 @@ def handle_send_message(data):
         # Optional: Ring signature — proves "one of these users" sent it; server cannot tell which
         ring_signature = data.get('ring_signature')  # if client sends ring_sig, we store and don't log sender linkably
 
-        expiry_time = datetime.utcnow() + timedelta(minutes=expiry_minutes)
+        expiry_time = datetime.now(timezone.utc) + timedelta(minutes=expiry_minutes)
 
         # Store ONLY proof metadata — NOT the actual encrypted content
         messages = load_json('messages.json', default={})
@@ -335,7 +335,7 @@ def handle_send_message(data):
             'sender': sender_id,
             'recipient': recipient_id,
             'proof_hash': proof['proof_hash'],
-            'expiry': expiry_time.isoformat() + 'Z'
+            'expiry': expiry_time.strftime('%Y-%m-%dT%H:%M:%SZ')
         })
 
     except Exception as e:
@@ -364,7 +364,7 @@ def handle_message_validity_check(data):
             return
 
         msg = messages[message_id]
-        now_str = datetime.utcnow().isoformat() + 'Z'
+        now_str = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
         expires_at = msg.get('expires_at', '')
 
         if expires_at and now_str >= expires_at:
@@ -386,8 +386,9 @@ def handle_message_validity_check(data):
         else:
             # Calculate seconds remaining
             try:
-                expires_dt = datetime.fromisoformat(expires_at)
-                remaining = (expires_dt - datetime.utcnow()).total_seconds()
+                # Need to handle Z for fromisoformat if Python < 3.11
+                expires_dt = datetime.fromisoformat(expires_at.replace('Z', '+00:00'))
+                remaining = (expires_dt - datetime.now(timezone.utc)).total_seconds()
             except Exception:
                 remaining = None
 
@@ -445,7 +446,7 @@ def handle_disconnect():
         security_monitor.log_event('disconnection', {
             'session_id': session_id,
             'device_id': device_id,
-            'timestamp': datetime.utcnow().isoformat() + 'Z'
+            'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
         })
 
         del connected_devices[session_id]
@@ -459,7 +460,7 @@ def handle_disconnect():
 def health_check():
     return jsonify({
         'status': 'healthy',
-        'timestamp': datetime.utcnow().isoformat() + 'Z',
+        'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'connected_devices': len(connected_devices),
         'framework': 'From Trust Me to Prove It',
         'proofs': {
@@ -492,7 +493,7 @@ def server_info():
     return jsonify({
         'server_url': f'http://{local_ip}:5000',
         'websocket_url': f'ws://{local_ip}:5000',
-        'timestamp': datetime.utcnow().isoformat() + 'Z'
+        'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
     })
 
 

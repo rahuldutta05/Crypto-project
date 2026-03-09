@@ -8,7 +8,7 @@ from Cryptodome.Hash import SHA256, HMAC
 import os
 import hashlib
 import base64
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def create_key_commitment(key_material, binding=None):
@@ -45,7 +45,7 @@ def create_proof_of_deletion(commitment_hash_b64, key_id=None, secret_attestatio
     The proof binds: this commitment was issued, and the holder attests deletion at this time.
     secret_attestation_key: optional; if provided, proof is HMAC-signed so only the holder could produce it.
     """
-    timestamp = datetime.utcnow().isoformat()
+    timestamp = datetime.now(timezone.utc).isoformat()
     payload = f"{commitment_hash_b64}:DELETED:{timestamp}"
     if key_id:
         payload = f"{key_id}:{payload}"

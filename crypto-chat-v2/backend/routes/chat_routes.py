@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from crypto.key_expiry import TimeLockCipher, generate_session_key, encrypt_message
 from crypto.signature_utils import encrypt_with_public_key, sign_data
 from crypto.hash_utils import create_proof_of_existence
@@ -73,7 +73,7 @@ def send_message():
 
             nonces.append({
                 'nonce': nonce,
-                'timestamp': datetime.utcnow().isoformat(),
+                'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                 'sender': sender_id
             })
             save_nonces(nonces)
@@ -129,7 +129,7 @@ def send_message():
             'signature': signature,
             'time_lock_key_id': time_lock['key_id'],
             'proof_hash': proof['proof_hash'],
-            'timestamp': datetime.utcnow().isoformat(),
+            'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
             'expires_at': time_lock['expires_at'],
             'status': 'active'
         }
@@ -164,7 +164,7 @@ def receive_messages(recipient_id):
     """Retrieve encrypted messages for recipient"""
     try:
         messages = load_messages()
-        now_str = datetime.utcnow().isoformat()
+        now_str = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
         recipient_messages = []
         for msg_id, msg in messages.items():

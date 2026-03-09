@@ -23,7 +23,7 @@ export default function App() {
         <header className="topbar">
           <NavLink to="/" className="topbar-brand">
             <Shield size={22} />
-            CryptoChat <span style={{ color: 'var(--accent-purple)', fontWeight: 800 }}>v2</span>
+            CryptoChat <span style={{ color: 'var(--accent-purple)', fontWeight: 800 }}>v3</span>
           </NavLink>
 
           <nav className="topbar-nav">

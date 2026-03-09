@@ -153,8 +153,12 @@ export default function ChatInterface({ deviceInfo }) {
             const now = Date.now()
             setMessages(prev => prev.map(m => {
                 if (m.expiresAt && !m.expired) {
-                    const remaining = new Date(m.expiresAt).getTime() - now
-                    if (remaining <= 0) return { ...m, expired: true, content: '[key destroyed — permanently unrecoverable]' }
+                    // Standardize string for parsing: ensure it works across browsers
+                    const targetDate = new Date(m.expiresAt.replace('Z', '+00:00'))
+                    const remaining = targetDate.getTime() - now
+                    
+                    if (isNaN(remaining)) return m
+                    if (remaining <= 0) return { ...m, expired: true, content: '[key destroyed — permanently unrecoverable]', remainingMs: 0 }
                     return { ...m, remainingMs: remaining }
                 }
                 return m
@@ -217,7 +221,7 @@ export default function ChatInterface({ deviceInfo }) {
     }
 
     const formatRemaining = (ms) => {
-        if (!ms || ms <= 0) return null
+        if (!ms || isNaN(ms) || ms <= 0) return null
         const s = Math.floor(ms / 1000)
         if (s < 60) return `${s}s`
         const m = Math.floor(s / 60)

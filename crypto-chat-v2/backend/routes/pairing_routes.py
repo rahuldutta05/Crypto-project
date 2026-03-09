@@ -12,9 +12,8 @@ import base64
 from crypto.diffie_hellman import DiffieHellman
 from crypto.signature_utils import generate_keypair, create_anonymous_id
 from crypto.hash_utils import hash_data
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from github_storage import load_json, save_json
-from datetime import timedelta
 from config import Config
 import random
 
@@ -32,7 +31,7 @@ PAIRING_CODE_TTL = timedelta(minutes=2)
 
 
 def _cleanup_expired_codes(now=None):
-    now = now or datetime.utcnow()
+    now = now or datetime.now(timezone.utc)
     expired = [code for code, v in _pending_codes.items() if now - v['created_at'] > PAIRING_CODE_TTL]
     for code in expired:
         _pending_codes.pop(code, None)
@@ -83,7 +82,7 @@ def initiate_pairing():
 
         # Allocate a short pairing code (6 digits) so Device B can join easily
         pairing_code = _generate_pairing_code()
-        _pending_codes[pairing_code] = {'device_id': device_id, 'created_at': datetime.utcnow()}
+        _pending_codes[pairing_code] = {'device_id': device_id, 'created_at': datetime.now(timezone.utc)}
 
         # Store device info
         devices = load_devices()
@@ -92,7 +91,7 @@ def initiate_pairing():
             'public_key': keypair['public_key'],
             'dh_public_key': dh_public_hex,
             'challenge': challenge,
-            'created_at': datetime.utcnow().isoformat(),
+            'created_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'paired_with': None,
             'safety_number': None,
             'status': 'pending_pairing',
@@ -106,7 +105,7 @@ def initiate_pairing():
             'server_url': request.host_url.rstrip('/'),
             'dh_public_key': dh_public_hex,
             'challenge': challenge,
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         }
 
         # Generate QR code image
@@ -265,7 +264,7 @@ def scan_qr_code():
             'device_id': device2_id,
             'public_key': keypair['public_key'],
             'dh_public_key': device2_dh_public_hex,
-            'created_at': datetime.utcnow().isoformat(),
+            'created_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'paired_with': device1_id,
             'safety_number': safety_number,
             'status': 'paired'
@@ -412,7 +411,7 @@ def list_devices():
         for device_id, device in devices.items():
             device_list.append({
                 'device_id': device_id,
-                'created_at': device['created_at'],
+                'created_at': device.get('created_at'),
                 'status': device['status'],
                 'paired_with': device.get('paired_with'),
                 'safety_number': device.get('safety_number')

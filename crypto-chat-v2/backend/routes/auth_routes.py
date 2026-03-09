@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from crypto.signature_utils import generate_keypair, sign_data, verify_signature, create_anonymous_id
 from crypto.hash_utils import create_commitment, verify_commitment, hash_data
 from crypto.blind_signatures import (
@@ -57,7 +57,7 @@ def register():
             'commitment': commitment,
             'nonce': nonce,
             'secret': secret,  # In production, server wouldn't store this
-            'created_at': datetime.utcnow().isoformat(),
+            'created_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'status': 'active'
         }
         save_tokens(tokens)
@@ -92,7 +92,7 @@ def get_challenge():
         
         # Store challenge temporarily
         tokens[anon_id]['challenge'] = challenge
-        tokens[anon_id]['challenge_time'] = datetime.utcnow().isoformat()
+        tokens[anon_id]['challenge_time'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         save_tokens(tokens)
         
         return jsonify({
@@ -121,8 +121,10 @@ def verify_identity():
         user_data = tokens[anon_id]
         
         # Check challenge expiry
-        challenge_time = datetime.fromisoformat(user_data['challenge_time'])
-        if datetime.utcnow() - challenge_time > timedelta(minutes=5):
+        # Need to handle Z for fromisoformat if Python < 3.11
+        challenge_time_str = user_data['challenge_time']
+        challenge_time = datetime.fromisoformat(challenge_time_str.replace('Z', '+00:00'))
+        if datetime.now(timezone.utc) - challenge_time > timedelta(minutes=5):
             return jsonify({'error': 'Challenge expired'}), 401
         
         # Verify signature
@@ -135,7 +137,7 @@ def verify_identity():
         # Create session token
         session_token = os.urandom(32).hex()
         tokens[anon_id]['session_token'] = session_token
-        tokens[anon_id]['session_expires'] = (datetime.utcnow() + timedelta(hours=12)).isoformat()
+        tokens[anon_id]['session_expires'] = (datetime.now(timezone.utc) + timedelta(hours=12)).isoformat().replace('+00:00', 'Z')
         save_tokens(tokens)
         
         return jsonify({
@@ -166,8 +168,9 @@ def validate_session():
             return jsonify({'valid': False, 'error': 'Invalid token'}), 401
         
         # Check expiry
-        expires = datetime.fromisoformat(user_data['session_expires'])
-        if datetime.utcnow() >= expires:
+        expires_str = user_data['session_expires']
+        expires = datetime.fromisoformat(expires_str.replace('Z', '+00:00'))
+        if datetime.now(timezone.utc) >= expires:
             return jsonify({'valid': False, 'error': 'Token expired'}), 401
         
         return jsonify({

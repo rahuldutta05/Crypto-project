@@ -5,7 +5,7 @@ View all attack attempts, their success/failure, and security metrics
 
 from flask import Blueprint, request, jsonify
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from monitoring.security_monitor import security_monitor
 
 admin_bp = Blueprint('admin', __name__)
@@ -33,10 +33,10 @@ def get_security_events():
 
         if request.args.get('hours'):
             hours = int(request.args.get('hours'))
-            end_time = datetime.utcnow()
+            end_time = datetime.now(timezone.utc)
             start_time = end_time - timedelta(hours=hours)
             # Use ISO strings — get_events does string comparison
-            filters['time_range'] = (start_time.isoformat() + 'Z', end_time.isoformat() + 'Z')
+            filters['time_range'] = (start_time.isoformat().replace('+00:00', 'Z'), end_time.isoformat().replace('+00:00', 'Z'))
 
         if request.args.get('ip'):
             filters['ip'] = request.args.get('ip')
@@ -64,7 +64,7 @@ def get_attack_summary():
 
         return jsonify({
             'summary': summary,
-            'generated_at': datetime.utcnow().isoformat() + 'Z',
+            'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'interpretation': {
                 'total_attacks': summary['total_attacks_detected'],
                 'success_rate': f"{summary['attack_success_rate']:.2f}%",
@@ -89,7 +89,7 @@ def get_attack_timeline():
         return jsonify({
             'timeline': timeline,
             'period': f'Last {hours} hours',
-            'generated_at': datetime.utcnow().isoformat() + 'Z'
+            'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         })
 
     except Exception as e:
@@ -106,7 +106,7 @@ def get_penetration_test_report():
 
         return jsonify({
             'report': report,
-            'generated_at': datetime.utcnow().isoformat() + 'Z',
+            'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'recommendation': generate_recommendation(report)
         })
 
@@ -128,7 +128,7 @@ def export_events():
                 'Content-Type': 'application/json',
                 'Content-Disposition': (
                     f'attachment; filename=security_events_'
-                    f'{datetime.utcnow().strftime("%Y%m%d_%H%M%S")}Z.json'
+                    f'{datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")}Z.json'
                 )
             }
 
@@ -138,7 +138,7 @@ def export_events():
                 'Content-Type': 'text/csv',
                 'Content-Disposition': (
                     f'attachment; filename=security_events_'
-                    f'{datetime.utcnow().strftime("%Y%m%d_%H%M%S")}Z.csv'
+                    f'{datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")}Z.csv'
                 )
             }
 
@@ -211,7 +211,7 @@ def get_system_stats():
         attack_summary = security_monitor.get_attack_summary()
 
         return jsonify({
-            'timestamp': datetime.utcnow().isoformat() + 'Z',
+            'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'core_principles': {
                 'anonymous_verifiable': {
                     'total_devices': len(devices),
@@ -252,7 +252,7 @@ def get_system_stats():
 def get_threat_assessment():
     """Assess current threat level based on recent activity"""
     try:
-        cutoff = (datetime.utcnow() - timedelta(hours=1)).isoformat() + 'Z'
+        cutoff = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat().replace('+00:00', 'Z')
         events = security_monitor.get_events()
         recent_events = [e for e in events if e['timestamp'] >= cutoff]
 
@@ -376,7 +376,7 @@ def simulate_attack():
             'source': 'admin_simulation',
             'note': f'Simulated {attack_type} via Admin Dashboard',
             'ip': request.remote_addr,
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         })
 
         return jsonify({

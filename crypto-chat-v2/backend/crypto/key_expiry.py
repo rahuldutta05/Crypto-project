@@ -3,7 +3,7 @@ from Cryptodome.Random import get_random_bytes
 from Cryptodome.Protocol.KDF import PBKDF2
 import base64
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
 
 def generate_session_key():
@@ -48,8 +48,8 @@ def create_time_locked_key(session_key, expiry_time):
     return {
         'key_id': key_id,
         'session_key': base64.b64encode(session_key).decode(),
-        'created_at': datetime.utcnow().isoformat(),
-        'expires_at': expiry_time.isoformat(),
+        'created_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'expires_at': expiry_time.strftime('%Y-%m-%dT%H:%M:%SZ'),
         'status': 'active'
     }
 
@@ -58,8 +58,9 @@ def is_key_expired(key_data):
     if key_data['status'] == 'expired':
         return True
     
-    expires_at = datetime.fromisoformat(key_data['expires_at'])
-    return datetime.utcnow() >= expires_at
+    # Need to handle Z for fromisoformat if Python < 3.11
+    expires_at = datetime.fromisoformat(key_data['expires_at'].replace('Z', '+00:00'))
+    return datetime.now(timezone.utc) >= expires_at
 
 def expire_key(key_data):
     """
@@ -68,7 +69,7 @@ def expire_key(key_data):
     """
     key_data['status'] = 'expired'
     key_data['session_key'] = None  # Permanently destroy the key
-    key_data['expired_at'] = datetime.utcnow().isoformat()
+    key_data['expired_at'] = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     return key_data
 
 def derive_key_from_password(password, salt=None):
@@ -97,7 +98,7 @@ class TimeLockCipher:
         session_key = generate_session_key()
         encrypted = encrypt_message(message, session_key)
         
-        expiry_time = datetime.utcnow() + expiry_delta
+        expiry_time = datetime.now(timezone.utc) + expiry_delta
         key_data = create_time_locked_key(session_key, expiry_time)
         
         # Store key
@@ -106,7 +107,7 @@ class TimeLockCipher:
         return {
             'key_id': key_data['key_id'],
             'encrypted_data': encrypted,
-            'expires_at': expiry_time.isoformat()
+            'expires_at': expiry_time.strftime('%Y-%m-%dT%H:%M:%SZ')
         }
     
     def decrypt(self, key_id, encrypted_data):

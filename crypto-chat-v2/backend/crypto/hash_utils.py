@@ -1,6 +1,6 @@
 import hashlib
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 import os
 
 def hash_data(data):
@@ -34,7 +34,7 @@ def create_proof_of_existence(data, metadata=None):
     Create cryptographic proof that data existed at a specific time
     Returns proof object without storing the original data
     """
-    timestamp = datetime.utcnow().isoformat()
+    timestamp = datetime.now(timezone.utc).isoformat()
     data_hash = hash_data(data)
     
     proof = {

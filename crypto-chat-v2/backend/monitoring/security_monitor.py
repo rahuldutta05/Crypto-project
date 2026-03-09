@@ -11,7 +11,7 @@ This module tracks:
 
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from collections import defaultdict
 import hashlib
 
@@ -54,9 +54,9 @@ class SecurityMonitor:
 
         event = {
             'id': hashlib.sha256(
-                f"{event_type}{datetime.utcnow().isoformat()}Z".encode()
+                f"{event_type}{datetime.now(timezone.utc).isoformat()}".encode()
             ).hexdigest()[:16],
-            'timestamp': datetime.utcnow().isoformat() + 'Z',
+            'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'event_type': event_type,
             'severity': self._calculate_severity(event_type),
             'details': details,
@@ -110,23 +110,23 @@ class SecurityMonitor:
             ip = details['ip']
             self.attack_patterns[ip].append({
                 'type': event_type,
-                'timestamp': datetime.utcnow()
+                'timestamp': datetime.now(timezone.utc)
             })
 
             # Check for brute force (multiple auth failures from same IP)
             recent_failures = [
                 e for e in self.attack_patterns[ip]
                 if e['type'] == 'auth_failure'
-                and (datetime.utcnow() - e['timestamp']) < timedelta(minutes=5)
+                and (datetime.now(timezone.utc) - e['timestamp']) < timedelta(minutes=5)
             ]
 
             if len(recent_failures) >= 5:
                 # Direct append to avoid recursion
                 bf_event = {
                     'id': hashlib.sha256(
-                        f"brute_force_detected{datetime.utcnow().isoformat()}Z".encode()
+                        f"brute_force_detected{datetime.now(timezone.utc).isoformat()}".encode()
                     ).hexdigest()[:16],
-                    'timestamp': datetime.utcnow().isoformat() + 'Z',
+                    'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
                     'event_type': 'brute_force_detected',
                     'severity': 'critical',
                     'details': {
@@ -151,16 +151,16 @@ class SecurityMonitor:
             recent_replays = [
                 e for e in self.events
                 if e['event_type'] == 'replay_attack_detected'
-                and (datetime.utcnow() - datetime.fromisoformat(e['timestamp'])) < timedelta(minutes=10)
+                and (datetime.now(timezone.utc) - datetime.fromisoformat(e['timestamp'].replace('Z', '+00:00'))) < timedelta(minutes=10)
             ]
 
             if len(recent_replays) >= 3:
                 # Direct append to avoid recursion
                 sp_event = {
                     'id': hashlib.sha256(
-                        f"suspicious_pattern{datetime.utcnow().isoformat()}Z".encode()
+                        f"suspicious_pattern{datetime.now(timezone.utc).isoformat()}".encode()
                     ).hexdigest()[:16],
-                    'timestamp': datetime.utcnow().isoformat() + 'Z',
+                    'timestamp': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
                     'event_type': 'suspicious_pattern',
                     'severity': 'high',
                     'details': {
@@ -255,8 +255,8 @@ class SecurityMonitor:
     def get_timeline(self, hours=24):
         """Get attack timeline for the last N hours"""
 
-        cutoff = datetime.utcnow() - timedelta(hours=hours)
-        cutoff_str = cutoff.isoformat() + 'Z'
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+        cutoff_str = cutoff.isoformat().replace('+00:00', 'Z')
         recent_events = [
             e for e in self.events
             if e['timestamp'] >= cutoff_str
@@ -283,8 +283,8 @@ class SecurityMonitor:
     def clear_old_events(self, days=30):
         """Clear events older than N days"""
 
-        cutoff = datetime.utcnow() - timedelta(days=days)
-        cutoff_str = cutoff.isoformat() + 'Z'
+        cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+        cutoff_str = cutoff.isoformat().replace('+00:00', 'Z')
         self.events = [
             e for e in self.events
             if e['timestamp'] >= cutoff_str
