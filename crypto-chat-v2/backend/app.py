@@ -19,13 +19,11 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 # CORS for internet hosting
-CORS(app, resources={
-    r"/*": {
-        "origins": "*",
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
+CORS(app)  # Simplify to global default for debugging
+
+@app.route('/api/debug-post', methods=['POST', 'OPTIONS'])
+def debug_post():
+    return jsonify({'status': 'ok', 'method': request.method}), 200
 
 # Use eventlet in production (gunicorn), fall back to threading for Windows dev
 try:
