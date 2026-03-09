@@ -14,6 +14,8 @@ export default function ChatInterface({ deviceInfo }) {
     const [sending, setSending] = useState(false)
     const [verified, setVerified] = useState(false)
     const bottomRef = useRef(null)
+    const messagesAreaRef = useRef(null)
+    const prevMsgCountRef = useRef(0)
     const socket = getSocket()
     // Double Ratchet state — held in a ref so React re-renders don't reset the chain
     const ratchetRef = useRef(null)
@@ -125,9 +127,24 @@ export default function ChatInterface({ deviceInfo }) {
         }
     }, [socket, sessionKey, deviceId])
 
-    // ── Auto-scroll ───────────────────────────────────────────────────────────────
+    // ── Smart Auto-scroll ─────────────────────────────────────────────────────────
+    // Only snap to bottom when a NEW message arrives (prevMsgCount < messages.length).
+    // Timer ticks that update remainingMs don't increase count, so they don't scroll.
+    // Also respects user scroll position — won't snap if they're reading old messages.
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+        const area = messagesAreaRef.current
+        const newCount = messages.length
+        if (newCount > prevMsgCountRef.current) {
+            prevMsgCountRef.current = newCount
+            if (area) {
+                const distFromBottom = area.scrollHeight - area.scrollTop - area.clientHeight
+                if (distFromBottom < 150) {
+                    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+                }
+            } else {
+                bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+            }
+        }
     }, [messages])
 
     // ── Expiry countdowns ─────────────────────────────────────────────────────────
@@ -232,7 +249,7 @@ export default function ChatInterface({ deviceInfo }) {
             </div>
 
             {/* Messages */}
-            <div className="messages-area">
+            <div className="messages-area" ref={messagesAreaRef}>
                 {messages.length === 0 && (
                     <div className="empty-state">
                         <Lock size={40} />
