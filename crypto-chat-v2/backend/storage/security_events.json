@@ -1,5 +1,17 @@
 [
   {
+    "id": "d6a300edbe18cb16",
+    "timestamp": "2026-03-10T04:35:23.743599Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "7c2696f9adf8f628",
+      "session_id": "M8nLvLDodVmiBKQjAAAR",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "3a4aae5b3936ac3b",
     "timestamp": "2026-03-10T04:35:21.722784Z",
     "event_type": "auth_success",
