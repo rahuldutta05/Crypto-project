@@ -1,5 +1,17 @@
 [
   {
+    "id": "309eabb72a410da3",
+    "timestamp": "2026-03-10T08:42:57.174896Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "0rFPaZFJNhvJQyjLAAAf",
+      "ip": "100.64.0.13",
+      "timestamp": "2026-03-10T08:42:57.174858Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "655be728c4bff884",
     "timestamp": "2026-03-10T08:42:21.916759Z",
     "event_type": "connection",
