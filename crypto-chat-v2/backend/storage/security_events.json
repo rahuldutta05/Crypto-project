@@ -1,5 +1,17 @@
 [
   {
+    "id": "3089e5e9a509d086",
+    "timestamp": "2026-03-10T05:57:33.441148Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.10"
+    },
+    "analyzed": false
+  },
+  {
     "id": "20bafcfad55c9347",
     "timestamp": "2026-03-10T05:57:30.788158Z",
     "event_type": "replay_attack_detected",
@@ -956,6 +968,18 @@
     "details": {
       "pattern": "multiple_replay_attempts",
       "count": 4,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ae18bde3a8ae9e64",
+    "timestamp": "2026-03-10T05:57:33.444263Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 5,
       "recommendation": "Possible automated attack tool detected"
     },
     "analyzed": false
