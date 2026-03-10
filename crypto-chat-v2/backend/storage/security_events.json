@@ -1,5 +1,33 @@
 [
   {
+    "id": "32042682608a5356",
+    "timestamp": "2026-03-10T08:14:22.915381Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:22.915335Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0fc331eec2b00a8a",
+    "timestamp": "2026-03-10T08:14:22.068142Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:22.068077Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "3c3379bf8944d571",
     "timestamp": "2026-03-10T08:14:21.310324Z",
     "event_type": "brute_force_detected",
