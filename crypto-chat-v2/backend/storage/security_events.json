@@ -1,5 +1,58 @@
 [
   {
+    "id": "474ffb65963cf96d",
+    "timestamp": "2026-03-10T05:35:04.507349Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.11",
+      "timestamp": "2026-03-10T05:35:04.507297Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0760b386d3a2899c",
+    "timestamp": "2026-03-10T05:34:46.480235Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "c57eff4001b991cbd2ffaf63c8fae98a",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d11f51d98cfd1eaf",
+    "timestamp": "2026-03-10T05:34:45.397690Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "c57eff4001b991cbd2ffaf63c8fae98a",
+      "sender": "e804430c10639d0f",
+      "recipient": "1ada7eeef82e232f",
+      "proof_hash": "cea5cec006312dd144df3b427036df5af45294b9d7c1c575abfcf4efcad42bcd",
+      "expiry": "2026-03-10T05:35:45Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "603fd0a5c9aa6fa9",
+    "timestamp": "2026-03-10T05:34:28.772512Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "9b0d9a9a4ac4e6e7dd1bfb0e11c4230e",
+      "sender": "e804430c10639d0f",
+      "recipient": "1ada7eeef82e232f",
+      "proof_hash": "317c70e0d4e65f877a4f0c169bda5018f41c10501487826095d2a8c249b2c9c6",
+      "expiry": "2026-03-10T05:35:28Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "bf9adb135a5fa3a6",
     "timestamp": "2026-03-10T05:34:20.480072Z",
     "event_type": "auth_success",
