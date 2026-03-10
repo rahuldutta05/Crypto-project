@@ -1,4 +1,4 @@
-# 🔐 CryptoChat v3 — *From Trust Me to Prove It*
+# 🔐 CryptoChat v2 — *From Trust Me to Prove It*
 
 **A cryptographically verifiable, end-to-end encrypted chat system where every security property is mathematically provable — not just claimed.**
 
@@ -8,7 +8,7 @@
 
 ## 📖 The Philosophy
 
-Traditional secure messaging asks you to **trust the server**. CryptoChat v3 eliminates trust as a requirement entirely.
+Traditional secure messaging asks you to **trust the server**. CryptoChat v2 eliminates trust as a requirement entirely.
 
 | Old Claim | New Proof |
 |-----------|-----------|
@@ -89,7 +89,7 @@ Every claim is a **mathematical proof**. No faith in any party required.
 ## 🗂️ Project Structure
 
 ```
-crypto-chat-v3/
+crypto-chat-v2/
 │
 ├── frontend/                        # React 19 + Vite 7
 │   ├── src/
@@ -169,8 +169,8 @@ crypto-chat-v3/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/crypto-chat-v3.git
-cd crypto-chat-v3
+git clone https://github.com/rahuldutta05/Crypto-project
+cd crypto-chat-v2
 ```
 
 ---
@@ -235,7 +235,7 @@ npm run build
 
 Set environment variable in Vercel:
 ```
-VITE_BACKEND_URL=https://your-railway-backend.up.railway.app
+VITE_BACKEND_URL=https://cryptochat-production-e2fe.up.railway.app
 ```
 
 The included `vercel.json` handles SPA routing rewrites and sets required `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers for WebCrypto API support.
@@ -259,7 +259,7 @@ The included `vercel.json` handles SPA routing rewrites and sets required `Cross
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `SECRET_KEY` | Yes | Flask secret key — generate a random 32-byte hex string |
-| `FRONTEND_URL` | Yes | Full URL of deployed frontend (e.g. `https://your-app.vercel.app`) |
+| `FRONTEND_URL` | Yes | Full URL of deployed frontend (e.g. `https://crypto-chat-sepia.vercel.app/`) |
 | `GITHUB_TOKEN` | Optional | GitHub PAT with `repo` write scope — enables persistent storage |
 | `GITHUB_REPO` | Optional | Repo for storage (e.g. `username/repo-name`) |
 | `GITHUB_BRANCH` | Optional | Branch to read/write (default: `main`) |
