@@ -1,5 +1,19 @@
 [
   {
+    "id": "7777c7b702af66d8",
+    "timestamp": "2026-03-10T03:56:01.599334Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-10T03:56:01.599282Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "7a3358786721cba8",
     "timestamp": "2026-03-10T03:55:10.848381Z",
     "event_type": "unauthorized_attempt",
