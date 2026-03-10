@@ -1,5 +1,83 @@
 [
   {
+    "id": "ae0767f099eef4ce",
+    "timestamp": "2026-03-10T11:31:39.105504Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-10T11:31:39.105443Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "37158cb508511ab7",
+    "timestamp": "2026-03-10T11:29:18.591104Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "523d90f136b9c1f9d2322ae885f26b43",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8f58a011291233a2",
+    "timestamp": "2026-03-10T11:29:17.553334Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "523d90f136b9c1f9d2322ae885f26b43",
+      "sender": "8ebe1ae5bf68d731",
+      "recipient": "001ff2d580e320f9",
+      "proof_hash": "5ff5d73ffad0f5f24626576696aa084f035600dda4757269c8ef98cb52ea02a7",
+      "expiry": "2026-03-10T11:30:17Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "605255ad6c68a7f6",
+    "timestamp": "2026-03-10T11:28:45.473993Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "c04aa6d13790d1d1a62943a5018322c3",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ef694e857634a3a4",
+    "timestamp": "2026-03-10T11:28:44.415538Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "c04aa6d13790d1d1a62943a5018322c3",
+      "sender": "001ff2d580e320f9",
+      "recipient": "8ebe1ae5bf68d731",
+      "proof_hash": "362120888c4cd0e220cd72dc3f17436d111ad14bbc2c9a4e551932b446930bb7",
+      "expiry": "2026-03-10T11:29:44Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "75de97f19093682d",
+    "timestamp": "2026-03-10T11:28:32.697222Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "4577e6e3760ff1912bc9e6faa1c83672",
+      "sender": "8ebe1ae5bf68d731",
+      "recipient": "001ff2d580e320f9",
+      "proof_hash": "ce9b8e3fe6ad308523fcd8ed05726a12be6fefb8bda03d1d891e548e1a84f2e6",
+      "expiry": "2026-03-10T11:29:32Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "6bbbb56df1197906",
     "timestamp": "2026-03-10T11:28:18.691799Z",
     "event_type": "auth_success",
