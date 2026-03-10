@@ -1,5 +1,19 @@
 [
   {
+    "id": "4e6e7397b33d1b6d",
+    "timestamp": "2026-03-10T05:43:07.779510Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T05:43:07.779456Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "ac46db4bffc1b531",
     "timestamp": "2026-03-10T05:42:56.230040Z",
     "event_type": "mitm_detected",
