@@ -1,5 +1,1856 @@
 [
   {
+    "id": "d3544a70d3e11df2",
+    "timestamp": "2026-03-10T16:03:27.193470Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "j0VJIa5CJ0rdHrZBAAAv",
+      "device_id": null,
+      "timestamp": "2026-03-10T16:03:27Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "eb1626bf715de740",
+    "timestamp": "2026-03-10T16:03:25.183117Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "j0VJIa5CJ0rdHrZBAAAv",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-10T16:03:25.183089Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5b44a369b22dd9cb",
+    "timestamp": "2026-03-10T16:03:24.376783Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "bK2K_yJ2w7vGP0JvAAAt",
+      "device_id": null,
+      "timestamp": "2026-03-10T16:03:24Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "adf7ba9921d8c6be",
+    "timestamp": "2026-03-10T16:03:21.969797Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "bK2K_yJ2w7vGP0JvAAAt",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-10T16:03:21.969753Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e7c1cd5d03dbda1b",
+    "timestamp": "2026-03-10T11:42:01.084259Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "jyTJXCpmE4rCCzoVAAAr",
+      "device_id": null,
+      "timestamp": "2026-03-10T11:42:01Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fcbc0e1592e00ee3",
+    "timestamp": "2026-03-10T11:40:24.024832Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "jyTJXCpmE4rCCzoVAAAr",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-10T11:40:24.024803Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "016d57ff11bbec4a",
+    "timestamp": "2026-03-10T11:32:53.543507Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "hEfhkHACN6YBdGJ8AAAo",
+      "device_id": "8ebe1ae5bf68d731",
+      "timestamp": "2026-03-10T11:32:53Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5d1ce15bb8763276",
+    "timestamp": "2026-03-10T11:32:18.366475Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "aV2DPtg129Slat6BAAAk",
+      "device_id": "001ff2d580e320f9",
+      "timestamp": "2026-03-10T11:32:18Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "024c770c93ffbf2f",
+    "timestamp": "2026-03-10T11:31:57.869359Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-10T11:31:57.869316Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ae0767f099eef4ce",
+    "timestamp": "2026-03-10T11:31:39.105504Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-10T11:31:39.105443Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "37158cb508511ab7",
+    "timestamp": "2026-03-10T11:29:18.591104Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "523d90f136b9c1f9d2322ae885f26b43",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8f58a011291233a2",
+    "timestamp": "2026-03-10T11:29:17.553334Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "523d90f136b9c1f9d2322ae885f26b43",
+      "sender": "8ebe1ae5bf68d731",
+      "recipient": "001ff2d580e320f9",
+      "proof_hash": "5ff5d73ffad0f5f24626576696aa084f035600dda4757269c8ef98cb52ea02a7",
+      "expiry": "2026-03-10T11:30:17Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "605255ad6c68a7f6",
+    "timestamp": "2026-03-10T11:28:45.473993Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "c04aa6d13790d1d1a62943a5018322c3",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ef694e857634a3a4",
+    "timestamp": "2026-03-10T11:28:44.415538Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "c04aa6d13790d1d1a62943a5018322c3",
+      "sender": "001ff2d580e320f9",
+      "recipient": "8ebe1ae5bf68d731",
+      "proof_hash": "362120888c4cd0e220cd72dc3f17436d111ad14bbc2c9a4e551932b446930bb7",
+      "expiry": "2026-03-10T11:29:44Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "75de97f19093682d",
+    "timestamp": "2026-03-10T11:28:32.697222Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "4577e6e3760ff1912bc9e6faa1c83672",
+      "sender": "8ebe1ae5bf68d731",
+      "recipient": "001ff2d580e320f9",
+      "proof_hash": "ce9b8e3fe6ad308523fcd8ed05726a12be6fefb8bda03d1d891e548e1a84f2e6",
+      "expiry": "2026-03-10T11:29:32Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6bbbb56df1197906",
+    "timestamp": "2026-03-10T11:28:18.691799Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "001ff2d580e320f9",
+      "session_id": "aV2DPtg129Slat6BAAAk",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3c98e0b8814be537",
+    "timestamp": "2026-03-10T11:28:12.893850Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "8ebe1ae5bf68d731",
+      "session_id": "hEfhkHACN6YBdGJ8AAAo",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1c7af005f53f5589",
+    "timestamp": "2026-03-10T11:27:53.413228Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "hEfhkHACN6YBdGJ8AAAo",
+      "ip": "100.64.0.12",
+      "timestamp": "2026-03-10T11:27:53.413202Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f3e5e7bed3f08d55",
+    "timestamp": "2026-03-10T11:26:16.420548Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "PBdaA8g4KtrTL0SsAAAm",
+      "device_id": null,
+      "timestamp": "2026-03-10T11:26:16Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c64289d5b72fe05b",
+    "timestamp": "2026-03-10T11:26:13.721176Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "PBdaA8g4KtrTL0SsAAAm",
+      "ip": "100.64.0.12",
+      "timestamp": "2026-03-10T11:26:13.721148Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f89e16537642802e",
+    "timestamp": "2026-03-10T11:24:35.480450Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "aV2DPtg129Slat6BAAAk",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T11:24:35.480418Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "009280a034b09749",
+    "timestamp": "2026-03-10T08:51:04.375452Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "vgY4KsJ2xe7-0dbtAAAi",
+      "device_id": "013e402034f3a477",
+      "timestamp": "2026-03-10T08:51:04Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2aec0a263c21a997",
+    "timestamp": "2026-03-10T08:50:56.420614Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "NPbg09HBVWZzGdmgAAAd",
+      "device_id": "ee487a66e57430fe",
+      "timestamp": "2026-03-10T08:50:56Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "066c0304b094e13d",
+    "timestamp": "2026-03-10T08:50:19.684506Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "d9ca81c0de0a75d247a476d9ddae7719",
+      "sender": "013e402034f3a477",
+      "recipient": "ee487a66e57430fe",
+      "proof_hash": "e4a9f6a4eea442dbf3298d03a215e89ae98f835b2dee4c976fc921af085e323e",
+      "expiry": "2026-03-10T08:51:19Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "07c85e1fab660c4a",
+    "timestamp": "2026-03-10T08:50:13.361187Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "6e1532c9288ca88ded60ed4614358611",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5068b0ef282e3e58",
+    "timestamp": "2026-03-10T08:50:12.423774Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "6e1532c9288ca88ded60ed4614358611",
+      "sender": "013e402034f3a477",
+      "recipient": "ee487a66e57430fe",
+      "proof_hash": "12195d5a9de13a41f28cd1f462e2dae2008f116e9ae36cd95449686cccea9a4f",
+      "expiry": "2026-03-10T08:51:12Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2709222d084f137f",
+    "timestamp": "2026-03-10T08:49:58.758801Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "bf531d53ddcc23923ced48debe14d55e",
+      "sender": "ee487a66e57430fe",
+      "recipient": "013e402034f3a477",
+      "proof_hash": "2f765a89921f79adbd1fd151712dcf7022e458f610674def5defe740d5cb941a",
+      "expiry": "2026-03-10T09:49:58Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b7f1e0fb3b0a7144",
+    "timestamp": "2026-03-10T08:49:45.719174Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "ee487a66e57430fe",
+      "session_id": "NPbg09HBVWZzGdmgAAAd",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "88507bfac29c884c",
+    "timestamp": "2026-03-10T08:49:41.419079Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "013e402034f3a477",
+      "session_id": "vgY4KsJ2xe7-0dbtAAAi",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1abc4da0b83930e9",
+    "timestamp": "2026-03-10T08:49:38.972864Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "vgY4KsJ2xe7-0dbtAAAi",
+      "ip": "100.64.0.13",
+      "timestamp": "2026-03-10T08:49:38.972839Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "383f8636986e058e",
+    "timestamp": "2026-03-10T08:48:48.984952Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T08:48:48.984900Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "97853dfc0c169b4e",
+    "timestamp": "2026-03-10T08:47:42.449499Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T08:47:42.449444Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6b24aafdb98593a5",
+    "timestamp": "2026-03-10T08:47:28.284287Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "0rFPaZFJNhvJQyjLAAAf",
+      "device_id": "370919a959af6f47",
+      "timestamp": "2026-03-10T08:47:28Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c08a9703433a49f4",
+    "timestamp": "2026-03-10T08:46:50.901483Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T08:46:50.901427Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7dc5dfb82968a82b",
+    "timestamp": "2026-03-10T08:44:26.396868Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "0b887ea0694310ec7d1a2dd50ab9d196",
+      "sender": "370919a959af6f47",
+      "recipient": "5ba30f985aa48c2e",
+      "proof_hash": "a4dbcd2f999cc768faea34477c6e13b10691e558d3ad9f454405e7294643ee7e",
+      "expiry": "2026-03-10T08:45:26Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "458a3290609d8d1c",
+    "timestamp": "2026-03-10T08:44:16.079841Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "7b5ac26853707189163ec6763708cc54",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c7a45ba668a03f31",
+    "timestamp": "2026-03-10T08:44:15.196193Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "7b5ac26853707189163ec6763708cc54",
+      "sender": "370919a959af6f47",
+      "recipient": "5ba30f985aa48c2e",
+      "proof_hash": "ed770b84f7100b06fd41efc4a53dfe5eb678cbdc3b4ca85bbd6247293483afd5",
+      "expiry": "2026-03-10T08:45:15Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b66fb9954ad88966",
+    "timestamp": "2026-03-10T08:44:04.639063Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "9887676c3634b37e207bc63891f777af",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ab4e21b169e8d347",
+    "timestamp": "2026-03-10T08:44:03.144932Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "9887676c3634b37e207bc63891f777af",
+      "sender": "5ba30f985aa48c2e",
+      "recipient": "370919a959af6f47",
+      "proof_hash": "a74f97bc9cfeb4ee781c765693b402f2ad30302693320a5d55ee028f34d80348",
+      "expiry": "2026-03-10T09:44:03Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3c482bf26a47bc2b",
+    "timestamp": "2026-03-10T08:43:51.798560Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "ca5d34e3dc599c8d9e20118a334ab848",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "18d43c78a7356ec4",
+    "timestamp": "2026-03-10T08:43:50.683902Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "ca5d34e3dc599c8d9e20118a334ab848",
+      "sender": "370919a959af6f47",
+      "recipient": "5ba30f985aa48c2e",
+      "proof_hash": "2d52209792e59d08a3d323da60582815d0b5ee64d9aa571dfe14a751b52fb1e8",
+      "expiry": "2026-03-10T09:43:50Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f825361af841cc1a",
+    "timestamp": "2026-03-10T08:43:35.452358Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "77d5850b458ab5a187c7535d49c72c7a",
+      "sender": "5ba30f985aa48c2e",
+      "recipient": "370919a959af6f47",
+      "proof_hash": "199fbd6922c8993201d10bae8beb82e6a30cbe4b12edab05b3e43d5be84af4e9",
+      "expiry": "2026-03-10T09:43:35Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a8d0aa9ca35c6724",
+    "timestamp": "2026-03-10T08:43:22.926408Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "5ba30f985aa48c2e",
+      "session_id": "NPbg09HBVWZzGdmgAAAd",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "af09a634302a2642",
+    "timestamp": "2026-03-10T08:43:22.165695Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "370919a959af6f47",
+      "session_id": "0rFPaZFJNhvJQyjLAAAf",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "309eabb72a410da3",
+    "timestamp": "2026-03-10T08:42:57.174896Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "0rFPaZFJNhvJQyjLAAAf",
+      "ip": "100.64.0.13",
+      "timestamp": "2026-03-10T08:42:57.174858Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "655be728c4bff884",
+    "timestamp": "2026-03-10T08:42:21.916759Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "NPbg09HBVWZzGdmgAAAd",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-10T08:42:21.916729Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5cdb59d283858708",
+    "timestamp": "2026-03-10T08:42:09.909073Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "Dd3OM2sC3ZLVmVnTAAAb",
+      "device_id": null,
+      "timestamp": "2026-03-10T08:42:09Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2545817541a2d217",
+    "timestamp": "2026-03-10T08:42:02.157683Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "Dd3OM2sC3ZLVmVnTAAAb",
+      "ip": "100.64.0.10",
+      "timestamp": "2026-03-10T08:42:02.157658Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ab59a15c57eb7f69",
+    "timestamp": "2026-03-10T08:15:06.525358Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "Za4aCu172-PqT3xHAAAZ",
+      "device_id": "3acacd4d23998fab",
+      "timestamp": "2026-03-10T08:15:06Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2732334d5fa40a7a",
+    "timestamp": "2026-03-10T08:15:01.834002Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "dvWunfJniHBj46JeAAAX",
+      "device_id": "f21aaa308a1c551f",
+      "timestamp": "2026-03-10T08:15:01Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "924ebc1659beae6a",
+    "timestamp": "2026-03-10T08:14:45.318405Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:45.318362Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "658e0339ecc447d3",
+    "timestamp": "2026-03-10T08:14:43.029143Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:43.029102Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6f9399fa4336dc40",
+    "timestamp": "2026-03-10T08:14:41.975609Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:41.975563Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2763d603a3702e4a",
+    "timestamp": "2026-03-10T08:14:39.956535Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:39.956490Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "35af50a0d60732ea",
+    "timestamp": "2026-03-10T08:14:38.977803Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:38.977760Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "635798f76d911f4a",
+    "timestamp": "2026-03-10T08:14:37.475229Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:37.475175Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a43bd9e1a79373ae",
+    "timestamp": "2026-03-10T08:14:36.574941Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:36.574889Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a053f3a3076ab456",
+    "timestamp": "2026-03-10T08:14:35.187135Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:35.187088Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a0bbfbf5ce89309f",
+    "timestamp": "2026-03-10T08:14:34.105239Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:34.105197Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7fa77a8b6f17f3b9",
+    "timestamp": "2026-03-10T08:14:32.958684Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:32.958640Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e06594abc40f5a79",
+    "timestamp": "2026-03-10T08:14:31.812335Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:31.812282Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "045367ad3c2f738e",
+    "timestamp": "2026-03-10T08:14:30.299592Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:30.299549Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6401a148f7546bec",
+    "timestamp": "2026-03-10T08:14:29.265204Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:29.265153Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "18526b7524c5ef3d",
+    "timestamp": "2026-03-10T08:14:27.763680Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:27.763626Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "634409fbda738418",
+    "timestamp": "2026-03-10T08:14:26.710537Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:26.710495Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "74f666479da628fd",
+    "timestamp": "2026-03-10T08:14:25.464041Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:25.463988Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "615b1648251beda7",
+    "timestamp": "2026-03-10T08:14:24.642138Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:24.642098Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "30a25fabfbcea595",
+    "timestamp": "2026-03-10T08:14:23.785895Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:23.785814Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "32042682608a5356",
+    "timestamp": "2026-03-10T08:14:22.915381Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:22.915335Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0fc331eec2b00a8a",
+    "timestamp": "2026-03-10T08:14:22.068142Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:22.068077Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3c3379bf8944d571",
+    "timestamp": "2026-03-10T08:14:21.310324Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:21.310267Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a3729ffe10e0a587",
+    "timestamp": "2026-03-10T08:14:18.825338Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:18.825294Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b6a8e20063e8d169",
+    "timestamp": "2026-03-10T08:14:17.675108Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:17.675067Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b07adbe831a1d247",
+    "timestamp": "2026-03-10T08:14:16.885117Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:16.885074Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "432bdca20ec819c8",
+    "timestamp": "2026-03-10T08:14:16.123918Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:16.123863Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f87a47d269c4d438",
+    "timestamp": "2026-03-10T08:14:15.157417Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:15.157373Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0a8206612dc0412a",
+    "timestamp": "2026-03-10T08:14:14.027298Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:14.027256Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9f3062a298d51cb8",
+    "timestamp": "2026-03-10T08:14:13.210274Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:13.210229Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8a86b7ee72bf13be",
+    "timestamp": "2026-03-10T08:14:12.309409Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:12.309357Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ce7178c8bf7731c8",
+    "timestamp": "2026-03-10T08:14:10.477048Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:10.477005Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9b527dd8bfc32428",
+    "timestamp": "2026-03-10T08:14:09.414024Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:09.413979Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f98a5387747ac464",
+    "timestamp": "2026-03-10T08:14:07.112001Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:07.111958Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5d4321c30159c2d6",
+    "timestamp": "2026-03-10T08:14:05.967983Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:05.967941Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "da45e8eb4f975de6",
+    "timestamp": "2026-03-10T08:14:03.973024Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:03.972979Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4e0273e175ce0ece",
+    "timestamp": "2026-03-10T08:13:56.905853Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:13:56.905787Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b29a39d39de0c6cf",
+    "timestamp": "2026-03-10T08:13:45.707031Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "37976cc9e355c3e9e062acf261d3320e",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "12167e3e27de56ca",
+    "timestamp": "2026-03-10T08:13:44.412367Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "37976cc9e355c3e9e062acf261d3320e",
+      "sender": "f21aaa308a1c551f",
+      "recipient": "3acacd4d23998fab",
+      "proof_hash": "a4cf1f8ef952b4e8923186eec681c7ead80032d685bf44c890087ea16e9c17ad",
+      "expiry": "2026-03-10T08:14:44Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "406c17545e255d3f",
+    "timestamp": "2026-03-10T08:13:31.707454Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "893c12a83d753c223ccacb4bf0c9cd14",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8e9c3a5616b804a5",
+    "timestamp": "2026-03-10T08:13:30.930617Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "893c12a83d753c223ccacb4bf0c9cd14",
+      "sender": "f21aaa308a1c551f",
+      "recipient": "3acacd4d23998fab",
+      "proof_hash": "e4b12c6fb2d955be9b29c9cdecc86ae430b684a84028f249ee258b92bc5368f5",
+      "expiry": "2026-03-10T08:14:30Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6a6f5d90fad055c6",
+    "timestamp": "2026-03-10T08:13:19.715326Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "91fea8ab583d991ea16cb124582eae0b",
+      "sender": "3acacd4d23998fab",
+      "recipient": "f21aaa308a1c551f",
+      "proof_hash": "3f7ee29d6244914d2d809917f2b826275da1d2fac62aeb0d1da2c3c4843eef1c",
+      "expiry": "2026-03-10T09:13:19Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7b024e12e6c8c902",
+    "timestamp": "2026-03-10T08:13:02.323869Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "f21aaa308a1c551f",
+      "session_id": "dvWunfJniHBj46JeAAAX",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a1508ae3fd1b1571",
+    "timestamp": "2026-03-10T08:12:56.898878Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "3acacd4d23998fab",
+      "session_id": "Za4aCu172-PqT3xHAAAZ",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "84955644056da5ef",
+    "timestamp": "2026-03-10T08:12:55.929633Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "Za4aCu172-PqT3xHAAAZ",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-10T08:12:55.929607Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "47f1491dffdd158f",
+    "timestamp": "2026-03-10T08:12:41.850550Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "dvWunfJniHBj46JeAAAX",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-10T08:12:41.850524Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "10eb2d95c619ca5f",
+    "timestamp": "2026-03-10T08:12:40.856114Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "kwNK91fkT60gPi_HAAAV",
+      "device_id": null,
+      "timestamp": "2026-03-10T08:12:40Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1ec897487f2d98b9",
+    "timestamp": "2026-03-10T08:12:36.402847Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "kwNK91fkT60gPi_HAAAV",
+      "ip": "100.64.0.11",
+      "timestamp": "2026-03-10T08:12:36.402821Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1c8f56485218925a",
+    "timestamp": "2026-03-10T06:39:46.932261Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "4uLbxwzv5Ftb_iEuAAAT",
+      "device_id": null,
+      "timestamp": "2026-03-10T06:39:46Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c361ebb089eb2419",
+    "timestamp": "2026-03-10T06:39:39.121304Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "4uLbxwzv5Ftb_iEuAAAT",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T06:39:39.121277Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1ad591d1d0eaece3",
+    "timestamp": "2026-03-10T06:39:24.608233Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "KfgysVdX8PQcsLzBAAAR",
+      "device_id": null,
+      "timestamp": "2026-03-10T06:39:24Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "56b29087ce7e90c2",
+    "timestamp": "2026-03-10T06:39:24.277356Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "KfgysVdX8PQcsLzBAAAR",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:39:24.277323Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c0294d909e097d78",
+    "timestamp": "2026-03-10T06:39:13.102722Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "BmvF5kP7BEPc2_55AAAP",
+      "device_id": null,
+      "timestamp": "2026-03-10T06:39:13Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f2b78b057e2e680e",
+    "timestamp": "2026-03-10T06:39:12.172796Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "BmvF5kP7BEPc2_55AAAP",
+      "ip": "100.64.0.13",
+      "timestamp": "2026-03-10T06:39:12.172771Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9dd0d86590295e5b",
+    "timestamp": "2026-03-10T06:04:48.474349Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "_dv2qvlnpnHhSndsAAAL",
+      "device_id": "c34b623d3dc82d9c",
+      "timestamp": "2026-03-10T06:04:48Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b03b7673b7fbf546",
+    "timestamp": "2026-03-10T06:03:05.100134Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "VrrO4LzdEBrkCqNgAAAN",
+      "device_id": "2fdddb05451d6486",
+      "timestamp": "2026-03-10T06:03:05Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "07a231a83877edea",
+    "timestamp": "2026-03-10T06:02:34.582439Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "b_v32nv9FZ8_Bqo3AAAJ",
+      "device_id": "632800b601795392",
+      "timestamp": "2026-03-10T06:02:34Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "09118c243db8a3ca",
+    "timestamp": "2026-03-10T06:02:11.476997Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "646ef35b23f8574c140fc34acf4007b2",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d873e69ada369d84",
+    "timestamp": "2026-03-10T06:02:10.364972Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "646ef35b23f8574c140fc34acf4007b2",
+      "sender": "c34b623d3dc82d9c",
+      "recipient": "2fdddb05451d6486",
+      "proof_hash": "fbbf797192fe886498e6868c8dcffacd894ba95903fd774c1ec6f88206015f53",
+      "expiry": "2026-03-10T07:02:10Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "170d05558f064e81",
+    "timestamp": "2026-03-10T06:01:58.027767Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "acc822fe0c72192df2c6ea5c8f9a0442",
+      "sender": "2fdddb05451d6486",
+      "recipient": "c34b623d3dc82d9c",
+      "proof_hash": "cfdf6fcd6dc87c99cb27ad906343ff20855102e8abf6b0338fbbe2754bf1d33f",
+      "expiry": "2026-03-10T07:01:58Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8bc0ea07cb369cb0",
+    "timestamp": "2026-03-10T06:01:53.738450Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "c34b623d3dc82d9c",
+      "session_id": "_dv2qvlnpnHhSndsAAAL",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9ffcf5d13e84a1e7",
+    "timestamp": "2026-03-10T06:01:48.935711Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "2fdddb05451d6486",
+      "session_id": "VrrO4LzdEBrkCqNgAAAN",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fa638c8c44c3ceed",
+    "timestamp": "2026-03-10T06:01:46.535135Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "VrrO4LzdEBrkCqNgAAAN",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:01:46.535098Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3606180ffb02254c",
+    "timestamp": "2026-03-10T06:01:00.540015Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:01:00.539959Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fbeeb838bb72fc66",
+    "timestamp": "2026-03-10T06:00:24.794402Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:00:24.794351Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "14d8b1c74aeb7534",
+    "timestamp": "2026-03-10T06:00:17.644409Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:00:17.644359Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6eb115a6d5dac1c4",
+    "timestamp": "2026-03-10T06:00:03.245487Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:00:03.245445Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "aa21b0dac5cd4855",
+    "timestamp": "2026-03-10T05:59:55.334552Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T05:59:55.334508Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d704d7d6f84991d5",
+    "timestamp": "2026-03-10T05:59:26.064080Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "_dv2qvlnpnHhSndsAAAL",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T05:59:26.064051Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "910605e9f51e4b19",
+    "timestamp": "2026-03-10T05:59:24.147801Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "7QtCEb-poe-xuUyxAAAH",
+      "device_id": "a229098050cff439",
+      "timestamp": "2026-03-10T05:59:24Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "12d0e0489296d9df",
+    "timestamp": "2026-03-10T05:57:41.520419Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.12"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6faeb051bc8b0603",
+    "timestamp": "2026-03-10T05:57:38.674674Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.12"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6d65261a97bfbb16",
+    "timestamp": "2026-03-10T05:57:36.054633Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.3"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3089e5e9a509d086",
+    "timestamp": "2026-03-10T05:57:33.441148Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.10"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "20bafcfad55c9347",
+    "timestamp": "2026-03-10T05:57:30.788158Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.11"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "401b6aa829bfda53",
+    "timestamp": "2026-03-10T05:57:27.777785Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.6"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "856348e0bbb97bbb",
+    "timestamp": "2026-03-10T05:57:25.186694Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.10"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "be58d47d2160c49b",
+    "timestamp": "2026-03-10T05:57:22.509314Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.7"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "92cff24a5d175a99",
+    "timestamp": "2026-03-10T05:52:36.990485Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "6bdad19823b60363489720490f2e9653",
+      "sender": "632800b601795392",
+      "recipient": "a229098050cff439",
+      "proof_hash": "1e2ee28abcbc68e535e18dfcae937314bc8d58c55cce596e0c1abca5a15321bb",
+      "expiry": "2026-03-10T05:53:36Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d5b6292629af453c",
+    "timestamp": "2026-03-10T05:51:50.387864Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "85a8227b37e25e4090b96b763f7d25b8",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a30aae2829430de9",
+    "timestamp": "2026-03-10T05:51:49.075400Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "85a8227b37e25e4090b96b763f7d25b8",
+      "sender": "a229098050cff439",
+      "recipient": "632800b601795392",
+      "proof_hash": "527c08a205496e7bc75e8e38228724e0c1481aa0747ab0628b33f7fa92346237",
+      "expiry": "2026-03-10T05:52:49Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "64e083a7cdf1368d",
+    "timestamp": "2026-03-10T05:51:23.512380Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "b1229dbb36330608d9a5512a1ddf34dc",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7b30d1f606213f01",
+    "timestamp": "2026-03-10T05:51:22.389359Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "b1229dbb36330608d9a5512a1ddf34dc",
+      "sender": "a229098050cff439",
+      "recipient": "632800b601795392",
+      "proof_hash": "06b24ac77f4a29a480ebf039ff62086551a2a1a81070ab6e3bc3374dac70ed3e",
+      "expiry": "2026-03-10T05:52:22Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ad18ee4a0857cf66",
+    "timestamp": "2026-03-10T05:49:44.361833Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "ed824fb984760206d9b0d4cbc3d23412",
+      "sender": "a229098050cff439",
+      "recipient": "632800b601795392",
+      "proof_hash": "124e39ecc88e3de25576b7a72794e3848cce39a6d1702be125daee9e95a494e8",
+      "expiry": "2026-03-10T05:50:44Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "db547d1e4b398909",
+    "timestamp": "2026-03-10T05:49:07.492122Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "632800b601795392",
+      "session_id": "b_v32nv9FZ8_Bqo3AAAJ",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2e205828d3ee630b",
+    "timestamp": "2026-03-10T05:49:07.373671Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "a229098050cff439",
+      "session_id": "7QtCEb-poe-xuUyxAAAH",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e937d8c5810f26ef",
+    "timestamp": "2026-03-10T05:48:28.001763Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "b_v32nv9FZ8_Bqo3AAAJ",
+      "ip": "100.64.0.8",
+      "timestamp": "2026-03-10T05:48:28.001732Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6a8a5f9443507873",
+    "timestamp": "2026-03-10T05:48:15.912897Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "7QtCEb-poe-xuUyxAAAH",
+      "ip": "100.64.0.6",
+      "timestamp": "2026-03-10T05:48:15.912854Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7000f1e4751473fe",
+    "timestamp": "2026-03-10T05:48:08.487719Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "MCCHQ1-n3FNlrl6TAAAF",
+      "device_id": null,
+      "timestamp": "2026-03-10T05:48:08Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1dab89ec81907be1",
+    "timestamp": "2026-03-10T05:48:06.693260Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "MCCHQ1-n3FNlrl6TAAAF",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-10T05:48:06.693228Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "85fad3641d1349d3",
+    "timestamp": "2026-03-10T05:46:08.303278Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "V5QTPjwzw5myikp-AAAD",
+      "device_id": null,
+      "timestamp": "2026-03-10T05:46:08Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7ba37d3be13d07fc",
+    "timestamp": "2026-03-10T05:45:55.064653Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "AYRzP96uvW4qEKouAAAB",
+      "device_id": null,
+      "timestamp": "2026-03-10T05:45:55Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4aa7e3c340709eb0",
+    "timestamp": "2026-03-10T05:45:13.485385Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T05:45:13.485335Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "49fdfe0f77deb86e",
+    "timestamp": "2026-03-10T05:44:58.441681Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "V5QTPjwzw5myikp-AAAD",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-10T05:44:58.441657Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "db53f8584db0851c",
+    "timestamp": "2026-03-10T05:44:58.248920Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T05:44:58.248868Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c178a972ff68b484",
+    "timestamp": "2026-03-10T05:44:44.551943Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "AYRzP96uvW4qEKouAAAB",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T05:44:44.551905Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "2f8279e2b772814f",
     "timestamp": "2026-03-10T04:38:26.003659Z",
     "event_type": "disconnection",
@@ -657,6 +2508,90 @@
     "severity": "critical",
     "details": {
       "ip": "5.6.7.8",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e21976082fbeee74",
+    "timestamp": "2026-03-10T05:57:27.780823Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 3,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b1b7acf5429af2d9",
+    "timestamp": "2026-03-10T05:57:30.791076Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 4,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ae18bde3a8ae9e64",
+    "timestamp": "2026-03-10T05:57:33.444263Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 5,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "75db703baaf277c7",
+    "timestamp": "2026-03-10T05:57:36.057876Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 6,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "699f64b4cb08fcad",
+    "timestamp": "2026-03-10T05:57:38.678057Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 7,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a7955d9bb94fa495",
+    "timestamp": "2026-03-10T05:57:41.523306Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 8,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "42d5983e0c4b99b7",
+    "timestamp": "2026-03-10T08:14:14.030880Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "100.64.0.9",
       "attempts": 5,
       "timeframe": "5 minutes"
     },
