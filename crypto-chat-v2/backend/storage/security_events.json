@@ -1,5 +1,44 @@
 [
   {
+    "id": "4e0273e175ce0ece",
+    "timestamp": "2026-03-10T08:13:56.905853Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:13:56.905787Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b29a39d39de0c6cf",
+    "timestamp": "2026-03-10T08:13:45.707031Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "37976cc9e355c3e9e062acf261d3320e",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "12167e3e27de56ca",
+    "timestamp": "2026-03-10T08:13:44.412367Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "37976cc9e355c3e9e062acf261d3320e",
+      "sender": "f21aaa308a1c551f",
+      "recipient": "3acacd4d23998fab",
+      "proof_hash": "a4cf1f8ef952b4e8923186eec681c7ead80032d685bf44c890087ea16e9c17ad",
+      "expiry": "2026-03-10T08:14:44Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "406c17545e255d3f",
     "timestamp": "2026-03-10T08:13:31.707454Z",
     "event_type": "message_burned",
