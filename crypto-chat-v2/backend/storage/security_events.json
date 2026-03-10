@@ -1,5 +1,41 @@
 [
   {
+    "id": "d05fe3609c34689c",
+    "timestamp": "2026-03-10T03:53:57.839204Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "5r8HLjG89RYQmjskAAAF",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-10T03:53:57.839177Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c6a57a1282ad322c",
+    "timestamp": "2026-03-10T03:53:45.781147Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "uU6-KjfUrAJKCiMDAAAD",
+      "device_id": null,
+      "timestamp": "2026-03-10T03:53:45Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "18db376a7cf3246e",
+    "timestamp": "2026-03-10T03:53:45.664135Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "LUwhW9SpzaQYc7TNAAAC",
+      "device_id": null,
+      "timestamp": "2026-03-10T03:53:45Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "87eee7e9b0f0272f",
     "timestamp": "2026-03-10T03:53:45.582257Z",
     "event_type": "connection",
