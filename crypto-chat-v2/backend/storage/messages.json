@@ -493,5 +493,29 @@
     "status": "active",
     "merkle_index": 39,
     "burn_on_read": true
+  },
+  "5359df8cc8dddd2b37114fccb29a5561": {
+    "sender": "7c2696f9adf8f628",
+    "recipient": "7dee8f2b91c08ed3",
+    "proof_hash": "31c113203093a3c86bc43c126a671e416ab8411c463d3afd9075e709dd9ab787",
+    "timestamp": "2026-03-10T04:35:33.492283+00:00",
+    "expires_at": "2026-03-10T04:36:33.506357Z",
+    "signature": "demo_sig",
+    "nonce": "9fb2082e8cc30176f507925e980b0c68",
+    "status": "active",
+    "merkle_index": 37,
+    "burn_on_read": false
+  },
+  "d9eae164abb72155e752df79f9c3285d": {
+    "sender": "7dee8f2b91c08ed3",
+    "recipient": "7c2696f9adf8f628",
+    "proof_hash": "a5b55ce359ab96839d8a35c317d43b8bd453758e293f5aea111213fc29a1c36b",
+    "timestamp": "2026-03-10T04:35:53.261872+00:00",
+    "expires_at": "2026-03-10T05:35:53.265118Z",
+    "signature": "demo_sig",
+    "nonce": "c231f0e3435820142274e9d1955ffd2c",
+    "status": "burned",
+    "merkle_index": 38,
+    "burn_on_read": true
   }
 }
