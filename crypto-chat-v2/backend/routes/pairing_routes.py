@@ -19,29 +19,31 @@ import random
 
 pairing_bp = Blueprint('pairing', __name__)
 
-# In-memory store for pending DH instances (private keys don't persist to disk)
-# { device_id: DiffieHellman instance }
+# In-memory cache for DH private keys (also persisted to devices.json as fallback)
 _pending_dh = {}
 
-# In-memory store for short pairing codes (expire quickly)
-# { code: { device_id: str, created_at: datetime } }
-_pending_codes = {}
-
-PAIRING_CODE_TTL = timedelta(minutes=2)
-
-
-def _cleanup_expired_codes(now=None):
-    now = now or datetime.now(timezone.utc)
-    expired = [code for code, v in _pending_codes.items() if now - v['created_at'] > PAIRING_CODE_TTL]
-    for code in expired:
-        _pending_codes.pop(code, None)
+PAIRING_CODE_TTL = timedelta(minutes=10)  # Extended to 10 mins for cross-device reliability
 
 
 def _generate_pairing_code():
-    _cleanup_expired_codes()
+    """Generate a unique 6-digit pairing code that isn't already pending in devices.json."""
+    devices = load_devices()
+    now = datetime.now(timezone.utc)
+    # Collect all unexpired codes already in use
+    active_codes = set()
+    for d in devices.values():
+        code = d.get('pairing_code')
+        if code and d.get('status') == 'pending_pairing':
+            created_str = d.get('created_at', '')
+            try:
+                created_dt = datetime.fromisoformat(created_str.replace('Z', '+00:00'))
+                if now - created_dt < PAIRING_CODE_TTL:
+                    active_codes.add(code)
+            except Exception:
+                pass
     for _ in range(20):
         code = f"{random.randint(0, 999999):06d}"
-        if code not in _pending_codes:
+        if code not in active_codes:
             return code
     raise RuntimeError("Unable to allocate pairing code")
 
@@ -77,19 +79,20 @@ def initiate_pairing():
         # Generate challenge for device verification
         challenge = os.urandom(32).hex()
 
-        # Store DH instance in memory so complete_pairing can use correct private key
-        _pending_dh[device_id] = dh.get_private_key_hex()
+        # Store DH private key — in-memory AND in devices.json for restart resilience
+        dh_private_hex = dh.get_private_key_hex()
+        _pending_dh[device_id] = dh_private_hex
 
-        # Allocate a short pairing code (6 digits) so Device B can join easily
+        # Allocate a short pairing code (6 digits) — stored in devices.json (persistent)
         pairing_code = _generate_pairing_code()
-        _pending_codes[pairing_code] = {'device_id': device_id, 'created_at': datetime.now(timezone.utc)}
 
-        # Store device info
+        # Store device info (including dh_private_key for restart resilience)
         devices = load_devices()
         devices[device_id] = {
             'device_id': device_id,
             'public_key': keypair['public_key'],
             'dh_public_key': dh_public_hex,
+            'dh_private_key': dh_private_hex,
             'challenge': challenge,
             'created_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'paired_with': None,
@@ -140,30 +143,42 @@ def initiate_pairing():
 def lookup_pairing():
     """
     Lookup pairing QR payload by a short code.
-    Used for deep links / QR-of-URL flows so users never copy raw JSON.
+    Reads from devices.json (persistent GitHub storage) so it survives
+    Railway restarts and works across multiple server instances.
     """
     try:
         code = (request.args.get('code') or '').strip()
         if not code or not code.isdigit() or len(code) != 6:
             return jsonify({'error': 'Invalid code'}), 400
 
-        _cleanup_expired_codes()
-        entry = _pending_codes.get(code)
-        if not entry:
-            return jsonify({'error': 'Code expired or not found'}), 404
-
-        device_id = entry['device_id']
         devices = load_devices()
-        d = devices.get(device_id)
-        if not d:
-            return jsonify({'error': 'Device not found'}), 404
+        now = datetime.now(timezone.utc)
+
+        # Find the device with this pending pairing code
+        device_id = None
+        device_data = None
+        for did, d in devices.items():
+            if d.get('pairing_code') == code and d.get('status') == 'pending_pairing':
+                # Check TTL
+                created_str = d.get('created_at', '')
+                try:
+                    created_dt = datetime.fromisoformat(created_str.replace('Z', '+00:00'))
+                    if now - created_dt < PAIRING_CODE_TTL:
+                        device_id = did
+                        device_data = d
+                        break
+                except Exception:
+                    pass
+
+        if not device_id:
+            return jsonify({'error': 'Code expired or not found'}), 404
 
         qr_data = {
             'device_id': device_id,
             'server_url': request.host_url.rstrip('/'),
-            'dh_public_key': d.get('dh_public_key'),
-            'challenge': d.get('challenge'),
-            'timestamp': d.get('created_at')
+            'dh_public_key': device_data.get('dh_public_key'),
+            'challenge': device_data.get('challenge'),
+            'timestamp': device_data.get('created_at')
         }
 
         return jsonify({'success': True, 'qr_data': qr_data}), 200
@@ -191,7 +206,8 @@ def complete_pairing_auto():
         if not device2_dh_public_hex:
             return jsonify({'error': 'Waiting for Device B to join'}), 409
 
-        private_key_hex = _pending_dh.get(device1_id)
+        # Try in-memory cache first, fall back to devices.json (survives restarts)
+        private_key_hex = _pending_dh.get(device1_id) or devices[device1_id].get('dh_private_key')
         if not private_key_hex:
             return jsonify({'error': 'DH session expired - please re-initiate pairing'}), 400
 
@@ -319,8 +335,8 @@ def complete_pairing():
         if device1_id not in devices:
             return jsonify({'error': 'Device not found'}), 404
 
-        # Retrieve stored DH private key for device 1
-        private_key_hex = _pending_dh.get(device1_id)
+        # Retrieve stored DH private key for device 1 — memory first, then devices.json
+        private_key_hex = _pending_dh.get(device1_id) or devices[device1_id].get('dh_private_key')
         if not private_key_hex:
             return jsonify({'error': 'DH session expired - please re-initiate pairing'}), 400
 
