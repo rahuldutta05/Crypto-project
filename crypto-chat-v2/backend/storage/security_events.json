@@ -1,5 +1,17 @@
 [
   {
+    "id": "5d1ce15bb8763276",
+    "timestamp": "2026-03-10T11:32:18.366475Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "aV2DPtg129Slat6BAAAk",
+      "device_id": "001ff2d580e320f9",
+      "timestamp": "2026-03-10T11:32:18Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "024c770c93ffbf2f",
     "timestamp": "2026-03-10T11:31:57.869359Z",
     "event_type": "mitm_detected",
