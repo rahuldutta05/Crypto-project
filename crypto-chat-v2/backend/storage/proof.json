@@ -470,5 +470,66 @@
     "proof_hash": "ca99519b9d4e4f68d7ca51dae467c1b41e5a325078c94c7f5d3d48b9d6183e50",
     "merkle_index": 39,
     "data_hash": "DESTROYED"
+  },
+  "5359df8cc8dddd2b37114fccb29a5561": {
+    "hash": "805c36ff7ad55648942bf246a80849c0f9517171ffca9a39885f3d0fccb01730",
+    "timestamp": "2026-03-10T04:35:33.492283+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "7c2696f9adf8f628",
+      "recipient": "7dee8f2b91c08ed3",
+      "type": "chat_message"
+    },
+    "proof_hash": "31c113203093a3c86bc43c126a671e416ab8411c463d3afd9075e709dd9ab787",
+    "merkle_index": 37
+  },
+  "d9eae164abb72155e752df79f9c3285d": {
+    "hash": "430d47f90fd52240e0830fe745a3a46cef0d8d809a4192d2a2e954e6c11d5765",
+    "timestamp": "2026-03-10T04:35:53.261872+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "7dee8f2b91c08ed3",
+      "recipient": "7c2696f9adf8f628",
+      "type": "chat_message"
+    },
+    "proof_hash": "a5b55ce359ab96839d8a35c317d43b8bd453758e293f5aea111213fc29a1c36b",
+    "merkle_index": 38,
+    "data_hash": "DESTROYED"
+  },
+  "ff79c77f01179f462db1cf6005f3d9d4": {
+    "hash": "b60dad0462c9ccea0b2c1778374cad1ed133070e94c8d0d81705e7154027a3e9",
+    "timestamp": "2026-03-10T04:36:16.233009+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "7c2696f9adf8f628",
+      "recipient": "7dee8f2b91c08ed3",
+      "type": "chat_message"
+    },
+    "proof_hash": "bfac26d7d98674c56a0d6f90c1df7ad96fe6991e66ec96361e077ce3f1193cf4",
+    "merkle_index": 39
+  },
+  "270951fc8324c2aad4898f4e4c32553d": {
+    "hash": "713c14d62a81ff45b01f8d112fc850435539e4cdfdb2699151f613340fae7ad5",
+    "timestamp": "2026-03-10T04:36:18.566898+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "7c2696f9adf8f628",
+      "recipient": "7dee8f2b91c08ed3",
+      "type": "chat_message"
+    },
+    "proof_hash": "9cc2cc6f11ac5571717b12855e12b83a82c22bb9b12ca46631ea2255297f0788",
+    "merkle_index": 40
+  },
+  "9b34b4a8fe5bc59cf531d05f9a84f5fd": {
+    "hash": "aae50528dac90eed1d6b5b08b887faf0ecb3eb806c56a4373cf7f49becc5a8c3",
+    "timestamp": "2026-03-10T04:36:20.871435+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "7c2696f9adf8f628",
+      "recipient": "7dee8f2b91c08ed3",
+      "type": "chat_message"
+    },
+    "proof_hash": "473ea95c531e3f9c82af2fb40ad03df14d88589fe0e217008a98d5668022e718",
+    "merkle_index": 41
   }
 }
