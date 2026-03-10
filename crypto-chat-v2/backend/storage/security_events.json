@@ -1,5 +1,19 @@
 [
   {
+    "id": "db53f8584db0851c",
+    "timestamp": "2026-03-10T05:44:58.248920Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated replay_attack_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T05:44:58.248868Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "c178a972ff68b484",
     "timestamp": "2026-03-10T05:44:44.551943Z",
     "event_type": "connection",
