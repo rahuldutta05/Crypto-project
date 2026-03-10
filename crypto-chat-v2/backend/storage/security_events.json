@@ -1,5 +1,19 @@
 [
   {
+    "id": "615b1648251beda7",
+    "timestamp": "2026-03-10T08:14:24.642138Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:24.642098Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "30a25fabfbcea595",
     "timestamp": "2026-03-10T08:14:23.785895Z",
     "event_type": "brute_force_detected",
