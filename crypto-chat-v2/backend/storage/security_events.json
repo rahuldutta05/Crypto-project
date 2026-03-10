@@ -1,5 +1,17 @@
 [
   {
+    "id": "f37bf02d6bcf329a",
+    "timestamp": "2026-03-10T05:38:39.291512Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": null,
+      "ip": "100.64.0.9"
+    },
+    "analyzed": false
+  },
+  {
     "id": "c2317cf2a7a54203",
     "timestamp": "2026-03-10T05:36:30.092661Z",
     "event_type": "connection",
