@@ -1,5 +1,70 @@
 [
   {
+    "id": "2aec0a263c21a997",
+    "timestamp": "2026-03-10T08:50:56.420614Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "NPbg09HBVWZzGdmgAAAd",
+      "device_id": "ee487a66e57430fe",
+      "timestamp": "2026-03-10T08:50:56Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "066c0304b094e13d",
+    "timestamp": "2026-03-10T08:50:19.684506Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "d9ca81c0de0a75d247a476d9ddae7719",
+      "sender": "013e402034f3a477",
+      "recipient": "ee487a66e57430fe",
+      "proof_hash": "e4a9f6a4eea442dbf3298d03a215e89ae98f835b2dee4c976fc921af085e323e",
+      "expiry": "2026-03-10T08:51:19Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "07c85e1fab660c4a",
+    "timestamp": "2026-03-10T08:50:13.361187Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "6e1532c9288ca88ded60ed4614358611",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5068b0ef282e3e58",
+    "timestamp": "2026-03-10T08:50:12.423774Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "6e1532c9288ca88ded60ed4614358611",
+      "sender": "013e402034f3a477",
+      "recipient": "ee487a66e57430fe",
+      "proof_hash": "12195d5a9de13a41f28cd1f462e2dae2008f116e9ae36cd95449686cccea9a4f",
+      "expiry": "2026-03-10T08:51:12Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2709222d084f137f",
+    "timestamp": "2026-03-10T08:49:58.758801Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "bf531d53ddcc23923ced48debe14d55e",
+      "sender": "ee487a66e57430fe",
+      "recipient": "013e402034f3a477",
+      "proof_hash": "2f765a89921f79adbd1fd151712dcf7022e458f610674def5defe740d5cb941a",
+      "expiry": "2026-03-10T09:49:58Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "b7f1e0fb3b0a7144",
     "timestamp": "2026-03-10T08:49:45.719174Z",
     "event_type": "auth_success",
