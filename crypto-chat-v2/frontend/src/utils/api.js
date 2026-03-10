@@ -2,7 +2,11 @@
  * api.js — Centralized API URL handling for cross-domain deployments.
  */
 
-const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
+const API_BASE = (
+    import.meta.env.VITE_API_URL ||
+    import.meta.env.VITE_BACKEND_URL ||
+    ''
+).replace(/\/$/, '')
 
 /**
  * Builds an absolute URL for an API endpoint.
