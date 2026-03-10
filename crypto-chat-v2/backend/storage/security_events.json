@@ -1,5 +1,19 @@
 [
   {
+    "id": "0a8206612dc0412a",
+    "timestamp": "2026-03-10T08:14:14.027298Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:14.027256Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "9f3062a298d51cb8",
     "timestamp": "2026-03-10T08:14:13.210274Z",
     "event_type": "auth_failure",
@@ -1578,6 +1592,18 @@
       "pattern": "multiple_replay_attempts",
       "count": 8,
       "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "42d5983e0c4b99b7",
+    "timestamp": "2026-03-10T08:14:14.030880Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "100.64.0.9",
+      "attempts": 5,
+      "timeframe": "5 minutes"
     },
     "analyzed": false
   }
