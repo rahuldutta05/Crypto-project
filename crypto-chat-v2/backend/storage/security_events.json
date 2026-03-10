@@ -1,5 +1,29 @@
 [
   {
+    "id": "c361ebb089eb2419",
+    "timestamp": "2026-03-10T06:39:39.121304Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "4uLbxwzv5Ftb_iEuAAAT",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T06:39:39.121277Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1ad591d1d0eaece3",
+    "timestamp": "2026-03-10T06:39:24.608233Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "KfgysVdX8PQcsLzBAAAR",
+      "device_id": null,
+      "timestamp": "2026-03-10T06:39:24Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "56b29087ce7e90c2",
     "timestamp": "2026-03-10T06:39:24.277356Z",
     "event_type": "connection",
