@@ -1,5 +1,33 @@
 [
   {
+    "id": "b6a8e20063e8d169",
+    "timestamp": "2026-03-10T08:14:17.675108Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:17.675067Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b07adbe831a1d247",
+    "timestamp": "2026-03-10T08:14:16.885117Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:16.885074Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "432bdca20ec819c8",
     "timestamp": "2026-03-10T08:14:16.123918Z",
     "event_type": "auth_failure",
