@@ -1,5 +1,19 @@
 [
   {
+    "id": "78c8ab82cdcd7929",
+    "timestamp": "2026-03-10T05:06:21.048711Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "469a1bb169d6d0e037133912e000837d",
+      "sender": "55e7b6f0f17eced9",
+      "recipient": "ea74f1db5495bc8b",
+      "proof_hash": "e0ce734cd7c90ac81e3110295ddc3d893894895df51db0e1f56e8440cdf676b7",
+      "expiry": "2026-03-10T05:11:21Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "ab09878b7b9b1e7a",
     "timestamp": "2026-03-10T05:05:35.953518Z",
     "event_type": "auth_success",
