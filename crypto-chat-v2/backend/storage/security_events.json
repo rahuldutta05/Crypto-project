@@ -1,5 +1,19 @@
 [
   {
+    "id": "658e0339ecc447d3",
+    "timestamp": "2026-03-10T08:14:43.029143Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "100.64.0.9",
+      "timestamp": "2026-03-10T08:14:43.029102Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "6f9399fa4336dc40",
     "timestamp": "2026-03-10T08:14:41.975609Z",
     "event_type": "suspicious_pattern",
