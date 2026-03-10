@@ -457,5 +457,41 @@
     "status": "burned",
     "merkle_index": 34,
     "burn_on_read": true
+  },
+  "0450a8e6e8d52c067996e04442d1cc8c": {
+    "sender": "37bcf889102f73aa",
+    "recipient": "f3cbd4ccfa5fe197",
+    "proof_hash": "106253813ee21e68c4301d88e00885744db48b7bafbdf716492d83f95e6cf115",
+    "timestamp": "2026-03-09T16:40:27.252550+00:00",
+    "expires_at": "2026-03-09T16:41:27.254196Z",
+    "signature": "demo_sig",
+    "nonce": "0661ba46c9a759073f1796a7bf5b03ba",
+    "status": "active",
+    "merkle_index": 37,
+    "burn_on_read": false
+  },
+  "5cff5e5da98a82badbc5f7b9ca85dc35": {
+    "sender": "37bcf889102f73aa",
+    "recipient": "f3cbd4ccfa5fe197",
+    "proof_hash": "b61bfd1fd70e86dae209afc4efa51cdc7ba780a2d69f5266ee86a5f9d8f2e449",
+    "timestamp": "2026-03-09T16:40:51.166925+00:00",
+    "expires_at": "2026-03-09T16:41:51.170070Z",
+    "signature": "demo_sig",
+    "nonce": "e327389810e91a0f715b3ff44c277c81",
+    "status": "burned",
+    "merkle_index": 38,
+    "burn_on_read": true
+  },
+  "a5595247b21180e2bfa4d445cbdc4a6b": {
+    "sender": "f3cbd4ccfa5fe197",
+    "recipient": "37bcf889102f73aa",
+    "proof_hash": "ca99519b9d4e4f68d7ca51dae467c1b41e5a325078c94c7f5d3d48b9d6183e50",
+    "timestamp": "2026-03-09T16:40:54.430583+00:00",
+    "expires_at": "2026-03-09T16:41:54.443703Z",
+    "signature": "demo_sig",
+    "nonce": "1370f037c0d8f4191e6fcae4bdd6fa56",
+    "status": "active",
+    "merkle_index": 39,
+    "burn_on_read": true
   }
 }

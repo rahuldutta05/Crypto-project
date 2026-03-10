@@ -1,5 +1,129 @@
 [
   {
+    "id": "723b58732b3a8e3a",
+    "timestamp": "2026-03-10T04:01:41.368996Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "YxLkk5TytgJaLbFfAAAJ",
+      "device_id": null,
+      "timestamp": "2026-03-10T04:01:41Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a00f635c00608b96",
+    "timestamp": "2026-03-10T04:01:27.762941Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "YxLkk5TytgJaLbFfAAAJ",
+      "ip": "100.64.0.7",
+      "timestamp": "2026-03-10T04:01:27.762913Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7777c7b702af66d8",
+    "timestamp": "2026-03-10T03:56:01.599334Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-10T03:56:01.599282Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7a3358786721cba8",
+    "timestamp": "2026-03-10T03:55:10.848381Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.5",
+      "timestamp": "2026-03-10T03:55:10.848326Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cc86e63c94029fb2",
+    "timestamp": "2026-03-10T03:55:09.517998Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "olKOGyMaHvdWyzkrAAAH",
+      "ip": "100.64.0.6",
+      "timestamp": "2026-03-10T03:55:09.517971Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d05fe3609c34689c",
+    "timestamp": "2026-03-10T03:53:57.839204Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "5r8HLjG89RYQmjskAAAF",
+      "ip": "100.64.0.4",
+      "timestamp": "2026-03-10T03:53:57.839177Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c6a57a1282ad322c",
+    "timestamp": "2026-03-10T03:53:45.781147Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "uU6-KjfUrAJKCiMDAAAD",
+      "device_id": null,
+      "timestamp": "2026-03-10T03:53:45Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "18db376a7cf3246e",
+    "timestamp": "2026-03-10T03:53:45.664135Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "LUwhW9SpzaQYc7TNAAAC",
+      "device_id": null,
+      "timestamp": "2026-03-10T03:53:45Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "87eee7e9b0f0272f",
+    "timestamp": "2026-03-10T03:53:45.582257Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "uU6-KjfUrAJKCiMDAAAD",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-10T03:53:45.582211Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c31d0f2bcf063079",
+    "timestamp": "2026-03-10T03:53:45.532887Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "LUwhW9SpzaQYc7TNAAAC",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T03:53:45.532851Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "520772f628181f91",
     "timestamp": "2026-03-09T16:28:24.672710Z",
     "event_type": "connection",
