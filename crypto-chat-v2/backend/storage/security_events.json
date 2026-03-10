@@ -1,5 +1,19 @@
 [
   {
+    "id": "6eb115a6d5dac1c4",
+    "timestamp": "2026-03-10T06:00:03.245487Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.2",
+      "timestamp": "2026-03-10T06:00:03.245445Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "aa21b0dac5cd4855",
     "timestamp": "2026-03-10T05:59:55.334552Z",
     "event_type": "auth_failure",
