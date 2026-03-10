@@ -568,5 +568,29 @@
     "proof_hash": "cea5cec006312dd144df3b427036df5af45294b9d7c1c575abfcf4efcad42bcd",
     "merkle_index": 47,
     "data_hash": "DESTROYED"
+  },
+  "ed824fb984760206d9b0d4cbc3d23412": {
+    "hash": "ce501c3b3b0f2bf233d42b264ac0e18e39c174422fa98228deb973b31219c0fc",
+    "timestamp": "2026-03-10T05:49:44.335028+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "a229098050cff439",
+      "recipient": "632800b601795392",
+      "type": "chat_message"
+    },
+    "proof_hash": "124e39ecc88e3de25576b7a72794e3848cce39a6d1702be125daee9e95a494e8",
+    "merkle_index": 45
+  },
+  "b1229dbb36330608d9a5512a1ddf34dc": {
+    "hash": "37c5bb2a3647b3738ac61214a61a4d182ffb45d16d329bd0d15b46e5f5202f2f",
+    "timestamp": "2026-03-10T05:51:22.381172+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "a229098050cff439",
+      "recipient": "632800b601795392",
+      "type": "chat_message"
+    },
+    "proof_hash": "06b24ac77f4a29a480ebf039ff62086551a2a1a81070ab6e3bc3374dac70ed3e",
+    "merkle_index": 46
   }
 }
