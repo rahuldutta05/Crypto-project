@@ -953,6 +953,7 @@
       "type": "chat_message"
     },
     "proof_hash": "a1e77c693be33f4eaeb259f00265baeb7ec3208035c1b1e20f71430dcc0d8673",
-    "merkle_index": 75
+    "merkle_index": 75,
+    "data_hash": "DESTROYED"
   }
 }
