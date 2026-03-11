@@ -1,5 +1,31 @@
 [
   {
+    "id": "9cfe9760148d4947",
+    "timestamp": "2026-03-11T10:29:36.914516Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-11T10:29:36.914460Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9aee314ec42566c3",
+    "timestamp": "2026-03-11T10:29:32.622113Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "0b6a95acd8851104",
+      "session_id": "BQ1amUEcSB7qRoidAABJ",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "d6bdf9e6e0ce64c8",
     "timestamp": "2026-03-11T10:29:32.228639Z",
     "event_type": "connection",
