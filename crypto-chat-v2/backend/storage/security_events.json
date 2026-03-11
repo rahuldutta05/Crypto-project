@@ -1,5 +1,33 @@
 [
   {
+    "id": "cfd0422e3fb92ca5",
+    "timestamp": "2026-03-11T06:32:52.375055Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "fdbf4b49b4a90a6d31cffcc24042380e",
+      "sender": "2fca499c4da4119c",
+      "recipient": "bab48ee2b4cd89da",
+      "proof_hash": "edaefa4b4eb0bf67a3c75a718417befca980d229e2a729091536a7e9f308892d",
+      "expiry": "2026-03-11T06:33:52Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e45e38876cf0f979",
+    "timestamp": "2026-03-11T06:32:47.192963Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "29c440c279780f65dff6dd52bbfd98c6",
+      "sender": "2fca499c4da4119c",
+      "recipient": "bab48ee2b4cd89da",
+      "proof_hash": "293cb934ac7797486bff5af4f90c46558b5ad06da654797ab0091225e120fa10",
+      "expiry": "2026-03-11T06:33:47Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "b30e51cc5a2932f4",
     "timestamp": "2026-03-11T06:32:39.765221Z",
     "event_type": "auth_success",
