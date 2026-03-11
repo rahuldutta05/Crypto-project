@@ -819,5 +819,17 @@
     "proof_hash": "5ff5d73ffad0f5f24626576696aa084f035600dda4757269c8ef98cb52ea02a7",
     "merkle_index": 64,
     "data_hash": "DESTROYED"
+  },
+  "cd4679713cb8f4df3bb426164c9ca485": {
+    "hash": "5319daa6bc5dbb76dff227f91c468c33ba33b749d9051e526b9e45c157b7572c",
+    "timestamp": "2026-03-11T06:30:47.672705+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "bdfc7de39d4f1cb8",
+      "recipient": "41f98272d1b783b6",
+      "type": "chat_message"
+    },
+    "proof_hash": "cb9e7df300093ef03234dfc440b096e3b8516e9f0b91450c4751b675ec8ae8ae",
+    "merkle_index": 65
   }
 }
