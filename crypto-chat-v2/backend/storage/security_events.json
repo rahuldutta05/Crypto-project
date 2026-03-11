@@ -1,5 +1,17 @@
 [
   {
+    "id": "4fe2d1ee07ab2ec3",
+    "timestamp": "2026-03-11T06:32:05.972123Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "x8axaZTof8XhW-lXAAAz",
+      "device_id": "41f98272d1b783b6",
+      "timestamp": "2026-03-11T06:32:05Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "00523b4f0fde5729",
     "timestamp": "2026-03-11T06:32:04.204772Z",
     "event_type": "disconnection",
