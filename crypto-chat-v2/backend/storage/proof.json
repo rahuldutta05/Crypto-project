@@ -868,5 +868,79 @@
     "proof_hash": "8cf675eceeff4fe8019780dc52a7ed2ab25fca99479a43d814960bf831adadbc",
     "merkle_index": 68,
     "data_hash": "DESTROYED"
+  },
+  "29c440c279780f65dff6dd52bbfd98c6": {
+    "hash": "213c8cc89ef3ba48466018d770814627f585728f6dcbf69864f791bccaf8bd01",
+    "timestamp": "2026-03-11T06:32:47.164827+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "2fca499c4da4119c",
+      "recipient": "bab48ee2b4cd89da",
+      "type": "chat_message"
+    },
+    "proof_hash": "293cb934ac7797486bff5af4f90c46558b5ad06da654797ab0091225e120fa10",
+    "merkle_index": 69
+  },
+  "fdbf4b49b4a90a6d31cffcc24042380e": {
+    "hash": "1dee7da221754c094764c3c5fee446e7d576437547160032415e488a7d46cec2",
+    "timestamp": "2026-03-11T06:32:52.346391+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "2fca499c4da4119c",
+      "recipient": "bab48ee2b4cd89da",
+      "type": "chat_message"
+    },
+    "proof_hash": "edaefa4b4eb0bf67a3c75a718417befca980d229e2a729091536a7e9f308892d",
+    "merkle_index": 70
+  },
+  "449bfe510a7f1133c8670f91b51ccb50": {
+    "hash": "e61f652cd41e03b14c308d7d43b2c6b2fc4112fe499c219c449163f5100e223f",
+    "timestamp": "2026-03-11T06:32:58.449850+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "bab48ee2b4cd89da",
+      "recipient": "2fca499c4da4119c",
+      "type": "chat_message"
+    },
+    "proof_hash": "a98216b84109bf3aebed0289000cdc16303aa43bf6533055d10e34cc1affd8b4",
+    "merkle_index": 71
+  },
+  "ad4e0522a224ee839cb6569d01ab2083": {
+    "hash": "cb5bd51b90402f6a16aeae791773122c5b6a7741c5201f5466580e9fa5bc2580",
+    "timestamp": "2026-03-11T06:38:44.083166+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "2fca499c4da4119c",
+      "recipient": "bab48ee2b4cd89da",
+      "type": "chat_message"
+    },
+    "proof_hash": "881df9d7a76772cf5c229302392afc800a680daf32baf25b93892a024d89dfaf",
+    "merkle_index": 72,
+    "data_hash": "DESTROYED"
+  },
+  "c2cd099a515242f61e477a3001d1e7a1": {
+    "hash": "c96b579afd6174b10007f2e695341f93e5147dcef220c4c1da7dfa399b2a2da9",
+    "timestamp": "2026-03-11T10:25:41.849243+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "a1043ba6f0e0cb37",
+      "recipient": "0b6a95acd8851104",
+      "type": "chat_message"
+    },
+    "proof_hash": "0fa78c0d5ddabc2f9ec6a05f16c0a029b82fd2adc2f8ef17ab0f12f5592d5d8f",
+    "merkle_index": 73
+  },
+  "26f9eac8ccbcc255d1283b0f326620a8": {
+    "hash": "a5b77ef0f5859dcec2bc2fd7ee3b0f9aa8bf6377d3cf1bda9c8b325e1afd715a",
+    "timestamp": "2026-03-11T10:26:00.344662+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "a1043ba6f0e0cb37",
+      "recipient": "0b6a95acd8851104",
+      "type": "chat_message"
+    },
+    "proof_hash": "537a13d3e75bd7a1d108a097b0eed18953e04960a9cd08f06f478c7a5064c306",
+    "merkle_index": 74,
+    "data_hash": "DESTROYED"
   }
 }
