@@ -1,5 +1,70 @@
 [
   {
+    "id": "4a10bdb11babc098",
+    "timestamp": "2026-03-11T10:29:15.548838Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "100.64.0.3",
+      "timestamp": "2026-03-11T10:29:15.548798Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2f263db3475bd197",
+    "timestamp": "2026-03-11T10:28:03.500510Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "8003f7866752c073985aac8e91fc901a",
+      "sender": "a1043ba6f0e0cb37",
+      "recipient": "0b6a95acd8851104",
+      "proof_hash": "41d343a7b907ce2dcc3911f9b4b6ba36ebc81d306dee0de19ddc3226e72f346f",
+      "expiry": "2026-03-11T10:29:03Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "38f1e591d0c69391",
+    "timestamp": "2026-03-11T10:27:55.062781Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "2855795e0a50b2e6cfafbb9687143b79",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e4333d43af08ce87",
+    "timestamp": "2026-03-11T10:27:54.178760Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "2855795e0a50b2e6cfafbb9687143b79",
+      "sender": "a1043ba6f0e0cb37",
+      "recipient": "0b6a95acd8851104",
+      "proof_hash": "a1e77c693be33f4eaeb259f00265baeb7ec3208035c1b1e20f71430dcc0d8673",
+      "expiry": "2026-03-11T10:28:54Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a7c9dd0791605124",
+    "timestamp": "2026-03-11T10:27:51.056657Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "a1043ba6f0e0cb37",
+      "session_id": "VzTcCFPy7iosQR6_AABH",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
     "id": "4fc962bbea7e4d3f",
     "timestamp": "2026-03-11T10:27:50.661094Z",
     "event_type": "connection",
