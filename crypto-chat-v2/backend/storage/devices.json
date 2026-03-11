@@ -925,5 +925,17 @@
     "safety_number": null,
     "status": "pending_pairing",
     "pairing_code": "370605"
+  },
+  "ec2707d0172640dd": {
+    "device_id": "ec2707d0172640dd",
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAonKybHkbDNdksh/r7fa9\nfyWYp/yP+EOZ3M7siwoNR6IwIp6LvpBQzKVQgc1OCauTCWpwD8WfEI43nSA9nKFz\nYqLIME0+TqWoIkekVJ8SpS3R4Vumb20EPI+5+I8oTt0YHLVnxPLzhYXS7gxl+3WA\nIk8tA04O0AvPR/E+7wqMQERy4TiqMLmDyS+OyrpFs0RwneQFkxQXjCmuY+3oQDSa\n5/Rs3veZrTdzN2VWl9lnQN0+m9u4t1zDPQRDqyD5fBMQlpVuRipWoUS+CPsfhOWN\ntdZEBX8qb6YL4VRnTe9FVLTb4j9crFzY8EiPpF88hR7GebPTCbKgW7lUaivD/Bnl\nYQIDAQAB\n-----END PUBLIC KEY-----",
+    "dh_public_key": "36cf8565ce51b5dc0e306c45d67621355deac271efbd455390ee43fb56fb9fe13040dfc8b04974a71febf1a1ed050aebd0ed0073033ae3bcf4a7578bbe62b74d4651ce3d171b016d6020b16c7a9e2869fa5c58e8f6bd4389b212aef06afa5f57f86beee5d032e1d96abe25360f5a97f7fc7c3bd1152d6f36c9be1b4bdd84346105a4fb4c6b44133e8b67f9cd1c5d31edff032baa8acc0e703395a054ba7c23a08124f12844120c7fd3efab4b21f306af4287772f84533ef0d9a547a588c311590840c4b7f072af1e44d28ecb0dcf9cd22377e41cdf938929c61be2b504c9940036c6fa031316f6a9f2f1902cf73c6e1207ccc1c39fc89fe621a2760fe401ab3c",
+    "dh_private_key": "6945e1eadc5c3bc71dde39497c1d6554f656b0960c76129920b3a8a0c883ca6c630442128b10cbcb1bbda7fb0f96186cf3e952276e682d860cf52b3b5e0d34affd42af6c67defa4347ea9cf2577a5a1639ef5cdd8de8d911e76e6f703ec4a205622498df4b28e1708141da91cf4498dee5b596ee2b88bab7338499057a583c6986be9c2e343a2d6eda445bbde2f547fa4d9ab6f011a4b6f88bae4f788daa8afb62d48330244f82ac1f4c23952b86bfb9ccd59443b7faa43ed6a9e455c0ee8f06016f121fa10377d750f37c336ae137d3c6b8f50a263dfd1cafe423671a0e68f40863db37a1625ae9ae9be8c3b1f9df729b6bbd72b4245aab2409b5a4afdfefae",
+    "challenge": "05d6c27763a5ad8e68a9ff1d1e2ecd23829406fa8ed557db12bc8b78e20bf269",
+    "created_at": "2026-03-11T11:12:00.960014Z",
+    "paired_with": null,
+    "safety_number": null,
+    "status": "pending_pairing",
+    "pairing_code": "881219"
   }
 }
