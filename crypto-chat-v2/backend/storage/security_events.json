@@ -1,5 +1,84 @@
 [
   {
+    "id": "00523b4f0fde5729",
+    "timestamp": "2026-03-11T06:32:04.204772Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "9ESz8KjF6ypkL-WSAAAx",
+      "device_id": "bdfc7de39d4f1cb8",
+      "timestamp": "2026-03-11T06:32:04Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "aab5b5cf7e14c4c7",
+    "timestamp": "2026-03-11T06:31:37.087159Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "0306730a402c238d4db888fc144c38e6",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1e423bce7741c29b",
+    "timestamp": "2026-03-11T06:31:36.308159Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "0306730a402c238d4db888fc144c38e6",
+      "sender": "bdfc7de39d4f1cb8",
+      "recipient": "41f98272d1b783b6",
+      "proof_hash": "8cf675eceeff4fe8019780dc52a7ed2ab25fca99479a43d814960bf831adadbc",
+      "expiry": "2026-03-11T06:32:36Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "31e0c2b217123818",
+    "timestamp": "2026-03-11T06:31:04.256850Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "27ac9c8d6eb4f81acd10a573445f3200",
+      "sender": "41f98272d1b783b6",
+      "recipient": "bdfc7de39d4f1cb8",
+      "proof_hash": "7209d15a83548e1339c1701bd32b21d7ad4816c8186d2dd403af68f1fd240d42",
+      "expiry": "2026-03-11T06:32:04Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1c84a3742846288d",
+    "timestamp": "2026-03-11T06:30:56.510761Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "f41bdfee3d17ef8aa2980e7acf1bb1df",
+      "sender": "bdfc7de39d4f1cb8",
+      "recipient": "41f98272d1b783b6",
+      "proof_hash": "0af298575b5d702cd85685f3ecce48220a08718fc099d691d556c02be3ce29fb",
+      "expiry": "2026-03-11T06:31:56Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "72f4b1a6602c730b",
+    "timestamp": "2026-03-11T06:30:47.703896Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "cd4679713cb8f4df3bb426164c9ca485",
+      "sender": "bdfc7de39d4f1cb8",
+      "recipient": "41f98272d1b783b6",
+      "proof_hash": "cb9e7df300093ef03234dfc440b096e3b8516e9f0b91450c4751b675ec8ae8ae",
+      "expiry": "2026-03-11T06:31:47Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "c7384a4bf45333fa",
     "timestamp": "2026-03-11T06:30:30.816193Z",
     "event_type": "auth_success",
