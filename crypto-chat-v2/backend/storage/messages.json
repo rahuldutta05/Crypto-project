@@ -877,5 +877,17 @@
     "status": "active",
     "merkle_index": 74,
     "burn_on_read": true
+  },
+  "bffb508b295a4b5cdc4f16d3ec00b9eb": {
+    "sender": "bda9866dac1ed83f",
+    "recipient": "ef30c0577b2c36b1",
+    "proof_hash": "bc52ffabde96fe73623095448de376a54534b4e074ca824089f49aea8f1544ad",
+    "timestamp": "2026-04-10T17:26:07.708193+00:00",
+    "expires_at": "2026-04-10T18:26:07.717186Z",
+    "signature": "demo_sig",
+    "nonce": "c7b622c3df8f8dbd790b6e5538164032",
+    "status": "active",
+    "merkle_index": 77,
+    "burn_on_read": false
   }
 }
