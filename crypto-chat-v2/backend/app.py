@@ -31,7 +31,7 @@ def debug_post():
 def pair_redirect():
     """
     Redirect /pair?code=... to the React frontend on Vercel.
-    The Railway backend has no /pair page — the React app (Vercel) handles it.
+    The backend has no /pair page — the React app handles it.
     This catches old links or any edge case where someone hits the backend URL directly.
     """
     code = request.args.get('code', '')

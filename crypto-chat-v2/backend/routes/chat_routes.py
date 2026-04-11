@@ -163,6 +163,17 @@ def send_message():
 def receive_messages(recipient_id):
     """Retrieve encrypted messages for recipient"""
     try:
+        from github_storage import load_json
+        devices = load_json('devices.json', default={})
+        if recipient_id not in devices:
+            security_monitor.log_event('unauthorized_attempt', {
+                'action': 'receive_messages',
+                'target_id': recipient_id,
+                'ip': request.remote_addr,
+                'note': 'Attempted to fetch messages for unknown device'
+            })
+            return jsonify({'error': 'Device not found'}), 404
+
         messages = load_messages()
         now_str = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
@@ -234,6 +245,18 @@ def decrypt_message_endpoint():
 def get_chat_history(user_id):
     """Get chat history for a user (metadata only, no content)"""
     try:
+        # Security: Log potentially unauthorized history requests
+        from github_storage import load_json
+        devices = load_json('devices.json', default={})
+        if user_id not in devices:
+            security_monitor.log_event('unauthorized_attempt', {
+                'action': 'get_history',
+                'target_id': user_id,
+                'ip': request.remote_addr,
+                'note': 'Attempted to access history for unknown device'
+            })
+            return jsonify({'error': 'Unauthorized - unknown device'}), 404
+
         messages = load_messages()
 
         user_messages = []

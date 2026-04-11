@@ -389,6 +389,13 @@ def verify_safety_number():
         devices = load_devices()
 
         if device_id not in devices:
+            from monitoring.security_monitor import security_monitor
+            security_monitor.log_event('unauthorized_attempt', {
+                'action': 'verify_safety_number',
+                'device_id': device_id,
+                'ip': request.remote_addr,
+                'note': 'Unknown device tried to verify safety number'
+            })
             return jsonify({'error': 'Device not found'}), 404
 
         actual_safety_number = devices[device_id]['safety_number']

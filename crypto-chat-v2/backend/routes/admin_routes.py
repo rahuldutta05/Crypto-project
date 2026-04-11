@@ -259,10 +259,10 @@ def get_threat_assessment():
         critical_events = [e for e in recent_events if e['severity'] == 'critical']
         high_events = [e for e in recent_events if e['severity'] == 'high']
 
-        if len(critical_events) > 5:
+        if len(critical_events) >= 3:
             threat_level = 'CRITICAL'
             color = '#ff0000'
-        elif len(critical_events) > 0 or len(high_events) > 10:
+        elif len(critical_events) > 0 or len(high_events) >= 5:
             threat_level = 'HIGH'
             color = '#ff8800'
         elif len(high_events) > 0:

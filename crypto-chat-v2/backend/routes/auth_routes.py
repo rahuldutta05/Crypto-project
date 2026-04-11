@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from monitoring.security_monitor import security_monitor
 import json
 import os
 from datetime import datetime, timedelta, timezone
@@ -85,6 +86,12 @@ def get_challenge():
         
         tokens = load_tokens()
         if anon_id not in tokens:
+            security_monitor.log_event('unauthorized_attempt', {
+                'action': 'get_challenge',
+                'anon_id': anon_id,
+                'ip': request.remote_addr,
+                'note': 'Attempted to get challenge for unknown ID'
+            })
             return jsonify({'error': 'Anonymous ID not found'}), 404
         
         # Generate challenge
@@ -116,6 +123,11 @@ def verify_identity():
         
         tokens = load_tokens()
         if anon_id not in tokens:
+            security_monitor.log_event('auth_failure', {
+                'reason': 'unknown_id',
+                'anon_id': anon_id,
+                'ip': request.remote_addr
+            })
             return jsonify({'error': 'Anonymous ID not found'}), 404
         
         user_data = tokens[anon_id]
@@ -132,6 +144,11 @@ def verify_identity():
         public_key = user_data['public_key']
         
         if not verify_signature(challenge, signature, public_key):
+            security_monitor.log_event('auth_failure', {
+                'reason': 'invalid_signature',
+                'anon_id': anon_id,
+                'ip': request.remote_addr
+            })
             return jsonify({'error': 'Invalid signature'}), 401
         
         # Create session token

@@ -7,7 +7,7 @@
     "expires_at": "2026-03-09T03:13:54.685699",
     "signature": "demo_sig",
     "nonce": "e059fefb2564f500716423cebf5a71a8",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 0
   },
   "85469f307d363550762dfbd327dbce61": {
@@ -18,7 +18,7 @@
     "expires_at": "2026-03-09T03:14:06.857748",
     "signature": "demo_sig",
     "nonce": "3ae0bcf214aa5a16615241c184ef15b9",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 1
   },
   "ed6274a8c0ea916caf68c7dd88583028": {
@@ -29,7 +29,7 @@
     "expires_at": "2026-03-09T03:15:21.309939",
     "signature": "demo_sig",
     "nonce": "3cb572a3da6fed5e71ea88bb0b0483d9",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 2
   },
   "c540191864c72387836b19d756a06dea": {
@@ -40,7 +40,7 @@
     "expires_at": "2026-03-09T03:15:26.493798",
     "signature": "demo_sig",
     "nonce": "6ff8faccbb82954a18c4f2202380458d",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 3
   },
   "4bfe2ee31667e98295dc8df624bb12d3": {
@@ -51,7 +51,7 @@
     "expires_at": "2026-03-09T03:17:52.545219Z",
     "signature": "demo_sig",
     "nonce": "2798769b70314145a8c992ca5ee85475",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 4
   },
   "e8a35b904684329d3dad65f7b8d484d7": {
@@ -62,7 +62,7 @@
     "expires_at": "2026-03-09T03:17:56.562951Z",
     "signature": "demo_sig",
     "nonce": "c8131f6678e21bd353a07e8784caa751",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 5
   },
   "c7e5a3d5f93fc7ee51608a64651c0209": {
@@ -73,7 +73,7 @@
     "expires_at": "2026-03-09T03:21:45.765672Z",
     "signature": "demo_sig",
     "nonce": "5ba355401d9744472ce45e6c485a9e70",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 6
   },
   "3ae514bd0738e22884de1f18894f2d91": {
@@ -84,7 +84,7 @@
     "expires_at": "2026-03-09T03:21:49.277004Z",
     "signature": "demo_sig",
     "nonce": "93bbb5f687db048ebe3478a4a738dd06",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 7
   },
   "209d9529054c1ebc138da2ac7cb1253d": {
@@ -106,7 +106,7 @@
     "expires_at": "2026-03-09T14:47:53.389842Z",
     "signature": "demo_sig",
     "nonce": "4d26209e37509e8e9b7676d8253265b6",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 9,
     "burn_on_read": false
   },
@@ -118,7 +118,7 @@
     "expires_at": "2026-03-09T14:48:03.537448Z",
     "signature": "demo_sig",
     "nonce": "16a4c9a369503db72f72b76319db4e82",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 10,
     "burn_on_read": false
   },
@@ -130,7 +130,7 @@
     "expires_at": "2026-03-09T14:50:05.143157Z",
     "signature": "demo_sig",
     "nonce": "5559cb72b8fe596cdd042ff2a74bddba",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 11,
     "burn_on_read": false
   },
@@ -142,7 +142,7 @@
     "expires_at": "2026-03-09T13:51:11.319843Z",
     "signature": "demo_sig",
     "nonce": "94b62d3447327175215d456b83a61fbd",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 12,
     "burn_on_read": false
   },
@@ -154,7 +154,7 @@
     "expires_at": "2026-03-09T13:51:31.492225Z",
     "signature": "demo_sig",
     "nonce": "f8a003e833836bf483224817089ef838",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 13,
     "burn_on_read": false
   },
@@ -166,7 +166,7 @@
     "expires_at": "2026-03-09T13:51:32.050183Z",
     "signature": "demo_sig",
     "nonce": "4bfc1b25bf34b8fa195412c50c50189c",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 14,
     "burn_on_read": false
   },
@@ -178,7 +178,7 @@
     "expires_at": "2026-03-09T13:51:32.730115Z",
     "signature": "demo_sig",
     "nonce": "b9a6b596038ab80daf0521afdbbeb896",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 15,
     "burn_on_read": false
   },
@@ -190,7 +190,7 @@
     "expires_at": "2026-03-09T13:51:33.678393Z",
     "signature": "demo_sig",
     "nonce": "028ad478c92efd6c369ca21baf439cae",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 16,
     "burn_on_read": false
   },
@@ -202,7 +202,7 @@
     "expires_at": "2026-03-09T13:51:34.107359Z",
     "signature": "demo_sig",
     "nonce": "fa94c8e6082886bc70e326b83f7685ff",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 17,
     "burn_on_read": false
   },
@@ -214,7 +214,7 @@
     "expires_at": "2026-03-09T13:51:34.273594Z",
     "signature": "demo_sig",
     "nonce": "718271da5c897a02cfab5e913422b5c7",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 18,
     "burn_on_read": false
   },
@@ -226,7 +226,7 @@
     "expires_at": "2026-03-09T13:51:34.540059Z",
     "signature": "demo_sig",
     "nonce": "e38a2bcc6ba8f80f497422bef04462f3",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 19,
     "burn_on_read": false
   },
@@ -238,7 +238,7 @@
     "expires_at": "2026-03-09T13:51:34.758535Z",
     "signature": "demo_sig",
     "nonce": "dbe8b006f12e643225c199894df7b9cd",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 20,
     "burn_on_read": false
   },
@@ -250,7 +250,7 @@
     "expires_at": "2026-03-09T13:51:34.995574Z",
     "signature": "demo_sig",
     "nonce": "33139697021a172859a9cc8fbd08d238",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 21,
     "burn_on_read": false
   },
@@ -262,7 +262,7 @@
     "expires_at": "2026-03-09T13:51:37.710305Z",
     "signature": "demo_sig",
     "nonce": "f78784713994969977c09a9130efa125",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 22,
     "burn_on_read": false
   },
@@ -274,7 +274,7 @@
     "expires_at": "2026-03-09T13:51:37.899037Z",
     "signature": "demo_sig",
     "nonce": "4d27090c4553b7b012d6368f7af48a71",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 23,
     "burn_on_read": false
   },
@@ -286,7 +286,7 @@
     "expires_at": "2026-03-09T13:51:38.073881Z",
     "signature": "demo_sig",
     "nonce": "22ba41d98975e083786a7cdaf06a7c58",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 24,
     "burn_on_read": false
   },
@@ -298,7 +298,7 @@
     "expires_at": "2026-03-09T13:51:38.224877Z",
     "signature": "demo_sig",
     "nonce": "66e7dae4565bb1c8476f3cc10958d1d0",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 25,
     "burn_on_read": false
   },
@@ -310,7 +310,7 @@
     "expires_at": "2026-03-09T13:51:38.355457Z",
     "signature": "demo_sig",
     "nonce": "3f50791c464dc17e34b4d5ebc7203c50",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 26,
     "burn_on_read": false
   },
@@ -322,7 +322,7 @@
     "expires_at": "2026-03-09T13:51:38.538380Z",
     "signature": "demo_sig",
     "nonce": "d3804d269a00d2ac9da5d015e2abe9cd",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 27,
     "burn_on_read": false
   },
@@ -334,7 +334,7 @@
     "expires_at": "2026-03-09T13:51:38.687383Z",
     "signature": "demo_sig",
     "nonce": "e1a334059e78bd6acd9bb86e3e7f9c5e",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 28,
     "burn_on_read": false
   },
@@ -346,7 +346,7 @@
     "expires_at": "2026-03-09T16:12:55.610048+00:00Z",
     "signature": "demo_sig",
     "nonce": "a61a1b2d65085ae1cdf0ea4e73132548",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 25,
     "burn_on_read": false
   },
@@ -358,7 +358,7 @@
     "expires_at": "2026-03-09T16:13:10.620967+00:00Z",
     "signature": "demo_sig",
     "nonce": "95d9d74aa9996b941d2f99a1f8b39ae1",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 26,
     "burn_on_read": false
   },
@@ -370,7 +370,7 @@
     "expires_at": "2026-03-09T16:13:38.918703+00:00Z",
     "signature": "demo_sig",
     "nonce": "c9f017b0d2047b0bb36c2a375b329a87",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 27,
     "burn_on_read": false
   },
@@ -382,7 +382,7 @@
     "expires_at": "2026-03-09T15:15:06.446852+00:00Z",
     "signature": "demo_sig",
     "nonce": "8c77ccef0b346e394c6b4e6ae5e246cf",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 28,
     "burn_on_read": false
   },
@@ -394,7 +394,7 @@
     "expires_at": "2026-03-09T16:09:07.172113+00:00Z",
     "signature": "demo_sig",
     "nonce": "df400ae66a0ed0bb096e03b85ddae11c",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 29,
     "burn_on_read": false
   },
@@ -406,7 +406,7 @@
     "expires_at": "2026-03-09T16:13:50.481383+00:00Z",
     "signature": "demo_sig",
     "nonce": "42dc7cd8f6c655a60dad06618893064e",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 30,
     "burn_on_read": false
   },
@@ -442,7 +442,7 @@
     "expires_at": "2026-03-09T16:14:41.216846+00:00Z",
     "signature": "demo_sig",
     "nonce": "1843e68276747254ef97ae29f00e0ce3",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 33,
     "burn_on_read": false
   },
@@ -466,7 +466,7 @@
     "expires_at": "2026-03-09T16:41:27.254196Z",
     "signature": "demo_sig",
     "nonce": "0661ba46c9a759073f1796a7bf5b03ba",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 37,
     "burn_on_read": false
   },
@@ -490,7 +490,7 @@
     "expires_at": "2026-03-09T16:41:54.443703Z",
     "signature": "demo_sig",
     "nonce": "1370f037c0d8f4191e6fcae4bdd6fa56",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 39,
     "burn_on_read": true
   },
@@ -502,7 +502,7 @@
     "expires_at": "2026-03-10T04:36:33.506357Z",
     "signature": "demo_sig",
     "nonce": "9fb2082e8cc30176f507925e980b0c68",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 37,
     "burn_on_read": false
   },
@@ -526,7 +526,7 @@
     "expires_at": "2026-03-10T05:50:44.336709Z",
     "signature": "demo_sig",
     "nonce": "a47f50f2c505ad820ea9cd9f0224e0ad",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 45,
     "burn_on_read": false
   },
@@ -562,7 +562,7 @@
     "expires_at": "2026-03-10T05:53:36.983915Z",
     "signature": "demo_sig",
     "nonce": "ebf4ece1f636c5e301f5292d8f608664",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 48,
     "burn_on_read": false
   },
@@ -574,7 +574,7 @@
     "expires_at": "2026-03-10T07:01:58.008394Z",
     "signature": "demo_sig",
     "nonce": "280812cd38c3456109b54abca4dcb77d",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 49,
     "burn_on_read": false
   },
@@ -598,7 +598,7 @@
     "expires_at": "2026-03-10T09:13:19.686083Z",
     "signature": "demo_sig",
     "nonce": "eaacc879f011de0c3da114d653688811",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 51,
     "burn_on_read": false
   },
@@ -634,7 +634,7 @@
     "expires_at": "2026-03-10T09:43:35.426615Z",
     "signature": "demo_sig",
     "nonce": "49fc2cbf87aa61fd9bc6c497640570bb",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 54,
     "burn_on_read": false
   },
@@ -682,7 +682,7 @@
     "expires_at": "2026-03-10T08:45:26.378910Z",
     "signature": "demo_sig",
     "nonce": "727d1c89d2de231c1ec22a4e21bcdef8",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 58,
     "burn_on_read": false
   },
@@ -694,7 +694,7 @@
     "expires_at": "2026-03-10T09:49:58.733996Z",
     "signature": "demo_sig",
     "nonce": "a870c702a5623fafa7af85d0f0366306",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 59,
     "burn_on_read": false
   },
@@ -718,8 +718,73 @@
     "expires_at": "2026-03-10T08:51:19.657696Z",
     "signature": "demo_sig",
     "nonce": "89dc57be970b3215c9f1f96de518d3ee",
-    "status": "active",
+    "status": "expired",
     "merkle_index": 61,
     "burn_on_read": false
+  },
+  "6865322edfaf811871f6a0491d83928d": {
+    "sender": "2eaf32b1a5fd4dbc",
+    "recipient": "49eb3a03014b7c92",
+    "proof_hash": "9522c1cfbc35b09b9ee0e2acb7ef70370823ae9d9a7a6a892367f8b5e30223f3",
+    "timestamp": "2026-04-11T04:11:14.431185+00:00",
+    "expires_at": "2026-04-11T05:11:14.434208Z",
+    "signature": "demo_sig",
+    "nonce": "77be63ed8f523f2f64ccb8d3faba779e",
+    "status": "expired",
+    "merkle_index": 64,
+    "burn_on_read": false
+  },
+  "ccea3fedef9b5b55e85ba1b48fe3cde0": {
+    "sender": "2eaf32b1a5fd4dbc",
+    "recipient": "49eb3a03014b7c92",
+    "proof_hash": "ab974e6e0c05b083dab5d28c5e1c5c7c0665c89f8fd41ef27a278a8f04fea7a5",
+    "timestamp": "2026-04-11T04:11:18.286246+00:00",
+    "expires_at": "2026-04-11T05:11:18.289259Z",
+    "signature": "demo_sig",
+    "nonce": "4ac2b4f5327b0b4826bde2996fcd01e0",
+    "status": "expired",
+    "merkle_index": 65,
+    "burn_on_read": false
+  },
+  "f402e7d4181e2a41603f234ecc7784ef": {
+    "sender": "2be041458f557f45",
+    "recipient": "d9eaca1bf9f257bc",
+    "proof_hash": "35057474597ec393379cbdb58b2a6f642429dfcb469fdc29abebedbe1864fc0b",
+    "timestamp": "2026-04-11T04:52:53.484096+00:00",
+    "expires_at": "2026-04-11T04:53:53.487202Z",
+    "signature": "demo_sig",
+    "nonce": "c02898a7efd0500fd6d5b39509da6ae8",
+    "status": "expired",
+    "merkle_index": 66,
+    "burn_on_read": false
+  },
+  "82353c7781079f76d8f82053823573fc": {
+    "sender": "d9eaca1bf9f257bc",
+    "recipient": "2be041458f557f45",
+    "proof_hash": "62688863de3d4951e4684ea53c75e4193b2dd85835309d0e498f4c96da75aa39",
+    "timestamp": "2026-04-11T04:53:17.210761+00:00",
+    "expires_at": "2026-04-11T05:53:17.213972Z",
+    "signature": "demo_sig",
+    "nonce": "8ccf1869b3baa37ecd76248363e5a6a9",
+    "status": "burned",
+    "merkle_index": 67,
+    "burn_on_read": true
+  },
+  "921ff47e90e2724a7624edc2342f3bfe": {
+    "id": "921ff47e90e2724a7624edc2342f3bfe",
+    "sender": "alice-laptop",
+    "recipient": "bob-phone",
+    "encrypted_data": {
+      "ciphertext": "xGkdMkt63foTJcBNTy20NYKpc/GkHATq",
+      "tag": "Avr/UqxEWb2DLjpnIzoHFA==",
+      "nonce": "BHhS3HAwpdeFtXCjuXeR5g=="
+    },
+    "encrypted_session_key": null,
+    "signature": null,
+    "time_lock_key_id": "7e27143fd54368381a41d091e8a4423a",
+    "proof_hash": "c51ed9c1b4fe6dc15c9976479bbe9fd6bcb06144ba71cc8b2ba888d47da2c0eb",
+    "timestamp": "2026-04-11T05:41:40Z",
+    "expires_at": "2026-04-11T06:41:40Z",
+    "status": "active"
   }
 }

@@ -819,5 +819,65 @@
     "proof_hash": "5ff5d73ffad0f5f24626576696aa084f035600dda4757269c8ef98cb52ea02a7",
     "merkle_index": 64,
     "data_hash": "DESTROYED"
+  },
+  "6865322edfaf811871f6a0491d83928d": {
+    "hash": "9d8cf29cdffda58e1c9ddd24ea54d44ce930ceb98187b570cff43ead01447d6b",
+    "timestamp": "2026-04-11T04:11:14.431185+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "2eaf32b1a5fd4dbc",
+      "recipient": "49eb3a03014b7c92",
+      "type": "chat_message"
+    },
+    "proof_hash": "9522c1cfbc35b09b9ee0e2acb7ef70370823ae9d9a7a6a892367f8b5e30223f3",
+    "merkle_index": 64
+  },
+  "ccea3fedef9b5b55e85ba1b48fe3cde0": {
+    "hash": "c5f6a4336e2c26a1eb1fb2411322bf97ca87e152f9dc9eb3b7f486cd6997a318",
+    "timestamp": "2026-04-11T04:11:18.286246+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "2eaf32b1a5fd4dbc",
+      "recipient": "49eb3a03014b7c92",
+      "type": "chat_message"
+    },
+    "proof_hash": "ab974e6e0c05b083dab5d28c5e1c5c7c0665c89f8fd41ef27a278a8f04fea7a5",
+    "merkle_index": 65
+  },
+  "f402e7d4181e2a41603f234ecc7784ef": {
+    "hash": "07844091261c2cfbc42651232ddb358d9e94984ff09bab6191d51828b66c7f88",
+    "timestamp": "2026-04-11T04:52:53.484096+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "2be041458f557f45",
+      "recipient": "d9eaca1bf9f257bc",
+      "type": "chat_message"
+    },
+    "proof_hash": "35057474597ec393379cbdb58b2a6f642429dfcb469fdc29abebedbe1864fc0b",
+    "merkle_index": 66
+  },
+  "82353c7781079f76d8f82053823573fc": {
+    "hash": "6c09bdb36bab29513d249fd7683e12b694abe622629a28401ee7a814cb388bf5",
+    "timestamp": "2026-04-11T04:53:17.210761+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "d9eaca1bf9f257bc",
+      "recipient": "2be041458f557f45",
+      "type": "chat_message"
+    },
+    "proof_hash": "62688863de3d4951e4684ea53c75e4193b2dd85835309d0e498f4c96da75aa39",
+    "merkle_index": 67,
+    "data_hash": "DESTROYED"
+  },
+  "921ff47e90e2724a7624edc2342f3bfe": {
+    "hash": "008c97100db5da4411e1706fad4bf96907553a50b342a299fed0ce7e81ba78fc",
+    "timestamp": "2026-04-11T05:41:40.597789+00:00",
+    "algorithm": "sha256",
+    "metadata": {
+      "sender": "alice-laptop",
+      "recipient": "bob-phone",
+      "type": "chat_message"
+    },
+    "proof_hash": "c51ed9c1b4fe6dc15c9976479bbe9fd6bcb06144ba71cc8b2ba888d47da2c0eb"
   }
 }

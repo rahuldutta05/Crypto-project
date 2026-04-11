@@ -136,7 +136,7 @@ class SecurityMonitor:
                     },
                     'analyzed': False
                 }
-                self.events.append(bf_event)
+                self.events.insert(0, bf_event)
                 self._save_events()
 
                 print(f"\n🚨 SECURITY ALERT: brute_force_detected")
@@ -170,7 +170,7 @@ class SecurityMonitor:
                     },
                     'analyzed': False
                 }
-                self.events.append(sp_event)
+                self.events.insert(0, sp_event)
                 self._save_events()
 
     def _trigger_alert(self, event):

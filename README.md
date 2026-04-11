@@ -2,7 +2,7 @@
 
 **A cryptographically verifiable, end-to-end encrypted chat system where every security property is mathematically provable — not just claimed.**
 
-[Live Demo](https://crypto-chat-sepia.vercel.app) · [Backend API](https://cryptochat-production-e2fe.up.railway.app/api/health) · [Report Bug](../../issues) · [Request Feature](../../issues)
+[Local Presentation Demo](http://localhost:5173) · [Admin Dashboard](http://localhost:5173/admin) · [Report Bug](../../issues)
 
 ---
 
@@ -80,9 +80,9 @@ Every claim is a **mathematical proof**. No faith in any party required.
 - 🗑️ **Burn on Read** — messages self-destruct after delivery
 - ⏱️ **Configurable expiry** — 1 min to 24 hr; keys auto-nullified by scheduler
 - 🛡️ **Safety Numbers** — Signal-style MITM detection via verbal fingerprint comparison
-- 📊 **Security Dashboard** — real-time threat monitoring, attack simulation, pentest reports
-- 🔄 **Persistent storage** — GitHub API-backed JSON storage survives server restarts
-- 🌐 **Deployed** — Frontend on Vercel, Backend on Railway
+- 🛡️ **Security Dashboard** — real-time threat monitoring, automated attack detection, and pentest reports
+- 🔄 **Local Storage** — robust JSON-based storage for local demonstrations (GitHub sync optional)
+- 💻 **Presentation Mode** — optimized for local execution and rapid threat escalation demos
 
 ---
 
@@ -161,7 +161,7 @@ crypto-chat-v2/
 ### Prerequisites
 
 - Node.js 18+ and npm
-- Python 3.11+
+- Python 3.11+ (Fully compatible with Python 3.13)
 - Git
 
 ---
@@ -209,7 +209,7 @@ npm install
 npm run dev
 ```
 
-The frontend starts on **http://localhost:5173** and proxies API/WebSocket calls to `localhost:5000` automatically.
+The frontend starts on **http://localhost:5173** and proxies API/WebSocket calls to the local backend.
 
 ---
 
@@ -223,53 +223,26 @@ The frontend starts on **http://localhost:5173** and proxies API/WebSocket calls
 
 ---
 
-## 🌐 Deployment
+## 🌐 Local Presentation Setup
 
-### Frontend — Vercel
+The project is currently optimized for local presentations and live security demonstrations.
 
-```bash
-cd frontend
-npm run build
-# Deploy the dist/ folder to Vercel, or connect your GitHub repo
-```
+| Component | URL |
+|-----------|-----|
+| **Frontend** | `http://localhost:5173` |
+| **Backend** | `http://localhost:5000` |
+| **Admin Panel** | `http://localhost:5173/admin` |
 
-Set environment variable in Vercel:
-```
-VITE_BACKEND_URL=https://cryptochat-production-e2fe.up.railway.app
-```
-
-The included `vercel.json` handles SPA routing rewrites and sets required `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers for WebCrypto API support.
+### 🚀 Live Demo Workflow
+1. **Start Backend**: `cd backend && python app.py`
+2. **Start Frontend**: `cd frontend && npm run dev`
+3. **Run Attack Simulation**: `python attack.py` (in a separate terminal)
 
 ---
 
-### Backend — Railway
-
-1. Connect your GitHub repo to Railway
-2. Set the root directory to `backend/`
-3. Railway auto-detects `railway.json` and uses Nixpacks builder
-4. Set environment variables (see below)
-5. Deploy — the `Procfile` runs `gunicorn --worker-class eventlet`
-
----
-
-## 🔧 Environment Variables
-
-### Backend
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `SECRET_KEY` | Yes | Flask secret key — generate a random 32-byte hex string |
-| `FRONTEND_URL` | Yes | Full URL of deployed frontend (e.g. `https://crypto-chat-sepia.vercel.app/`) |
-| `GITHUB_TOKEN` | Optional | GitHub PAT with `repo` write scope — enables persistent storage |
-| `GITHUB_REPO` | Optional | Repo for storage (e.g. `username/repo-name`) |
-| `GITHUB_BRANCH` | Optional | Branch to read/write (default: `main`) |
-| `GITHUB_STORAGE_PATH` | Optional | Path inside repo (default: `backend/storage`) |
-
-### Frontend
-
-| Variable | Description |
-|----------|-------------|
-| `VITE_BACKEND_URL` | Full URL of deployed backend |
+## 🔧 Deployment (Optional)
+...
+253: └── railway.json                 # Railway deployment config
 
 ---
 
@@ -391,17 +364,19 @@ The admin dashboard at `/admin` provides:
 
 ## 🧪 Running the Pentest Simulation
 
-The admin dashboard includes a built-in attack simulator. To test the full pipeline:
+The project includes an **automated attack script** (`attack.py`) designed for live demonstrations. 
 
-1. Navigate to `/admin`
-2. Use the **Attacker Simulation** panel to fire events:
-   - 🔁 **Replay Attack** — tests nonce deduplication
-   - 💥 **Brute Force** — tests pattern detection (5 failures → alert)
-   - 🕵 **MITM Attempt** — tests safety number mismatch detection
-   - 🚫 **Unauthorized Access** — tests unverified device rejection
-3. Watch the **Recent Security Events** table update in real-time via WebSocket
-4. Check **Threat Level** — it escalates automatically based on event volume
-5. View the **Penetration Test Report** for a structured security analysis
+1. **Dashboard**: Open **http://localhost:5173/admin**
+2. **Execute**:
+   ```bash
+   python attack.py
+   ```
+3. **Defense Scenarios**:
+   - 🔁 **Replay Protection** — Attacker tries to resend captured messages.
+   - 💥 **Brute Force Detection** — Rapid failures trigger automated detectors.
+   - 🕵 **MITM Defeat** — System detects Signal-style fingerprint mismatches.
+   - 🚫 **Unauthorized Rejection** — Rejects unauthenticated private data requests.
+   - 📈 **Threat Level Sensor** — Watch the "Threat Level" turn **RED (CRITICAL)** as attacks intensify.
 
 ---
 

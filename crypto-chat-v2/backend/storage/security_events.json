@@ -1,5 +1,2728 @@
 [
   {
+    "id": "56579d9d6f547c46",
+    "timestamp": "2026-04-11T06:21:33.538355Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "6zIOcbj4fxlh9yMwAAAL",
+      "device_id": null,
+      "timestamp": "2026-04-11T06:21:33Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "68f5583dbd4ad691",
+    "timestamp": "2026-04-11T06:04:59.264067Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "device_id": "c5fe1525a78a8e74",
+      "expected": null,
+      "received": "000000"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e40de6d1170d8210",
+    "timestamp": "2026-04-11T06:03:59.486063Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bab20228fb8d1c61",
+    "timestamp": "2026-04-11T06:03:57.109539Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "70219ea3657a95f5",
+    "timestamp": "2026-04-11T06:03:54.717826Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "127.0.0.1",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cf8aef9710bc47ac",
+    "timestamp": "2026-04-11T06:03:54.680540Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "29735dc7e730d706",
+    "timestamp": "2026-04-11T06:03:52.306337Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "80d86ac6cccdedaa",
+    "timestamp": "2026-04-11T06:03:49.893082Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0729f6a399126951",
+    "timestamp": "2026-04-11T06:03:47.514367Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cbdc798d12b1abd5",
+    "timestamp": "2026-04-11T06:03:15.890140Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "rogue-agent-007",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cecec8e2b86971ce",
+    "timestamp": "2026-04-11T06:03:08.707481Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 8,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6f89375acd53a4de",
+    "timestamp": "2026-04-11T06:03:08.673151Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b71fb3e9443b3bc4",
+    "timestamp": "2026-04-11T06:03:06.191772Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 7,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c4543c793b74cc1d",
+    "timestamp": "2026-04-11T06:03:06.152256Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "637c03773705c902",
+    "timestamp": "2026-04-11T06:03:03.686316Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 6,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "011046e08f5aa030",
+    "timestamp": "2026-04-11T06:03:03.642151Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1b83b994650cbb90",
+    "timestamp": "2026-04-11T06:03:01.553663Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 5,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "106c06675d747eb0",
+    "timestamp": "2026-04-11T06:03:01.498522Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "c5fe1525a78a8e74",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "47dfd857393becb1",
+    "timestamp": "2026-04-11T06:02:06.113344Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "6zIOcbj4fxlh9yMwAAAL",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T06:02:06.113344Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0d945e0a8689c19e",
+    "timestamp": "2026-04-11T06:02:05.565901Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "JZuushIRz026Szi7AAAJ",
+      "device_id": null,
+      "timestamp": "2026-04-11T06:02:05Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fc24c6c2defde749",
+    "timestamp": "2026-04-11T05:57:32.400980Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "receive_messages",
+      "target_id": "random-id",
+      "ip": "127.0.0.1",
+      "note": "Attempted to fetch messages for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "62223d64f35a6015",
+    "timestamp": "2026-04-11T05:57:18.423721Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-102",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a14f12fb8c060ae4",
+    "timestamp": "2026-04-11T05:57:15.935307Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-101",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cbbd096e72bd7207",
+    "timestamp": "2026-04-11T05:57:13.442164Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-100",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3fa0cd5f67891988",
+    "timestamp": "2026-04-11T05:56:07.038758Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "device_id": "b67a1ad8c9e87647",
+      "expected": null,
+      "received": "000000"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9042d8111e4a15ee",
+    "timestamp": "2026-04-11T05:55:53.030352Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ce423c5a2cd5973d",
+    "timestamp": "2026-04-11T05:55:50.648588Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "31b8c08879eadb7a",
+    "timestamp": "2026-04-11T05:55:48.264499Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "55406b8c77655809",
+    "timestamp": "2026-04-11T05:55:45.880901Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "127.0.0.1",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d2795d4cf25a6fd6",
+    "timestamp": "2026-04-11T05:55:45.851509Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a3672c1bc8fc7d05",
+    "timestamp": "2026-04-11T05:55:43.481044Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8be0ce798a699cd1",
+    "timestamp": "2026-04-11T05:55:41.099719Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "aba1250ce12653a3",
+    "timestamp": "2026-04-11T05:54:45.110773Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "rogue-agent-007",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "019ec3de6b100cea",
+    "timestamp": "2026-04-11T05:54:30.143127Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 12,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "be3fbd56f41fbc1b",
+    "timestamp": "2026-04-11T05:54:30.107642Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "47c3896a052675d1",
+    "timestamp": "2026-04-11T05:54:27.620298Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 11,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2e7dbd0498a0bcdf",
+    "timestamp": "2026-04-11T05:54:27.581372Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "36c547d6229fa115",
+    "timestamp": "2026-04-11T05:54:25.009682Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 10,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ef0f2acb6c0c7eb5",
+    "timestamp": "2026-04-11T05:54:24.797112Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a21f71a4b9507e28",
+    "timestamp": "2026-04-11T05:54:22.696663Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 9,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "51a5bf84fe3514d5",
+    "timestamp": "2026-04-11T05:54:22.659368Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "b67a1ad8c9e87647",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "23dc7059c210ebf8",
+    "timestamp": "2026-04-11T05:52:52.846841Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "JZuushIRz026Szi7AAAJ",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:52:52.846841Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "99160b1a265c11fe",
+    "timestamp": "2026-04-11T05:52:52.363537Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "nwVIB3V1juCciteKAAAH",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:52:52Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5015e68a971a966d",
+    "timestamp": "2026-04-11T05:51:50.803854Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "rogue-agent-007",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d0ea3da6d5e3cd18",
+    "timestamp": "2026-04-11T05:51:36.516926Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 11,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0257022db28a3f4a",
+    "timestamp": "2026-04-11T05:51:36.481589Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "2a844df63e72601a",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7f62d08de4124574",
+    "timestamp": "2026-04-11T05:51:34.009529Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 10,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f6d239c6dbe4a3a7",
+    "timestamp": "2026-04-11T05:51:33.942305Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "2a844df63e72601a",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2e41fcbaf9975ffe",
+    "timestamp": "2026-04-11T05:51:31.467917Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 9,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e6650fe4afd6e590",
+    "timestamp": "2026-04-11T05:51:31.423441Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "2a844df63e72601a",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b6ce49a15611c2f5",
+    "timestamp": "2026-04-11T05:51:29.341520Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 8,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fa4c3438cac09c21",
+    "timestamp": "2026-04-11T05:51:29.296633Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "2a844df63e72601a",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1315d8c168f340b6",
+    "timestamp": "2026-04-11T05:48:17.854913Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "nwVIB3V1juCciteKAAAH",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:48:17.854913Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b9c39df7024f3ca1",
+    "timestamp": "2026-04-11T05:48:17.432375Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "gNm8kwHROFW9vB_AAAAF",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:48:17Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bd38f6570d67f310",
+    "timestamp": "2026-04-11T05:46:16.273345Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "receive_messages",
+      "target_id": "random-id",
+      "ip": "127.0.0.1",
+      "note": "Attempted to fetch messages for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "be8cd84f392731df",
+    "timestamp": "2026-04-11T05:46:12.297036Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-102",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ea972451167a09b9",
+    "timestamp": "2026-04-11T05:46:09.823125Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-101",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b04d393f2e3849d3",
+    "timestamp": "2026-04-11T05:46:07.351788Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-100",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "deda0d89ddb47d9e",
+    "timestamp": "2026-04-11T05:46:02.080902Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "device_id": "696bfeaae80d3acf",
+      "expected": null,
+      "received": "000000"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2b65ae0091edc638",
+    "timestamp": "2026-04-11T05:45:57.061675Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "043022f5761a7ea9",
+    "timestamp": "2026-04-11T05:45:54.674990Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d7fc29d2e3b12454",
+    "timestamp": "2026-04-11T05:45:52.276606Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "127.0.0.1",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "40efd9aa894d5744",
+    "timestamp": "2026-04-11T05:45:52.238429Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "957addfba958e421",
+    "timestamp": "2026-04-11T05:45:49.870603Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3fe92ea9c5c5dbed",
+    "timestamp": "2026-04-11T05:45:47.464667Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "073ac65bd62829be",
+    "timestamp": "2026-04-11T05:45:45.092694Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a492b5caa9372ec0",
+    "timestamp": "2026-04-11T05:45:39.818325Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "rogue-agent-007",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b2a82ea539af922d",
+    "timestamp": "2026-04-11T05:45:27.162139Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 15,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a55ac971f46dc9e7",
+    "timestamp": "2026-04-11T05:45:27.134636Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3e05f3a9f4b958e9",
+    "timestamp": "2026-04-11T05:45:24.674413Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 14,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "877590f05022f621",
+    "timestamp": "2026-04-11T05:45:24.649953Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "28eb4f5219281981",
+    "timestamp": "2026-04-11T05:45:22.174470Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 13,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cc747cf565479300",
+    "timestamp": "2026-04-11T05:45:22.150328Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "54dab56db83fd475",
+    "timestamp": "2026-04-11T05:45:20.074291Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 12,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2b3a225adeedce09",
+    "timestamp": "2026-04-11T05:45:20.031112Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "696bfeaae80d3acf",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6ffca5d616046e8b",
+    "timestamp": "2026-04-11T05:45:18.482250Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "gNm8kwHROFW9vB_AAAAF",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:45:18.482250Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6d766d15134947f2",
+    "timestamp": "2026-04-11T05:45:18.058950Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "BFe0qp_ESJT1a62mAAAD",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:45:18Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e23d4efa5c1459bb",
+    "timestamp": "2026-04-11T05:44:27.305620Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "BFe0qp_ESJT1a62mAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:44:27.305620Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d430b168795b5cc0",
+    "timestamp": "2026-04-11T05:44:27.280630Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "pSXH_jqcb6K_wiwAAAAC",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:44:27.280630Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ffa3806ed6223df3",
+    "timestamp": "2026-04-11T05:43:55.297737Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "R-R9juooHgUUcgssAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:43:55.297737Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4c739dbb4fb9ccff",
+    "timestamp": "2026-04-11T05:43:54.792119Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "HxVfylQBTe-NAnjlAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:43:54.792119Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1d2df67c7bc289a8",
+    "timestamp": "2026-04-11T05:43:06.674482Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "RWJKeD_Tcon__zCuAAAJ",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:43:06.674482Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "89d9e8c55d1842e2",
+    "timestamp": "2026-04-11T05:43:06.160486Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "Saf3YoRRkXeV_e0IAAAH",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:43:06Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "169fa320857e60ee",
+    "timestamp": "2026-04-11T05:42:55.292138Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "receive_messages",
+      "target_id": "random-id",
+      "ip": "127.0.0.1",
+      "note": "Attempted to fetch messages for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8d02624dd9dd9dfc",
+    "timestamp": "2026-04-11T05:42:50.954429Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-102",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ce157ced2e204c4e",
+    "timestamp": "2026-04-11T05:42:48.483381Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-101",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3f3642388fc18be1",
+    "timestamp": "2026-04-11T05:42:46.019607Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "user-100",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3f71357b022c6b04",
+    "timestamp": "2026-04-11T05:42:39.302622Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "verify_safety_number",
+      "device_id": "victim-device",
+      "ip": "127.0.0.1",
+      "note": "Unknown device tried to verify safety number"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cd9ea09c8116e8ce",
+    "timestamp": "2026-04-11T05:42:29.401576Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bc01f5546c7740db",
+    "timestamp": "2026-04-11T05:42:27.052341Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5173828f32f2d4d1",
+    "timestamp": "2026-04-11T05:42:24.681015Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c83503a44aeb244e",
+    "timestamp": "2026-04-11T05:42:22.265898Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "14d8132990f03860",
+    "timestamp": "2026-04-11T05:42:19.879716Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b3df6318275be343",
+    "timestamp": "2026-04-11T05:42:17.512757Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f6dc21995caca212",
+    "timestamp": "2026-04-11T05:42:12.913930Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "rogue-agent-007",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "94fd0c98fa5a5d4b",
+    "timestamp": "2026-04-11T05:41:47.681216Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d0c9b717fd73bc78",
+    "timestamp": "2026-04-11T05:41:45.198274Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ee5cf8c4d6f654fe",
+    "timestamp": "2026-04-11T05:41:42.689139Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "DEMO_NONCE_99",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "35645417b256c916",
+    "timestamp": "2026-04-11T05:41:40.637270Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "921ff47e90e2724a7624edc2342f3bfe",
+      "sender": "alice-laptop",
+      "recipient": "bob-phone",
+      "proof_hash": "c51ed9c1b4fe6dc15c9976479bbe9fd6bcb06144ba71cc8b2ba888d47da2c0eb"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fc31b06ea2359a05",
+    "timestamp": "2026-04-11T05:40:10.328239Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "Saf3YoRRkXeV_e0IAAAH",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:40:10.328239Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cc474c599e5a4fd1",
+    "timestamp": "2026-04-11T05:40:09.780384Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "B9-HvygRhMTNlvJYAAAF",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:40:09Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4877f3babb1793ab",
+    "timestamp": "2026-04-11T05:40:06.213766Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:40:06.213766Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4141a388bbac327e",
+    "timestamp": "2026-04-11T05:40:01.129353Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:40:01.129353Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "65a5fcc9c0282c9d",
+    "timestamp": "2026-04-11T05:39:55.893650Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:39:55.893650Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c759c8ea3315c9c1",
+    "timestamp": "2026-04-11T05:39:49.318502Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:39:49.318502Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "868ca955abbff61c",
+    "timestamp": "2026-04-11T05:39:32.314673Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "rogue-device-4",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "22f21dd8fad674d0",
+    "timestamp": "2026-04-11T05:39:29.948284Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "rogue-device-3",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0efe7a1394d21ff8",
+    "timestamp": "2026-04-11T05:39:27.539416Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "rogue-device-2",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "89078a4b91e47da8",
+    "timestamp": "2026-04-11T05:39:25.156270Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "rogue-device-1",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "56d44f23141d22da",
+    "timestamp": "2026-04-11T05:39:22.773191Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "get_history",
+      "target_id": "rogue-device-0",
+      "ip": "127.0.0.1",
+      "note": "Attempted to access history for unknown device"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a30576f07d66364f",
+    "timestamp": "2026-04-11T05:39:18.113484Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "action": "verify_safety_number",
+      "device_id": "alice-laptop",
+      "ip": "127.0.0.1",
+      "note": "Unknown device tried to verify safety number"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a92d27b0480786c5",
+    "timestamp": "2026-04-11T05:39:11.679808Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3a28cdc60d020906",
+    "timestamp": "2026-04-11T05:39:09.220526Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "089ee702e4142612",
+    "timestamp": "2026-04-11T05:39:06.747055Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c966151f74ac85c9",
+    "timestamp": "2026-04-11T05:39:04.289373Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "08666142d87eb80e",
+    "timestamp": "2026-04-11T05:39:01.799869Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "94c860eedc3827ab",
+    "timestamp": "2026-04-11T05:38:59.285465Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "da3db8c511f93d94",
+    "timestamp": "2026-04-11T05:38:56.815284Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0fb74de290fa7a22",
+    "timestamp": "2026-04-11T05:38:54.339456Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "13b84994e1e16957",
+    "timestamp": "2026-04-11T05:38:51.870225Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "713364bbfecf3b08",
+    "timestamp": "2026-04-11T05:38:49.401666Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "reason": "unknown_id",
+      "anon_id": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e1e094192210d25f",
+    "timestamp": "2026-04-11T05:38:45.100201Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0c4ac67c2531d99e",
+    "timestamp": "2026-04-11T05:38:42.497781Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b86a372c1a2483b7",
+    "timestamp": "2026-04-11T05:38:39.891341Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8b4d506798f1c28c",
+    "timestamp": "2026-04-11T05:38:37.318248Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cfd2adc8b9d39825",
+    "timestamp": "2026-04-11T05:38:34.700819Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "df6b124b96877c87",
+    "timestamp": "2026-04-11T05:38:32.097622Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a6014c3d7abddd2b",
+    "timestamp": "2026-04-11T05:38:29.493888Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "868a266048e70a60",
+    "timestamp": "2026-04-11T05:38:26.911415Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "201977191cb449f8",
+    "timestamp": "2026-04-11T05:38:17.854004Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "B9-HvygRhMTNlvJYAAAF",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:38:17.854004Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5bf19a833c6ff099",
+    "timestamp": "2026-04-11T05:38:17.165336Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "-cEkZ2s0kHTndFk6AAAC",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:38:17Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a7f1bfbb1b6ea560",
+    "timestamp": "2026-04-11T05:37:42.305789Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "pZprRXoeroL2JFCWAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:37:42.305789Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0b2a448de5fb9027",
+    "timestamp": "2026-04-11T05:37:42.281128Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "-cEkZ2s0kHTndFk6AAAC",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:37:42.281128Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "edde346d8ac5eb5b",
+    "timestamp": "2026-04-11T05:36:53.285081Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "hkkdBgF9WsItx-r7AAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:53.285081Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "8768d347c58a152f",
+    "timestamp": "2026-04-11T05:36:52.287990Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "MFc4Gm5uy5Nt5JCGAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:52.287990Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "21fbaa6a3e1f56a2",
+    "timestamp": "2026-04-11T05:36:49.805014Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "uq0sfvval0UGGA4zAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:49.805014Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fabd922fcd8df97b",
+    "timestamp": "2026-04-11T05:36:49.782987Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "joUSIRmaB9qiz9obAAAC",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:49.782987Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1d2f1b5943e7d61b",
+    "timestamp": "2026-04-11T05:36:18.297001Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "OL6B1Fh0e_80EUevAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:18.297001Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "92f991ec71ff8e4b",
+    "timestamp": "2026-04-11T05:36:18.274967Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "tlGlf2tM2_VR1siAAAAC",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:18.274967Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "615e562b5d239aae",
+    "timestamp": "2026-04-11T05:36:05.288104Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "FipsBLuTg5yJVXkBAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:05.288104Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "150146509a5d720e",
+    "timestamp": "2026-04-11T05:36:04.913028Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "1SnmKJw2BVzU7o8tAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:36:04.913028Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "decb8523a10f4115",
+    "timestamp": "2026-04-11T05:33:29.153523Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "GLEWoB8g6DavcboMAAAb",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:33:29.152244Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "301c802b687d953b",
+    "timestamp": "2026-04-11T05:33:28.597991Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "BNnaO-tzBlWyRq7VAAAZ",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:33:28Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "75de942691c97192",
+    "timestamp": "2026-04-11T05:32:56.910332Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "56c579ae3e2ceddf",
+    "timestamp": "2026-04-11T05:32:54.332864Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fdbc5351e5f92fe6",
+    "timestamp": "2026-04-11T05:32:51.730895Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "681e6c2cba605cc2",
+    "timestamp": "2026-04-11T05:32:49.151539Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "05e674b069ce52fc",
+    "timestamp": "2026-04-11T05:32:46.553672Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "841ef709f122f64b",
+    "timestamp": "2026-04-11T05:32:43.974415Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e688b8d0e5b67ab4",
+    "timestamp": "2026-04-11T05:32:41.378084Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "494744d255aa3763",
+    "timestamp": "2026-04-11T05:32:38.800739Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "095e7a2bf6b8053e",
+    "timestamp": "2026-04-11T05:30:31.603357Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated suspicious_pattern via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:30:31.603357Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "35a5f05e5f25d64f",
+    "timestamp": "2026-04-11T05:29:52.565628Z",
+    "event_type": "auth_failure",
+    "severity": "warning",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated auth_failure via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:29:52.565628Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f56a93884d973735",
+    "timestamp": "2026-04-11T05:29:40.563298Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:29:40.563298Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ed9a449a3e0cdf1a",
+    "timestamp": "2026-04-11T05:28:58.167663Z",
+    "event_type": "mitm_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated mitm_detected via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:28:58.167663Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4ff2bc4e3ca9ed0d",
+    "timestamp": "2026-04-11T05:28:22.295400Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated brute_force_detected via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:28:22.295400Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "32f60e06703162e1",
+    "timestamp": "2026-04-11T05:28:10.303761Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "539c32a4737d7754",
+    "timestamp": "2026-04-11T05:28:07.712279Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "da557c417474a5ec",
+    "timestamp": "2026-04-11T05:28:05.107399Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3c7d7c41017f690d",
+    "timestamp": "2026-04-11T05:28:02.520086Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6fa62a97140df87f",
+    "timestamp": "2026-04-11T05:27:59.919356Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "fba9c6221b72c99f",
+    "timestamp": "2026-04-11T05:27:57.318258Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b3163f922bb69b16",
+    "timestamp": "2026-04-11T05:27:54.736374Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "47e8c9185137fbef",
+    "timestamp": "2026-04-11T05:27:52.073630Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6febd27a981a3f85",
+    "timestamp": "2026-04-11T05:26:36.224246Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "BNnaO-tzBlWyRq7VAAAZ",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:26:36.224246Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2f271bf8435621f5",
+    "timestamp": "2026-04-11T05:26:35.769489Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "qY1FmpHEiAZBtCFDAAAX",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:26:35Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1b777eb33b8cb317",
+    "timestamp": "2026-04-11T05:26:09.903870Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "qY1FmpHEiAZBtCFDAAAX",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:26:09.903870Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0d4e275f2bb97d63",
+    "timestamp": "2026-04-11T05:26:09.375156Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "zwFrS1HIrTAtLmtVAAAV",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:26:09Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "091eb6577e9dc0a1",
+    "timestamp": "2026-04-11T05:26:02.292023Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "zwFrS1HIrTAtLmtVAAAV",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:26:02.292023Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9e0895cdb73e78bf",
+    "timestamp": "2026-04-11T05:26:01.747762Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "2t8TmF0XZGpZLN0JAAAT",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:26:01Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bbcf67bd11336237",
+    "timestamp": "2026-04-11T05:25:04.125760Z",
+    "event_type": "unauthorized_attempt",
+    "severity": "high",
+    "details": {
+      "simulated": true,
+      "source": "admin_simulation",
+      "note": "Simulated unauthorized_attempt via Admin Dashboard",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:25:04.125760Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1e665f4c41b41a6e",
+    "timestamp": "2026-04-11T05:24:58.111499Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "2t8TmF0XZGpZLN0JAAAT",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:24:58.111499Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2b80c54ba8746bdd",
+    "timestamp": "2026-04-11T05:24:57.596249Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "IhAxeAUo0sF38NhgAAAR",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:24:57Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cba43e57f46221ef",
+    "timestamp": "2026-04-11T05:23:07.581301Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6c8a669a741179b9",
+    "timestamp": "2026-04-11T05:23:04.986474Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2d06d39a4920cab3",
+    "timestamp": "2026-04-11T05:23:02.376543Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f2dfd01456e528df",
+    "timestamp": "2026-04-11T05:22:59.719632Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1977cbba068e6ffb",
+    "timestamp": "2026-04-11T05:22:57.120040Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ea3900f41af826b4",
+    "timestamp": "2026-04-11T05:22:54.536810Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cd4d8da909d533cf",
+    "timestamp": "2026-04-11T05:22:51.922404Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "291ce89193f2eb91",
+    "timestamp": "2026-04-11T05:22:49.316617Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1c56d771320a6ffd",
+    "timestamp": "2026-04-11T05:21:08.896865Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "IhAxeAUo0sF38NhgAAAR",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:21:08.896319Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d44f84c11e1b233d",
+    "timestamp": "2026-04-11T05:21:08.346329Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "yLZk5iBrt5wV_BTvAAAP",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:21:08Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f9ff030f4b37100c",
+    "timestamp": "2026-04-11T05:20:35.108992Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "850a2d5ae4959636",
+    "timestamp": "2026-04-11T05:20:32.478186Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7c826c57cc94bcd9",
+    "timestamp": "2026-04-11T05:20:29.870408Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1cc083223496a6e5",
+    "timestamp": "2026-04-11T05:20:27.274329Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1b9d577fced5f86b",
+    "timestamp": "2026-04-11T05:18:32.189375Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "yLZk5iBrt5wV_BTvAAAP",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:18:32.189375Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6db3c9ba08f69e9c",
+    "timestamp": "2026-04-11T05:18:31.582487Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "Pk2_U8sha0HAqUA1AAAL",
+      "device_id": null,
+      "timestamp": "2026-04-11T05:18:31Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b02fe8c9249dd379",
+    "timestamp": "2026-04-11T05:15:51.560439Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "19584225696472e4",
+    "timestamp": "2026-04-11T05:15:48.974653Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c6b678f947e951fc",
+    "timestamp": "2026-04-11T05:15:46.403091Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7fb6cd4c3108a863",
+    "timestamp": "2026-04-11T05:15:43.828452Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "726a4ca4b340c278",
+    "timestamp": "2026-04-11T05:15:41.245265Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "76fe14cd8f0596fd",
+    "timestamp": "2026-04-11T05:15:38.653751Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f39a09283734111c",
+    "timestamp": "2026-04-11T05:15:35.908271Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "66007e1d7d462486",
+    "timestamp": "2026-04-11T05:15:33.351725Z",
+    "event_type": "replay_attack_detected",
+    "severity": "critical",
+    "details": {
+      "nonce": "CAPTURED_NONCE_A1B2C3",
+      "sender": "alice-laptop",
+      "ip": "127.0.0.1"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b00b8410071e023e",
+    "timestamp": "2026-04-11T05:12:26.858757Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "yfV1H-p7lH4P1JhJAAAN",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:12:26.858757Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0b3c4caaf1f5c79d",
+    "timestamp": "2026-04-11T05:12:25.957159Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "Pk2_U8sha0HAqUA1AAAL",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T05:12:25.957159Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3a377848f239189b",
+    "timestamp": "2026-04-11T05:12:23.886152Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "S8z7gVVz7qwFHNWNAAAH",
+      "device_id": "2be041458f557f45",
+      "timestamp": "2026-04-11T05:12:23Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "28012bd260f43f18",
+    "timestamp": "2026-04-11T05:12:23.874423Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "cl6_2VQ5fcstXVnTAAAJ",
+      "device_id": "d9eaca1bf9f257bc",
+      "timestamp": "2026-04-11T05:12:23Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "093fa5427b524668",
+    "timestamp": "2026-04-11T04:53:18.054055Z",
+    "event_type": "message_burned",
+    "severity": "info",
+    "details": {
+      "message_id": "82353c7781079f76d8f82053823573fc",
+      "reason": "burn_on_read"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2278dfe59fe59d55",
+    "timestamp": "2026-04-11T04:53:17.230163Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "82353c7781079f76d8f82053823573fc",
+      "sender": "d9eaca1bf9f257bc",
+      "recipient": "2be041458f557f45",
+      "proof_hash": "62688863de3d4951e4684ea53c75e4193b2dd85835309d0e498f4c96da75aa39",
+      "expiry": "2026-04-11T05:53:17Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4ac2ef880ab1231e",
+    "timestamp": "2026-04-11T04:52:53.506254Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "f402e7d4181e2a41603f234ecc7784ef",
+      "sender": "2be041458f557f45",
+      "recipient": "d9eaca1bf9f257bc",
+      "proof_hash": "35057474597ec393379cbdb58b2a6f642429dfcb469fdc29abebedbe1864fc0b",
+      "expiry": "2026-04-11T04:53:53Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4ef169d9483f2d22",
+    "timestamp": "2026-04-11T04:52:21.804764Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "2be041458f557f45",
+      "session_id": "S8z7gVVz7qwFHNWNAAAH",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5a5bedf4c4328586",
+    "timestamp": "2026-04-11T04:52:21.768722Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "2be041458f557f45",
+      "session_id": "S8z7gVVz7qwFHNWNAAAH",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bd1baf0761a2807c",
+    "timestamp": "2026-04-11T04:52:20.160684Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "d9eaca1bf9f257bc",
+      "session_id": "cl6_2VQ5fcstXVnTAAAJ",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "73ac4f3f63f08ec8",
+    "timestamp": "2026-04-11T04:52:20.132523Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "d9eaca1bf9f257bc",
+      "session_id": "cl6_2VQ5fcstXVnTAAAJ",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "103ac3fe9f528aa4",
+    "timestamp": "2026-04-11T04:11:50.796847Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "cl6_2VQ5fcstXVnTAAAJ",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T04:11:50.796847Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "a74da4bb83f62587",
+    "timestamp": "2026-04-11T04:11:50.316843Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "B2vQKvuW-6lNHtRmAAAD",
+      "device_id": "49eb3a03014b7c92",
+      "timestamp": "2026-04-11T04:11:50Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e2b1112c374effea",
+    "timestamp": "2026-04-11T04:11:45.501818Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "S8z7gVVz7qwFHNWNAAAH",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T04:11:45.501818Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "66e573346ca479a8",
+    "timestamp": "2026-04-11T04:11:44.342146Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "wVzUehMjY-J4mXiWAAAF",
+      "device_id": "2eaf32b1a5fd4dbc",
+      "timestamp": "2026-04-11T04:11:44Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ff7d7c51ad54286c",
+    "timestamp": "2026-04-11T04:11:33.401968Z",
+    "event_type": "disconnection",
+    "severity": "info",
+    "details": {
+      "session_id": "RB9nJBHMorTo7EWgAAAB",
+      "device_id": null,
+      "timestamp": "2026-04-11T04:11:33Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "034d7a106428b639",
+    "timestamp": "2026-04-11T04:11:18.306021Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "ccea3fedef9b5b55e85ba1b48fe3cde0",
+      "sender": "2eaf32b1a5fd4dbc",
+      "recipient": "49eb3a03014b7c92",
+      "proof_hash": "ab974e6e0c05b083dab5d28c5e1c5c7c0665c89f8fd41ef27a278a8f04fea7a5",
+      "expiry": "2026-04-11T05:11:18Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "23e7a8200461f362",
+    "timestamp": "2026-04-11T04:11:14.449903Z",
+    "event_type": "message_sent",
+    "severity": "info",
+    "details": {
+      "message_id": "6865322edfaf811871f6a0491d83928d",
+      "sender": "2eaf32b1a5fd4dbc",
+      "recipient": "49eb3a03014b7c92",
+      "proof_hash": "9522c1cfbc35b09b9ee0e2acb7ef70370823ae9d9a7a6a892367f8b5e30223f3",
+      "expiry": "2026-04-11T05:11:14Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7fc7174926973fff",
+    "timestamp": "2026-04-11T04:11:11.368290Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "49eb3a03014b7c92",
+      "session_id": "B2vQKvuW-6lNHtRmAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bd0a340c859592df",
+    "timestamp": "2026-04-11T04:11:11.343893Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "49eb3a03014b7c92",
+      "session_id": "B2vQKvuW-6lNHtRmAAAD",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "429b2ef7399abe02",
+    "timestamp": "2026-04-11T04:11:11.324266Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "2eaf32b1a5fd4dbc",
+      "session_id": "wVzUehMjY-J4mXiWAAAF",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e2f1a0c2bf27f122",
+    "timestamp": "2026-04-11T04:11:08.403979Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "34773246b926d2fa",
+      "session_id": "wVzUehMjY-J4mXiWAAAF",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1918c94e68b39354",
+    "timestamp": "2026-04-11T04:11:08.382967Z",
+    "event_type": "auth_success",
+    "severity": "info",
+    "details": {
+      "device_id": "34773246b926d2fa",
+      "session_id": "wVzUehMjY-J4mXiWAAAF",
+      "method": "dh_pairing"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "28f96aaca3c87ece",
+    "timestamp": "2026-04-11T04:11:04.365769Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "wVzUehMjY-J4mXiWAAAF",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T04:11:04.365769Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "53301652f9f88bba",
+    "timestamp": "2026-04-11T04:10:49.594904Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "B2vQKvuW-6lNHtRmAAAD",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T04:10:49.593915Z"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "79e1dbb3669e5963",
+    "timestamp": "2026-04-11T04:10:29.287416Z",
+    "event_type": "connection",
+    "severity": "info",
+    "details": {
+      "session_id": "RB9nJBHMorTo7EWgAAAB",
+      "ip": "127.0.0.1",
+      "timestamp": "2026-04-11T04:10:29.287416Z"
+    },
+    "analyzed": false
+  },
+  {
     "id": "d3544a70d3e11df2",
     "timestamp": "2026-03-10T16:03:27.193470Z",
     "event_type": "disconnection",
@@ -2592,6 +5315,582 @@
     "severity": "critical",
     "details": {
       "ip": "100.64.0.9",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "4182f647aef17629",
+    "timestamp": "2026-04-11T05:15:38.677847Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 3,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "36456eeac119aada",
+    "timestamp": "2026-04-11T05:15:41.274566Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 4,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "cf9b91987344b049",
+    "timestamp": "2026-04-11T05:15:43.847434Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 5,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "361770e09b7c11f9",
+    "timestamp": "2026-04-11T05:15:46.419061Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 6,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f989a6a4c94e00d4",
+    "timestamp": "2026-04-11T05:15:48.993648Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 7,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c61742168108393a",
+    "timestamp": "2026-04-11T05:15:51.585502Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 8,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "bbb4763ddca5a00f",
+    "timestamp": "2026-04-11T05:20:27.305867Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 9,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7af54c6d3b23aff3",
+    "timestamp": "2026-04-11T05:20:29.903587Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 10,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "233ab6575c72bfe5",
+    "timestamp": "2026-04-11T05:20:32.496459Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 11,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b2950ba447d56bfe",
+    "timestamp": "2026-04-11T05:20:35.135740Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 12,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "db71e717d4f88722",
+    "timestamp": "2026-04-11T05:22:49.348154Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 13,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c329978befdfe961",
+    "timestamp": "2026-04-11T05:22:51.949296Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 14,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e8193a885f3fa714",
+    "timestamp": "2026-04-11T05:22:54.569923Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 15,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "679bb50be1196fac",
+    "timestamp": "2026-04-11T05:22:57.152838Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 16,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "87a1cce0a47ddda8",
+    "timestamp": "2026-04-11T05:22:59.751012Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 17,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "68390a533c700239",
+    "timestamp": "2026-04-11T05:23:02.403545Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 18,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ff2a03a332a34365",
+    "timestamp": "2026-04-11T05:23:05.010490Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 19,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "3c138f0667291d47",
+    "timestamp": "2026-04-11T05:23:07.613413Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 20,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "51c4bb9c801e4687",
+    "timestamp": "2026-04-11T05:27:52.113029Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 13,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0bc707ac1ace41f6",
+    "timestamp": "2026-04-11T05:27:54.760327Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 14,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b2ab12f5d984e109",
+    "timestamp": "2026-04-11T05:27:57.347334Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 15,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "7a7a6400fcf005f9",
+    "timestamp": "2026-04-11T05:27:59.947801Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 16,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "b73cb81db5151684",
+    "timestamp": "2026-04-11T05:28:02.553983Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 17,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "34b284c61b572199",
+    "timestamp": "2026-04-11T05:28:05.140320Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 18,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "505b0f129d4f3627",
+    "timestamp": "2026-04-11T05:28:07.742789Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 19,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "af53da60e2367954",
+    "timestamp": "2026-04-11T05:28:10.337100Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 20,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2c22f746a0d8c0df",
+    "timestamp": "2026-04-11T05:32:38.819777Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 17,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9ab81fb0b4103cca",
+    "timestamp": "2026-04-11T05:32:41.405247Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 18,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "f949b635f3ae6fb1",
+    "timestamp": "2026-04-11T05:32:44.001999Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 19,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "c4b5817878b5a5c4",
+    "timestamp": "2026-04-11T05:32:46.584450Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 20,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "d4131b3c05bc9687",
+    "timestamp": "2026-04-11T05:32:49.172525Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 21,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0ac51fe1dcbec1f3",
+    "timestamp": "2026-04-11T05:32:51.757763Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 21,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "e287eb84bb2581cb",
+    "timestamp": "2026-04-11T05:32:54.353552Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 21,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5dd27e2a9bd37c42",
+    "timestamp": "2026-04-11T05:32:56.930602Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 21,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "66e02ac149c01c51",
+    "timestamp": "2026-04-11T05:38:26.940437Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 9,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6a7869d17ccbd69e",
+    "timestamp": "2026-04-11T05:38:29.526327Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 10,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "6eb0114387057539",
+    "timestamp": "2026-04-11T05:38:32.136154Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 11,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "5503d36edc244f17",
+    "timestamp": "2026-04-11T05:38:34.751214Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 12,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "631c094776c0f89b",
+    "timestamp": "2026-04-11T05:38:37.336128Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 13,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "9c25fcbc3d91634a",
+    "timestamp": "2026-04-11T05:38:39.932961Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 14,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "66a5e96f8eab6e9a",
+    "timestamp": "2026-04-11T05:38:42.539359Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 15,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ffd8772fbff2c493",
+    "timestamp": "2026-04-11T05:38:45.141572Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 16,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "ceb77a7a3e021054",
+    "timestamp": "2026-04-11T05:38:59.309982Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "127.0.0.1",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "1c9dbe01bceb00e7",
+    "timestamp": "2026-04-11T05:39:11.702156Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "127.0.0.1",
+      "attempts": 5,
+      "timeframe": "5 minutes"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "0911fab938a1433f",
+    "timestamp": "2026-04-11T05:41:42.730337Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 17,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "2961c6b0933f1808",
+    "timestamp": "2026-04-11T05:41:45.221374Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 18,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "302570b6c1a07d43",
+    "timestamp": "2026-04-11T05:41:47.735946Z",
+    "event_type": "suspicious_pattern",
+    "severity": "high",
+    "details": {
+      "pattern": "multiple_replay_attempts",
+      "count": 19,
+      "recommendation": "Possible automated attack tool detected"
+    },
+    "analyzed": false
+  },
+  {
+    "id": "28439c35a21a99ac",
+    "timestamp": "2026-04-11T05:42:22.297169Z",
+    "event_type": "brute_force_detected",
+    "severity": "critical",
+    "details": {
+      "ip": "127.0.0.1",
       "attempts": 5,
       "timeframe": "5 minutes"
     },
